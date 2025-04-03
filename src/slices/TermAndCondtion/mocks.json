@@ -1,0 +1,69 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"label": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Sit commodo magna aliqua velit ex. Labore commodo consequat sint anim consequat aliqua aute ad id sint sint reprehenderit aute occaecat. Do officia culpa ea Lorem tempor nisi aute consectetur officia anim irure proident dolor est reprehenderit."
+						}
+					}
+				]
+			},
+			"contant": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Motion"
+						}
+					}
+				]
+			},
+			"terms_and_conditions": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"heading",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Laborum commodo aliqua esse minim veniam ex ad amet commodo non. Tempor minim aliquip commodo sunt aute laborum dolore irure pariatur irure labore consectetur. Ipsum esse elit qui."
+											}
+										}
+									]
+								}
+							],
+							[
+								"description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "heading1",
+											"content": {
+												"text": "Difficulty"
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

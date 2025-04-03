@@ -1,0 +1,83 @@
+{
+  "id": "location",
+  "type": "SharedSlice",
+  "name": "Location",
+  "description": "Location",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1"
+          }
+        },
+        "sub_headeing": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Sub Headeing",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading4"
+          }
+        },
+        "contact": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Contact",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "location_card": {
+          "type": "Group",
+          "config": {
+            "label": "location card",
+            "repeat": true,
+            "fields": {
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Title",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "heading4,strong"
+                }
+              },
+              "place": {
+                "type": "Text",
+                "config": {
+                  "label": "Place",
+                  "placeholder": ""
+                }
+              },
+              "longitude_latitude": {
+                "type": "GeoPoint",
+                "config": {
+                  "label": "longitude latitude"
+                }
+              }
+            }
+          }
+        },
+        "longitude_latitude": {
+          "type": "GeoPoint",
+          "config": {
+            "label": "longitude latitude"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

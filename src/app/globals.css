@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+::-webkit-scrollbar-thumb{
+@apply bg-transparent shadow-sm
+}
+::-webkit-scrollbar{
+@apply w-3 bg-transparent
+}
+::-webkit-scrollbar-thumb{
+@apply rounded-none bg-[#FFFFFF] /*color trackbar*/
+}
+}
+
+body {
+  color: white;
+  background: #06263E;
+  overflow-x: hidden;
+}
+
+body[data-aos-delay='1000'] [data-aos],
+  [data-aos][data-aos][data-aos-delay='1000'] {
+    transition-delay: 1s;
+}
+
+body[data-aos-delay='800'] [data-aos],
+  [data-aos][data-aos][data-aos-delay='800'] {
+    transition-delay: 0.8s;
+}
+
+.custom-hexagon {
+  stroke: #06263E; /* Border color */
+  stroke-width: 2px;
+  fill: #06263E; /* Background color */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
+}

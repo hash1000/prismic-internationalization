@@ -1,0 +1,249 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Thumb"
+						}
+					}
+				]
+			},
+			"card": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"card_heading",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Aliqua cillum est reprehenderit magna commodo et nisi dolore excepteur commodo fugiat duis adipisicing adipisicing adipisicing."
+											}
+										}
+									]
+								}
+							],
+							[
+								"card_image",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1547082299-de196ea013d6",
+										"width": 4272,
+										"height": 2848
+									},
+									"url": "https://images.unsplash.com/photo-1547082299-de196ea013d6",
+									"width": 4272,
+									"height": 2848,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"card_link",
+								{
+									"__TYPE__": "LinkContent",
+									"key": "71f9b350-a692-45a9-8905-65b1febd671a",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://google.com",
+										"text": "early"
+									}
+								}
+							]
+						]
+					}
+				]
+			},
+			"vernetzung_und_modellaufbau": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"label",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "sunlight",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"festigkeit_und_lebensdauer": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"lable",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "breeze",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"crash_simulation": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"lable",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "prepare",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"stromungssimulationen": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"label",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "use",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"mehrkorper_simulation": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"label",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "cut",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"passive_sicherheit": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"lable",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "dawn",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"skripten_und_programmierung": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"lable",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "stiff",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"steifigkeit": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"lable",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "though",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"backgroung_image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea",
+					"width": 5000,
+					"height": 4613
+				},
+				"url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea",
+				"width": 5000,
+				"height": 4613,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			}
+		},
+		"items": []
+	}
+]

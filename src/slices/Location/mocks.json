@@ -1,0 +1,91 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Range"
+						}
+					}
+				]
+			},
+			"sub_headeing": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading4",
+						"content": {
+							"text": "Wooden"
+						}
+					}
+				]
+			},
+			"contact": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Eu non ea ut consectetur non sunt elit veniam incididunt mollit quis qui non cillum."
+						}
+					}
+				]
+			},
+			"location_card": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"title",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "heading4",
+											"content": {
+												"text": "Truck"
+											}
+										}
+									]
+								}
+							],
+							[
+								"place",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "door",
+									"type": "Text"
+								}
+							],
+							[
+								"longitude_latitude",
+								{
+									"position": {
+										"lat": 48.8583736,
+										"lng": 2.2922926
+									},
+									"__TYPE__": "GeoPointContent"
+								}
+							]
+						]
+					}
+				]
+			},
+			"longitude_latitude": {
+				"position": {
+					"lat": 48.8703712,
+					"lng": 2.3865198
+				},
+				"__TYPE__": "GeoPointContent"
+			}
+		},
+		"items": []
+	}
+]

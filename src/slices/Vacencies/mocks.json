@@ -1,0 +1,120 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Score"
+						}
+					}
+				]
+			},
+			"sub_headeing": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "String"
+						}
+					}
+				]
+			},
+			"vacency_card": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"card_image",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+										"width": 5243,
+										"height": 3495
+									},
+									"url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+									"width": 5243,
+									"height": 3495,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"card_heading",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "heading1",
+											"content": {
+												"text": "Buffalo"
+											}
+										}
+									]
+								}
+							],
+							[
+								"card_button",
+								{
+									"key": "ad9adae7-0ad1-482b-97fa-6293d138de5d",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://slicemachine.dev",
+										"text": "ice"
+									}
+								}
+							],
+							[
+								"card_sub_heading",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "free",
+									"type": "Text"
+								}
+							],
+							[
+								"card_label",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "dozen",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"conatct": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Dolor non in et incididunt pariatur veniam. Aute ipsum ut irure adipisicing voluptate consectetur do esse laborum adipisicing adipisicing. Veniam est consequat cillum labore mollit occaecat velit."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

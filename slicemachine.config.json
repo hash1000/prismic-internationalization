@@ -1,0 +1,6 @@
+{
+  "libraries": ["./src/slices"],
+  "adapter": "@slicemachine/adapter-next",
+  "repositoryName": "jn-consulting-eu-de",
+  "localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
+}

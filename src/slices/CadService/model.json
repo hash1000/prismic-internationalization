@@ -1,0 +1,137 @@
+{
+  "id": "engineering_service",
+  "type": "SharedSlice",
+  "name": "CadService",
+  "description": "EngineeringService",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1,strong"
+          }
+        },
+        "card": {
+          "type": "Group",
+          "config": {
+            "label": "card",
+            "repeat": true,
+            "fields": {
+              "card_image": {
+                "type": "Image",
+                "config": {
+                  "label": "card image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "card_heading": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "card heading",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "card_link": {
+                "type": "Link",
+                "config": {
+                  "label": "card link",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
+                }
+              }
+            }
+          }
+        },
+        "konstruktion_rohbau": {
+          "type": "Group",
+          "config": {
+            "label": "Konstruktion Rohbau",
+            "repeat": true,
+            "fields": {
+              "label": {
+                "type": "Text",
+                "config": {
+                  "label": "label",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "konstruktion_exterieur": {
+          "type": "Group",
+          "config": {
+            "label": "Konstruktion Exterieur",
+            "repeat": true,
+            "fields": {
+              "label": {
+                "type": "Text",
+                "config": {
+                  "label": "label",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "konstruktion_anbaueteile": {
+          "type": "Group",
+          "config": {
+            "label": "Konstruktion Anbaueteile",
+            "repeat": true,
+            "fields": {
+              "lable": {
+                "type": "Text",
+                "config": {
+                  "label": "lable",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "konstruktion_interieur": {
+          "type": "Group",
+          "config": {
+            "label": "Konstruktion Interieur",
+            "repeat": true,
+            "fields": {
+              "lable": {
+                "type": "Text",
+                "config": {
+                  "label": "lable",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "backgroung_image": {
+          "type": "Image",
+          "config": {
+            "label": "Backgroung Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

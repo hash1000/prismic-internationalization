@@ -1,0 +1,238 @@
+{
+  "id": "automotive_services",
+  "type": "SharedSlice",
+  "name": "PageServices",
+  "description": "AutomotiveServices",
+  "variations": [
+    {
+      "id": "default",
+      "name": "PageServices",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "lable": {
+          "type": "StructuredText",
+          "config": {
+            "label": "lable",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1,strong"
+          }
+        },
+        "content": {
+          "type": "StructuredText",
+          "config": {
+            "label": "content",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "card": {
+          "type": "Group",
+          "config": {
+            "label": "card",
+            "repeat": true,
+            "fields": {
+              "card_image": {
+                "type": "Image",
+                "config": {
+                  "label": "card image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "card_heading": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "card heading",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "heading1,strong"
+                }
+              },
+              "card_sub_heading": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "card sub heading",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "heading1,strong"
+                }
+              },
+              "card_popup_detail": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "card popup detail",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph"
+                }
+              },
+              "card_popup_heading": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "card popup heading",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "heading1,strong"
+                }
+              },
+              "card_link": {
+                "type": "Link",
+                "config": {
+                  "label": "card link",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
+                }
+              },
+              "card_popup_background": {
+                "type": "Image",
+                "config": {
+                  "label": "card popup background",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "popup": {
+                "type": "Boolean",
+                "config": {
+                  "label": "popup",
+                  "placeholder_false": "false",
+                  "placeholder_true": "true",
+                  "default_value": true
+                }
+              }
+            }
+          }
+        },
+        "background_image": {
+          "type": "Image",
+          "config": {
+            "label": "Background Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "span_lable": {
+          "type": "Text",
+          "config": {
+            "label": "span lable",
+            "placeholder": ""
+          }
+        },
+        "optimization": {
+          "type": "Group",
+          "config": {
+            "label": "Optimization",
+            "repeat": true,
+            "fields": {
+              "label": {
+                "type": "Text",
+                "config": {
+                  "label": "label",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "chemical_engineering_contant": {
+          "type": "StructuredText",
+          "config": {
+            "label": "chemical engineering contant",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1,strong"
+          }
+        },
+        "nvh": {
+          "type": "Group",
+          "config": {
+            "label": "NVH",
+            "repeat": true,
+            "fields": {
+              "label": {
+                "type": "Text",
+                "config": {
+                  "label": "label",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "strength": {
+          "type": "Group",
+          "config": {
+            "label": "strength",
+            "repeat": true,
+            "fields": {
+              "label": {
+                "type": "Text",
+                "config": {
+                  "label": "label",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "kinematics": {
+          "type": "Group",
+          "config": {
+            "label": "Kinematics",
+            "repeat": true,
+            "fields": {
+              "label": {
+                "type": "Text",
+                "config": {
+                  "label": "label",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "dynamics": {
+          "type": "Group",
+          "config": {
+            "label": "Dynamics",
+            "repeat": true,
+            "fields": {
+              "label": {
+                "type": "Text",
+                "config": {
+                  "label": "label",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "aero_and_thermal_analysis": {
+          "type": "Group",
+          "config": {
+            "label": "Aero and thermal analysis",
+            "repeat": true,
+            "fields": {
+              "label": {
+                "type": "Text",
+                "config": {
+                  "label": "label",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

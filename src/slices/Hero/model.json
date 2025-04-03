@@ -1,0 +1,90 @@
+{
+  "id": "hero",
+  "type": "SharedSlice",
+  "name": "Hero",
+  "description": "Hero",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1"
+          }
+        },
+        "contant": {
+          "type": "StructuredText",
+          "config": {
+            "label": "contant",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "backgroung_image": {
+          "type": "Image",
+          "config": {
+            "label": "Backgroung Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "sub_headeing": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Sub Headeing",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1"
+          }
+        },
+        "button": {
+          "type": "Link",
+          "config": {
+            "label": "Button",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false
+          }
+        },
+        "hexa_grid": {
+          "type": "Group",
+          "config": {
+            "label": "Hexa Grid",
+            "repeat": true,
+            "fields": {
+              "hexa_image": {
+                "type": "Image",
+                "config": {
+                  "label": "Hexa Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        },
+        "header_image": {
+          "type": "Image",
+          "config": {
+            "label": "Header Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

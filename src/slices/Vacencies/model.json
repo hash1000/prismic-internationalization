@@ -1,0 +1,97 @@
+{
+  "id": "vacencies",
+  "type": "SharedSlice",
+  "name": "Vacencies",
+  "description": "Vacencies",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1"
+          }
+        },
+        "sub_headeing": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Sub Headeing",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1"
+          }
+        },
+        "vacency_card": {
+          "type": "Group",
+          "config": {
+            "label": "vacency card",
+            "repeat": true,
+            "fields": {
+              "card_image": {
+                "type": "Image",
+                "config": {
+                  "label": "card image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "card_heading": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "card heading",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "heading1"
+                }
+              },
+              "card_button": {
+                "type": "Link",
+                "config": {
+                  "label": "card Button",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
+                }
+              },
+              "card_sub_heading": {
+                "type": "Text",
+                "config": {
+                  "label": "Card Sub heading",
+                  "placeholder": ""
+                }
+              },
+              "card_label": {
+                "type": "Text",
+                "config": {
+                  "label": "card label",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "conatct": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Conatct",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
