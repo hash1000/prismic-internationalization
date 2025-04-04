@@ -90,7 +90,7 @@ const AutomotiveServices: FC<AutomotiveServicesProps> = ({ slice }) => {
           />
 
           {/* Render the description */}
-          <div data-aos="fade-right" data-aos-delay="50" data-aos-offset="200">
+          <div data-aos="fade-right" data-aos-delay="50" data-aos-offset="200" className="w-4/5 mx-auto">
             <PrismicRichText
               field={slice.primary.content}
               components={{
@@ -108,12 +108,12 @@ const AutomotiveServices: FC<AutomotiveServicesProps> = ({ slice }) => {
       slice.primary.card.length === 2
         ? "flex justify-center"
         : slice.primary.card.length === 4
-          ? "flex"
+          ? "flex flex-wrap justify-center w-11/12 mx-auto"
           : slice.primary.card.length > 5
-            ? " grid grid-cols-1 md:grid-cols-3"
+            ? " grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-fit"
             : "md:grid-cols-4"
     } 
-    gap-6 place-items-center max-w-[1140px] mx-auto`}
+    gap-6 place-items-center max-w-[1240px] mx-auto`}
             data-aos="fade-left"
             data-aos-delay="50"
             data-aos-offset="200"
@@ -130,7 +130,7 @@ const AutomotiveServices: FC<AutomotiveServicesProps> = ({ slice }) => {
                       }
                     }
                   }}
-                  className="rounded-lg shadow-lg hover:cursor-pointer text-white transition-colors duration-300 flex flex-col h-full w-[365px] min-h-[310px]"
+                  className="rounded-lg shadow-lg hover:cursor-pointer text-white transition-colors duration-300 flex flex-col h-full w-[280px] min-h-[310px]"
                   style={{
                     background:
                       "radial-gradient(at top center, #235683 0%, #0D2F4B 100%)",

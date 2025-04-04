@@ -44,8 +44,9 @@ const CaeService: FC<CaeServiceProps> = ({ slice }) => {
           data-aos="fade-right"
           data-aos-delay="50"
           data-aos-offset="200"
-          className="grid gap-6 grid-cols-4 place-items-center mx-auto max-w-[1140px] py-[100px]"
+          className=" mx-auto max-w-[1240px] py-[100px]"
         >
+          <div className="flex gap-6 flex-wrap place-items-center px-6 justify-center">
           {slice.primary.card.map((item, index) => {
             const cardHeadingKey = asText(item.card_heading);
             return (
@@ -102,6 +103,8 @@ const CaeService: FC<CaeServiceProps> = ({ slice }) => {
               </div>
             );
           })}
+
+          </div>
         </div>
       </Bounded>
       <div className="border-b-4 border-white"></div>

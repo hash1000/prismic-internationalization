@@ -115,7 +115,7 @@ const Services: FC<ServicesProps> = ({ slice }) => {
 
           {/* Render the cards */}
           <div
-            className="grid md:grid-cols-[repeat(2,minmax(300px,350px))] xl:grid-cols-4 justify-center gap-4 place-items-center max-w-[1140px] mx-auto"
+            className="grid md:grid-cols-[repeat(2,minmax(300px,350px))] xl:grid-cols-4 justify-center gap-4 place-items-center max-w-[1240px] mx-auto"
             data-aos="fade-left"
             data-aos-delay="50"
             data-aos-offset="200"

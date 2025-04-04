@@ -18,7 +18,7 @@ const Vacencies: FC<VacenciesProps> = ({ slice }) => {
   return (
     <Bounded
       id="career"
-      className="pt-[100px] w-full max-w-[1140px] mx-auto"
+      className="pt-[100px] w-full max-w-[1240px] mx-auto"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
@@ -52,7 +52,7 @@ const Vacencies: FC<VacenciesProps> = ({ slice }) => {
 
         {/* Cards Section */}
         <div
-          className="grid md:grid-cols-[repeat(2,minmax(300px,350px))] xl:grid-cols-4 justify-center w-full max-w-[1140px] mx-auto  gap-4 place-items-center"
+          className="grid md:grid-cols-[repeat(2,minmax(300px,350px))] xl:grid-cols-4 justify-center w-full max-w-[1240px] mx-auto  gap-4 place-items-center"
           data-aos="fade-right"
           data-aos-delay="50"
           data-aos-offset="300"
