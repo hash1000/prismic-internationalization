@@ -31,7 +31,7 @@ export default function Bounded({
   };  
 
   return (
-    <Comp id={id} className={clsx("md:py-14", className)} style={style} {...restProp}>
+    <Comp id={id} className={clsx("py-14", className)} style={style} {...restProp}>
       {children}
     </Comp>
   );

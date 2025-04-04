@@ -98,6 +98,24 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "iso_label": {
+          "type": "StructuredText",
+          "config": {
+            "label": "iso label",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "iso_license": {
+          "type": "StructuredText",
+          "config": {
+            "label": "iso license",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
         }
       },
       "items": {}

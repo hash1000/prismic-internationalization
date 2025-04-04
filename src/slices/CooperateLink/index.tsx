@@ -64,7 +64,7 @@ const CooperateLink: FC<CooperateLinkProps> = ({ slice }) => {
 
         {/* Cards Section */}
         <div
-          className="flex justify-evenly w-full bg-[#2B465B] p-8 rounded-lg"
+          className="flex justify-evenly w-full bg-[#2B465B] p-8 rounded-lg flex-col sm:flex-row sm:gap-2 gap-5 items-center"
           data-aos="fade-right"
           data-aos-delay="100"
           data-aos-offset="200"

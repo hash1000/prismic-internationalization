@@ -25,9 +25,9 @@ const Services: FC<ServicesProps> = ({ slice }) => {
     setIsHovered(null);
   };
   return (
-    <div className="pt-[200px] lg:pt-[20px]">
+    <div className="sm:pt-[200px] lg:pt-[20px]">
       <div className="bg-[#51B0AB]">
-        <div className="flex items-center justify-center w-full px-4 py-10">
+        <div className="flex items-center justify-center w-full px-4 py-10 flex-col sm:flex-row">
           <Image
             src={slice.primary.iso_image.url || "/placeholder.png"}
             alt={slice.primary.iso_image.alt || "ISO Certification"}
@@ -35,12 +35,29 @@ const Services: FC<ServicesProps> = ({ slice }) => {
             height={100}
           />
 
-          <h1 className="text-[#06263E] text-4xl font-bold mb-4 text-center">
-            We Are Certified
-            <span className=" block text-5xl text-white px-4 py-2 ">
-              ISO/IEC 27001:2022
-            </span>
-          </h1>
+          <PrismicRichText
+            field={slice.primary.iso_label}
+            components={{
+              heading1: ({ children }) => (
+                <h1 className="text-[#06263E] text-4xl font-bold mb-4 text-center">
+                  {children}
+                  {
+                    <PrismicRichText
+                      field={slice.primary.iso_license}
+
+                      components={{
+                        paragraph: ({ children }) => (
+                          <span className=" block text-5xl text-white px-4 py-2 ">
+                            {children}
+                          </span>
+                        ),
+                      }}
+                    />
+                  }
+                </h1>
+              ),
+            }}
+          />
 
           <Image
             src={slice.primary.iso_image.url || "/placeholder.png"}
@@ -63,7 +80,7 @@ const Services: FC<ServicesProps> = ({ slice }) => {
 
       <Bounded
         id="services"
-        className="mx-auto w-full 
+        className="mx-auto w-11/12
       "
         data-slice-type={slice.slice_type}
         data-slice-variation={slice.variation}
@@ -134,12 +151,12 @@ const Services: FC<ServicesProps> = ({ slice }) => {
                   {/* Card Content */}
                   <div className="flex-grow">
                     {item.card_heading && (
-                      <div className="text-2xl font-bold mb-2">
+                      <div className=" text-lg md:text-2xl font-bold mb-2">
                         <PrismicRichText field={item.card_heading} />
                       </div>
                     )}
                     {item.card_sub_heading && (
-                      <div className="text-2xl font-bold mb-2">
+                      <div className="text-lg md:text-2xl font-bold mb-2">
                         <PrismicRichText field={item.card_sub_heading} />
                       </div>
                     )}

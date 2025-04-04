@@ -16,7 +16,6 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
  * Component for "Hero" Slices.
  */
 const Hero: FC<HeroProps> = ({ slice }) => {
-
   return (
     <Bounded
       id="hero"
@@ -28,7 +27,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
       <div
         className={`flex xl:justify-center flex-col xl:flex-row ${
           slice.primary.hexa_grid?.length > 0 && "items-center"
-        } w-full sm:pt-36 lg:pt-28 relative max-w-[1920px] mx-auto min-h-[100vh] gap-3`}
+        } w-full sm:pt-40 lg:pt-28 relative max-w-[1920px] mx-auto min-h-[100vh] gap-3`}
         data-aos="fade-right"
         data-aos-offset="200"
       >
@@ -36,14 +35,16 @@ const Hero: FC<HeroProps> = ({ slice }) => {
           data-aos="fade-right"
           data-aos-delay="200"
           data-aos-offset="200"
-          className="flex flex-col px-9 ps-20 pr-9"
+          className="flex flex-col px-9 ps-20 pr-9 h-full sm:h-auto justify-center sm:justify-start"
         >
           {/* Subheading */}
           <PrismicRichText
             field={slice.primary.sub_headeing}
             components={{
               heading1: ({ children }) => (
-                <h1 className={`${montserrat.className} text-[44px] font-normal`}>
+                <h1
+                  className={`${montserrat.className}  text-2xl sm:text-3xl md:text-5xl font-normal`}
+                >
                   {children}
                 </h1>
               ),
@@ -56,7 +57,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
             components={{
               heading1: ({ children }) => (
                 <h1
-                  className={`${montserrat.className} text-[80px] text-[#5AB7B5] font-bold leading-tight`}
+                  className={`${montserrat.className} text-4xl sm:text-6xl md:text-8xl text-[#5AB7B5] font-bold leading-tight`}
                 >
                   {children}
                 </h1>
@@ -70,7 +71,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
             components={{
               paragraph: ({ children }) => (
                 <p
-                  className={`${montserrat.className} font-normal text-lg text-left`}
+                  className={`${montserrat.className} font-normal text-base sm:text-lg md:text-xl  text-left`}
                 >
                   {children}
                 </p>
@@ -88,7 +89,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
             >
               <PrismicNextLink
                 field={slice.primary.button}
-                className="text-[#214955] bg-[#6FDCD6] py-3 px-5 rounded-md"
+                className="text-[#214955] bg-[#6FDCD6] py-2 px-3 md:py-3 md:px-5 rounded-md"
               />
             </div>
           )}
@@ -96,7 +97,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
 
         {slice.primary.hexa_grid?.length > 0 ? (
           <>
-            <div className="relative lg:max-w-[672px] min-w-[672px] mx-auto mt-52 xl:-mt-52">
+            <div className="hidden sm:block relative sm:max-w-[472px] md:max-w-[672px] min-w-[672px] mx-auto mt-52 xl:-mt-52">
               {slice.primary.hexa_grid.map((item, index) => {
                 let positionClass = "";
                 let size = 0;

@@ -1984,6 +1984,26 @@ export interface ServicesSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   qr_code: prismic.ImageField<never>;
+
+  /**
+   * iso label field in *Services → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.default.primary.iso_label
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  iso_label: prismic.RichTextField;
+
+  /**
+   * iso license field in *Services → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.default.primary.iso_license
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  iso_license: prismic.RichTextField;
 }
 
 /**

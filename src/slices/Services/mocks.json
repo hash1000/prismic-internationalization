@@ -130,7 +130,6 @@
 				"thumbnails": {}
 			},
 			"qr_code": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04",
@@ -148,7 +147,32 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"iso_label": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Velit in occaecat adipisicing sit consectetur aute labore ad excepteur reprehenderit ad. Reprehenderit amet proident irure pariatur aliqua ex qui non elit reprehenderit nisi ex officia est incididunt. Fugiat voluptate cupidatat ullamco sunt quis exercitation non aute culpa ex magna cupidatat."
+						}
+					}
+				]
+			},
+			"iso_license": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nostrud amet dolore amet incididunt excepteur do ea aliqua culpa commodo nostrud ea ea veniam."
+						}
+					}
+				]
 			}
 		},
 		"items": []
