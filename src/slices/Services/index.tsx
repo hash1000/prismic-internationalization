@@ -26,7 +26,7 @@ const Services: FC<ServicesProps> = ({ slice }) => {
   };
   return (
     <div className="pt-[200px] lg:pt-[20px]">
-      {/* <div className="bg-[#51B0AB]">
+      <div className="bg-[#51B0AB]">
         <div className="flex items-center justify-center w-full px-4 py-10">
           <Image
             src={slice.primary.iso_image.url || "/placeholder.png"}
@@ -49,7 +49,7 @@ const Services: FC<ServicesProps> = ({ slice }) => {
             height={100}
           />
         </div>
-      </div> */}
+      </div>
 
       <div className=" w-full flex justify-center items-center my-3">
         <Image

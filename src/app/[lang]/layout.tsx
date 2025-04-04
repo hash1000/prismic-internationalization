@@ -5,7 +5,7 @@ type Params = {
   lang: string;
 };
 
-export default async function  Layout({ children, params }: { children: React.ReactNode; params: Params }) {
+export default async function  Layout({ children, params }: { children: React.ReactNode; params:  Promise<Params>  }) {
   const resolvedParams = await Promise.resolve(params);
   const { lang } = resolvedParams;
   

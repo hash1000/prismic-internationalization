@@ -9,12 +9,11 @@ type Params = {
   uid?: string;
 };
 
-export default async function Index({ params }: { params: Params }) {
+export default async function Index({ params }: { params: Promise<Params> }) {
   const resolvedParams = await Promise.resolve(params);
   const { lang, uid } = resolvedParams;
   const client = createClient();
   
-  // If no uid is provided, assume it's the homepage
   const pageUid = uid || 'home';
 
   try {

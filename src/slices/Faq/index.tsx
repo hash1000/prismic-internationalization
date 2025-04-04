@@ -18,15 +18,20 @@ const Faq: FC<FaqProps> = ({ slice }) => {
       data-slice-variation={slice.variation}
     >
       <div className="max-w-4xl mx-auto pt-[200px] pb-[50px] h-screen">
-        <PrismicRichText
+        
+      <div className="text-center text-3xl font-bold mb-6">
+      <PrismicRichText
           field={slice.primary.heading}
           components={{
             // Use a component from another file.
             heading1: ({ children }) => (
-              <h1 className="text-3xl font-bold mb-6">{children}</h1>
+              <h1>{children}</h1>
             ),
           }}
         />
+
+      </div>
+        
 
         {slice.primary.faq?.map((item, index) => (
           <div key={index} className="mb-6">

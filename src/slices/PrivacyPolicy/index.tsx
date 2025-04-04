@@ -19,17 +19,21 @@ const PrivacyPolicy: FC<PrivacyPolicyProps> = ({ slice }) => {
     >
       <>
         <div className="max-w-7xl mx-auto pt-[150px] pb-[50px]">
+          <div className="text-center text-3xl font-bold  my-4">
           <PrismicRichText
             field={slice.primary.label}
             components={{
               // Use a component from another file.
               heading1: ({ children }) => (
-                <h1 className="text-3xl font-bold text-center my-4">
+                <h1>
                   {children}
                 </h1>
               ),
             }}
           />
+          </div>
+
+          
           <section>
             <PrismicRichText
               field={slice.primary.contant}
@@ -41,8 +45,8 @@ const PrivacyPolicy: FC<PrivacyPolicyProps> = ({ slice }) => {
               }}
             />
 
-            {slice.primary.privacypolicy.map((item) => (
-              <>
+            {slice.primary.privacypolicy.map((item,index) => (
+              <div key={index}>
                 <PrismicRichText
                   field={item.heading}
                   components={{
@@ -61,7 +65,7 @@ const PrivacyPolicy: FC<PrivacyPolicyProps> = ({ slice }) => {
                     ),
                   }}
                 />
-              </>
+              </div>
             ))}
           </section>
         </div>
