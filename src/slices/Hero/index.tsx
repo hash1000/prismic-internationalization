@@ -18,16 +18,18 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 const Hero: FC<HeroProps> = ({ slice }) => {
   const fullText = asText(slice.primary.contant);
   const truncatedText = fullText.slice(0, 200);
-  const [matches, setMatches] = useState(
-    window.matchMedia("(min-width: 768px)").matches
-  );
+    const [matches, setMatches] = useState(false);
 
-  useEffect(() => {
-    window
-      .matchMedia("(min-width: 768px)")
-      .addEventListener("change", (e) => setMatches(e.matches));
-  }, []);
-
+    useEffect(() => {
+      const mediaQuery = window.matchMedia("(min-width: 768px)");
+      setMatches(mediaQuery.matches);
+    
+      const handler = (e: MediaQueryListEvent) => setMatches(e.matches);
+      mediaQuery.addEventListener("change", handler);
+    
+      return () => mediaQuery.removeEventListener("change", handler);
+    }, []);
+    
   const [isExpanded, setIsExpanded] = useState(false);
 
   const handleToggle = () => {

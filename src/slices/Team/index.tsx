@@ -17,19 +17,23 @@ export type TeamProps = SliceComponentProps<Content.TeamSlice>;
  * Component for "Team" Slices.
  */
 const Team: FC<TeamProps> = ({ slice }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const [matches, setMatches] = useState(
-    window.matchMedia("(min-width: 768px)").matches
-  );
+  const [expandedIndexes, setExpandedIndexes] = useState<number[]>([]);
+  const [matches, setMatches] = useState(false);
 
   useEffect(() => {
-    window
-      .matchMedia("(min-width: 768px)")
-      .addEventListener("change", (e) => setMatches(e.matches));
+    const mediaQuery = window.matchMedia("(min-width: 768px)");
+    setMatches(mediaQuery.matches);
+  
+    const handler = (e: MediaQueryListEvent) => setMatches(e.matches);
+    mediaQuery.addEventListener("change", handler);
+  
+    return () => mediaQuery.removeEventListener("change", handler);
   }, []);
 
-  const handleToggle = () => {
-    setIsExpanded(!isExpanded);
+  const handleToggle = (index: number) => {
+    setExpandedIndexes((prev) =>
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+    );
   };
 
   return (
@@ -116,22 +120,37 @@ const Team: FC<TeamProps> = ({ slice }) => {
                   </div>
 
                   <div
-                    className={`${montserrat.className} mt-2 text-sm text-start`}
-                    onClick={handleToggle}
+                    className={`${montserrat.className} mt-2 text-sm text-start max-w-xl`}
+                    onClick={() => handleToggle(index)}
                     data-aos="fade-up"
                     data-aos-delay="50"
                     data-aos-offset="200"
                   >
-                    {matches && <p>{asText(item.description)}</p>}
+                    {matches && (
+                      <>
+                        <p>
+                          {expandedIndexes.includes(index)
+                            ? asText(item.description)
+                            : asText(item.description).slice(0, 300)}
+                        </p>
+                        <span className="text-blue-500 ml-1 underline cursor-pointer">
+                          {expandedIndexes.includes(index)
+                            ? "Show less"
+                            : "Read more"}
+                        </span>
+                      </>
+                    )}
                     {!matches && (
                       <>
                         <p>
-                          {isExpanded
+                          {expandedIndexes.includes(index)
                             ? asText(item.description)
                             : asText(item.description).slice(0, 200)}
                         </p>
                         <span className="text-blue-500 ml-1 underline cursor-pointer">
-                          {isExpanded ? "Show less" : "Read more"}
+                          {expandedIndexes.includes(index)
+                            ? "Show less"
+                            : "Read more"}
                         </span>
                       </>
                     )}
