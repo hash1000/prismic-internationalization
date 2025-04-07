@@ -1,10 +1,12 @@
-import { FC } from "react";
-import { Content } from "@prismicio/client";
+"use client";
+import { FC, useEffect, useState } from "react";
+import { asText, Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import Bounded from "@/components/Bounded";
 import { PrismicNextLink } from "@prismicio/next";
 import { RiRadioButtonFill } from "react-icons/ri";
 import SingleImageMask from "@/components/SingleImageMask";
+import { montserrat } from "@/app/font";
 
 /**
  * Props for `Team`.
@@ -15,6 +17,21 @@ export type TeamProps = SliceComponentProps<Content.TeamSlice>;
  * Component for "Team" Slices.
  */
 const Team: FC<TeamProps> = ({ slice }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [matches, setMatches] = useState(
+    window.matchMedia("(min-width: 768px)").matches
+  );
+
+  useEffect(() => {
+    window
+      .matchMedia("(min-width: 768px)")
+      .addEventListener("change", (e) => setMatches(e.matches));
+  }, []);
+
+  const handleToggle = () => {
+    setIsExpanded(!isExpanded);
+  };
+
   return (
     <Bounded
       id="team"
@@ -65,10 +82,10 @@ const Team: FC<TeamProps> = ({ slice }) => {
                 {item.person_image && (
                   <div className="mb-4 w-full max-w-[260px]">
                     <SingleImageMask
-                  size={200}
-                  imgSrc={item.person_image.url || ""}
-                  zoom={2}
-                />
+                      size={200}
+                      imgSrc={item.person_image.url || ""}
+                      zoom={2}
+                    />
                   </div>
                 )}
 
@@ -99,13 +116,27 @@ const Team: FC<TeamProps> = ({ slice }) => {
                   </div>
 
                   <div
-                    className="mt-2 text-sm text-start"
+                    className={`${montserrat.className} mt-2 text-sm text-start`}
+                    onClick={handleToggle}
                     data-aos="fade-up"
                     data-aos-delay="50"
                     data-aos-offset="200"
                   >
-                    <PrismicRichText field={item.description} />
+                    {matches && <p>{asText(item.description)}</p>}
+                    {!matches && (
+                      <>
+                        <p>
+                          {isExpanded
+                            ? asText(item.description)
+                            : asText(item.description).slice(0, 200)}
+                        </p>
+                        <span className="text-blue-500 ml-1 underline cursor-pointer">
+                          {isExpanded ? "Show less" : "Read more"}
+                        </span>
+                      </>
+                    )}
                   </div>
+
                   {item.button && (
                     <PrismicNextLink
                       field={item.button}

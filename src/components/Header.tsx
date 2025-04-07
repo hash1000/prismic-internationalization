@@ -18,19 +18,18 @@ export default async function Header({ lang }: { lang: string }) {
     <div className="relative">
       <div className="flex flex-col lg:flex-row justify-between items-center absolute top-0 w-full z-10">
         {/* Logo */}
-        <div className="self-start">
-          <Image
-            data-aos="fade-down"
-            data-aos-offset="200"
-            src={data.data.logo.url ?? "/fallback-image.jpg"}
-            alt={data.data.logo.alt ?? "Logo"}
-            width={275}
-            height={150}
-          />
-        </div>
+        <div className=" relative self-start h-20 w-36 sm:w-56 sm:h-28 md:w-60 md:h-32 lg:w-64 lg:h-36 xl:w-72 xl:h-40 aspect-[3/2]">
+  <Image
+    src={data.data.logo.url ?? "/fallback-image.jpg"}
+    alt={data.data.logo.alt ?? "Logo"}
+    fill
+    className="object-cover"
+  />
+</div>
+
 
         {/* Navbar */}
-        <div data-aos="fade-up" data-aos-offset="200" className="flex gap-3 sm:gap-4 p-5">
+        <div data-aos="fade-up" data-aos-offset="200" className="flex gap-3 sm:gap-4 p-5 justify-center sm:justify-end flex-wrap w-11/12">
           {data.data.slices[0]?.primary.navbar.map(
             (item: Simplify<TopNavbarSliceDefaultPrimaryNavbarItem>, index: number) => (
               <div key={index} className="relative group">

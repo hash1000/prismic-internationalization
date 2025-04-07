@@ -1,6 +1,6 @@
 "use client";
-import { FC } from "react";
-import { Content } from "@prismicio/client";
+import { FC, useEffect, useState } from "react";
+import { asText, Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { PrismicNextLink } from "@prismicio/next";
 import Bounded from "@/components/Bounded";
@@ -16,6 +16,24 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
  * Component for "Hero" Slices.
  */
 const Hero: FC<HeroProps> = ({ slice }) => {
+  const fullText = asText(slice.primary.contant);
+  const truncatedText = fullText.slice(0, 200);
+  const [matches, setMatches] = useState(
+    window.matchMedia("(min-width: 768px)").matches
+  );
+
+  useEffect(() => {
+    window
+      .matchMedia("(min-width: 768px)")
+      .addEventListener("change", (e) => setMatches(e.matches));
+  }, []);
+
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const handleToggle = () => {
+    setIsExpanded(!isExpanded);
+  };
+
   return (
     <Bounded
       id="hero"
@@ -66,18 +84,26 @@ const Hero: FC<HeroProps> = ({ slice }) => {
           />
 
           {/* Content */}
-          <PrismicRichText
-            field={slice.primary.contant}
-            components={{
-              paragraph: ({ children }) => (
-                <p
-                  className={`${montserrat.className} font-normal text-base sm:text-lg md:text-xl  text-left`}
-                >
-                  {children}
-                </p>
-              ),
-            }}
-          />
+          {matches && (
+            <p
+              className={`${montserrat.className} font-normal text-base sm:text-lg md:text-xl text-left cursor-pointer`}
+            >
+              {fullText}
+            </p>
+          )}
+          {!matches && (
+            <>
+              <p
+                onClick={handleToggle}
+                className={`${montserrat.className} font-normal text-base sm:text-lg md:text-xl text-left cursor-pointer`}
+              >
+                {isExpanded ? fullText : truncatedText}
+                <span className="text-blue-500 ml-1 underline">
+                  {isExpanded ? " Show less" : " Read more"}
+                </span>
+              </p>
+            </>
+          )}
 
           {/* Button */}
           {slice.primary.button?.text && (

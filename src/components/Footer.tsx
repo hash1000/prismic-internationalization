@@ -41,7 +41,7 @@ export default async function Footer({ lang }: { lang: string }) {
         />
       </div>
 
-      <div className="flex gap-2 relative" style={{ opacity: 100 }}>
+      <div className="flex gap-2 relative flex-col sm:flex-row" style={{ opacity: 100 }}>
         {data?.data?.footer_link?.length > 0 ? (
           data.data.footer_link.map(
 
@@ -53,7 +53,7 @@ export default async function Footer({ lang }: { lang: string }) {
                 <div key={index} className="flex items-center">
                   <PrismicNextLink field={item.link} className="text-white" />
                   {index !== data.data.footer_link.length - 1 && (
-                    <span className="px-2 text-gray-500 dark:text-gray-400">
+                    <span className="px-2 none sm:block text-gray-500 dark:text-gray-400">
                       |
                     </span>
                   )}
