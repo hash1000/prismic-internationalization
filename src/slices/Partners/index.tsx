@@ -27,7 +27,7 @@ const Partners: FC<PartnersProps> = ({ slice }) => {
             field={slice.primary.heading}
             components={{
               heading1: ({ children }) => (
-                <h2 className="text-4xl font-bold mb-4 flex justify-center items-center">
+                <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl  flex justify-center font-bold mb-4">
                   {children}
                   <span className="text-primary ml-3 text-[#6FDCD6]">
                     <PrismicRichText field={slice.primary.sub_headeing} />

@@ -1,5 +1,5 @@
 "use client";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { asText, Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { PrismicNextLink } from "@prismicio/next";
@@ -20,6 +20,17 @@ const AutomotiveServices: FC<AutomotiveServicesProps> = ({ slice }) => {
   const [selectedCard, setSelectedCard] = useState<any>(null);
   const [showModal, setShowModal] = useState(false);
   const normalizeString = (str: string) => str.toLowerCase().replace(/_/g, " ");
+  const [matches, setMatches] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 768px)");
+    setMatches(mediaQuery.matches);
+
+    const handler = (e: MediaQueryListEvent) => setMatches(e.matches);
+    mediaQuery.addEventListener("change", handler);
+
+    return () => mediaQuery.removeEventListener("change", handler);
+  }, []);
 
   return (
     <>
@@ -35,9 +46,12 @@ const AutomotiveServices: FC<AutomotiveServicesProps> = ({ slice }) => {
           onRequestClose={() => setShowModal(false)}
         >
           <div
-            className="w-[900px] h-[600px] grid place-items-end p-6 rounded-md"
+            className="w-11/12 h-4/5 md:w-[600px] md:h-[400px] lg:w-[700px] lg:h-[500px] xl:w-[900px] xl:h-[600px] grid place-items-end p-2 sm:p-3 md:p-4 xl:p-6 rounded-md"
             style={{
-              backgroundImage: `url(${selectedCard?.card_popup_background.url || ""})`,
+              backgroundImage:
+                matches && selectedCard?.card_popup_background?.url
+                  ? `url(${selectedCard.card_popup_background.url})`
+                  : "none",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
             }}
@@ -47,7 +61,7 @@ const AutomotiveServices: FC<AutomotiveServicesProps> = ({ slice }) => {
                 field={selectedCard?.card_popup_heading}
                 components={{
                   heading1: ({ children }) => (
-                    <h2 className="text-4xl font-bold mb-4 text-[#6FDCD6]">
+                    <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-4 text-[#6FDCD6]">
                       {children}
                     </h2>
                   ),
@@ -64,7 +78,7 @@ const AutomotiveServices: FC<AutomotiveServicesProps> = ({ slice }) => {
                   field={selectedCard?.card_popup_detail}
                   components={{
                     paragraph: ({ children }) => (
-                      <p className="text-left mb-8">{children}</p>
+                      <p className="text-left text-xs sm:text-sm mb-8">{children}</p>
                     ),
                   }}
                 />
@@ -90,7 +104,12 @@ const AutomotiveServices: FC<AutomotiveServicesProps> = ({ slice }) => {
           />
 
           {/* Render the description */}
-          <div data-aos="fade-right" data-aos-delay="50" data-aos-offset="200" className="w-4/5 mx-auto">
+          <div
+            data-aos="fade-right"
+            data-aos-delay="50"
+            data-aos-offset="200"
+            className="w-4/5 mx-auto"
+          >
             <PrismicRichText
               field={slice.primary.content}
               components={{
@@ -113,7 +132,7 @@ const AutomotiveServices: FC<AutomotiveServicesProps> = ({ slice }) => {
             ? " grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-fit"
             : "md:grid-cols-4"
     } 
-    gap-6 place-items-center max-w-[1240px] mx-auto`}
+    gap-6 flex-col sm:flex-row  place-items-center max-w-[1240px] mx-auto`}
             data-aos="fade-left"
             data-aos-delay="50"
             data-aos-offset="200"

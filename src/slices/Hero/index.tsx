@@ -18,7 +18,7 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 const Hero: FC<HeroProps> = ({ slice }) => {
   const fullText = asText(slice.primary.contant);
   const truncatedText = fullText.slice(0, 200);
-    const [matches, setMatches] = useState(false);
+  const [matches, setMatches] = useState(false);
 
     useEffect(() => {
       const mediaQuery = window.matchMedia("(min-width: 768px)");
@@ -55,7 +55,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
           data-aos="fade-right"
           data-aos-delay="200"
           data-aos-offset="200"
-          className="flex flex-col px-9 ps-20 pr-9 h-full sm:h-auto justify-center sm:justify-start gap-4"
+          className="flex flex-col px-5 md:px-9 ps-8 sm:ps-14 md:ps-16 lg:ps-20  sm:pr-6 md:pr-9 h-full sm:h-auto justify-center sm:justify-start gap-2 sm:gap-3 md:gap-4"
         >
           {/* Subheading */}
           <PrismicRichText
