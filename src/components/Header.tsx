@@ -18,12 +18,12 @@ export default async function Header({ lang }: { lang: string }) {
     <div className="relative">
       <div className="flex flex-col lg:flex-row justify-between items-center absolute top-0 w-full z-10">
         {/* Logo */}
-        <div className=" relative self-start h-20 w-auto sm:h-28 md:w-60 md:h-32  xl:h-40 aspect-[3/2]">
+        <div className=" relative self-start h-20 w-36 sm:w-56 sm:h-28 md:w-60 md:h-32 lg:w-64 lg:h-36 xl:w-72 xl:h-40 aspect-[3/2]">
           <Image
             src={data.data.logo.url ?? "/fallback-image.jpg"}
             alt={data.data.logo.alt ?? "Logo"}
             fill
-            className="object-cover"
+            className="object-contain !-top-3"
           />
         </div>
 
