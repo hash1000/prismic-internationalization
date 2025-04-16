@@ -1180,15 +1180,15 @@ export interface EngineeringServiceSliceDefaultPrimaryCardItem {
 }
 
 /**
- * Item in *CadService → Default → Primary → Konstruktion Rohbau*
+ * Item in *CadService → Default → Primary → Konstruktion Rahbau*
  */
-export interface EngineeringServiceSliceDefaultPrimaryKonstruktionRohbauItem {
+export interface EngineeringServiceSliceDefaultPrimaryKonstruktionRahbauItem {
   /**
-   * label field in *CadService → Default → Primary → Konstruktion Rohbau*
+   * label field in *CadService → Default → Primary → Konstruktion Rahbau*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: engineering_service.default.primary.konstruktion_rohbau[].label
+   * - **API ID Path**: engineering_service.default.primary.konstruktion_rahbau[].label
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   label: prismic.KeyTextField;
@@ -1266,15 +1266,15 @@ export interface EngineeringServiceSliceDefaultPrimary {
   >;
 
   /**
-   * Konstruktion Rohbau field in *CadService → Default → Primary*
+   * Konstruktion Rahbau field in *CadService → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: engineering_service.default.primary.konstruktion_rohbau[]
+   * - **API ID Path**: engineering_service.default.primary.konstruktion_rahbau[]
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  konstruktion_rohbau: prismic.GroupField<
-    Simplify<EngineeringServiceSliceDefaultPrimaryKonstruktionRohbauItem>
+  konstruktion_rahbau: prismic.GroupField<
+    Simplify<EngineeringServiceSliceDefaultPrimaryKonstruktionRahbauItem>
   >;
 
   /**
@@ -2584,7 +2584,7 @@ declare module "@prismicio/client" {
       CooperateLinkSliceDefault,
       EngineeringServiceSlice,
       EngineeringServiceSliceDefaultPrimaryCardItem,
-      EngineeringServiceSliceDefaultPrimaryKonstruktionRohbauItem,
+      EngineeringServiceSliceDefaultPrimaryKonstruktionRahbauItem,
       EngineeringServiceSliceDefaultPrimaryKonstruktionExterieurItem,
       EngineeringServiceSliceDefaultPrimaryKonstruktionAnbaueteileItem,
       EngineeringServiceSliceDefaultPrimaryKonstruktionInterieurItem,

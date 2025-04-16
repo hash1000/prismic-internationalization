@@ -58,10 +58,10 @@
             }
           }
         },
-        "konstruktion_rohbau": {
+        "konstruktion_rahbau": {
           "type": "Group",
           "config": {
-            "label": "Konstruktion Rohbau",
+            "label": "Konstruktion Rahbau",
             "repeat": true,
             "fields": {
               "label": {

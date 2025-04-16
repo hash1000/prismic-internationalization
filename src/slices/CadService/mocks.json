@@ -63,31 +63,13 @@
 							[
 								"card_link",
 								{
-									"__TYPE__": "LinkContent",
 									"key": "2fdebf62-d02a-47c2-bc66-56136dd7a4c1",
+									"__TYPE__": "LinkContent",
 									"value": {
 										"__TYPE__": "ExternalLink",
 										"url": "http://twitter.com",
 										"text": "pen"
 									}
-								}
-							]
-						]
-					}
-				]
-			},
-			"konstruktion_rohbau": {
-				"__TYPE__": "GroupContentType",
-				"value": [
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"label",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "shadow",
-									"type": "Text"
 								}
 							]
 						]
@@ -170,6 +152,24 @@
 				"alt": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"konstruktion_rahbau": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"label",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "would",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
 			}
 		},
 		"items": []

@@ -3,6 +3,7 @@ import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import Bounded from "@/components/Bounded";
 import Image from "next/image";
+import { PrismicNextLink } from '@prismicio/next';
 
 /**
  * Props for `Partners`.
@@ -13,6 +14,7 @@ export type PartnersProps = SliceComponentProps<Content.PartnersSlice>;
  * Component for "Partners" Slices.
  */
 const Partners: FC<PartnersProps> = ({ slice }) => {
+  console.log("slice", slice);
   return (
     <Bounded
       id="partners"
@@ -60,23 +62,26 @@ const Partners: FC<PartnersProps> = ({ slice }) => {
           {slice.primary.partners_card.map((item, index) => (
             <div
               key={index}
-              className=" p-5 rounded-lg shadow-lg bg-white text-black flex flex-col items-center h-full text-center"
+              className=" p-5 rounded-lg shadow-lg bg-white text-black flex flex-col items-center h-full text-center cursor-pointer"
               style={{
                 background:
                   "radial-gradient(at top center, #235683 0%, #0D2F4B 100%)",
               }}
             >
-              {item.card_image && (
-                <div className="mb-4 flex justify-center items-center w-full h-[80px]">
-                  <Image
-                    src={item.card_image.url || ""}
-                    alt="company logo"
-                    width={150}
-                    height={65}
-                    style={{ objectFit: "contain" }}
-                  />
-                </div>
-              )}
+              <PrismicNextLink field={item.card_link}>
+                {item.card_image && (
+                  <div className="mb-4 flex justify-center items-center w-full h-[80px]">
+                    <Image
+                      src={item.card_image.url || ""}
+                      alt="company logo"
+                      width={150}
+                      height={65}
+                      style={{ objectFit: "contain" }}
+                    />
+                    <p>{item.card_link.text}</p>
+                  </div>
+                )}
+              </PrismicNextLink>
             </div>
           ))}
         </div>

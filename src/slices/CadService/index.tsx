@@ -15,6 +15,7 @@ export type CaeServiceProps = SliceComponentProps<Content.CaeServiceSlice>;
  */
 const CaeService: FC<CaeServiceProps> = ({ slice }) => {
   const normalizeString = (str: string) => str.toLowerCase().replace(/_/g, " ");
+  console.log("slice",slice, slice.primary.card);
 
   return (
     <>

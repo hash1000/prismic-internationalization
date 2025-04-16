@@ -149,13 +149,13 @@ const AutomotiveServices: FC<AutomotiveServicesProps> = ({ slice }) => {
                       }
                     }
                   }}
-                  className="rounded-lg shadow-lg hover:cursor-pointer text-white transition-colors duration-300 flex flex-col h-full w-[280px] min-h-[310px]"
+                  className="rounded-lg shadow-lg hover:cursor-pointer text-white transition-colors duration-300 flex flex-col h-full  w-[280px] sm:w-[320px] min-h-[310px]"
                   style={{
                     background:
                       "radial-gradient(at top center, #235683 0%, #0D2F4B 100%)",
                   }}
                 >
-                  {/* Card Link */}
+                  {/* Card Link */} 
                   {item.popup ? (
                     <div className="flex flex-col h-full w-full py-4">
                       {/* Card Image */}
