@@ -46,7 +46,7 @@ const CaeService: FC<CaeServiceProps> = ({ slice }) => {
           {slice.primary.card.map((item, index) => {
             const cardHeadingKey = asText(item.card_heading);
             return (
-              <div className="w-full flex justify-center">
+              <div className="w-full flex justify-center" key={index}>
               <div
                 key={index}
                 className="rounded-md flex flex-col h-full w-4/5 mx-auto" // Use h-full for equal height
