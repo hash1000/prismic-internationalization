@@ -45,13 +45,13 @@ const Vacencies: FC<VacenciesProps> = ({ slice }) => {
           field={slice.primary.conatct}
           components={{
             paragraph: ({ children }) => (
-              <p className="tex-white mb-8 capitalize">{children}</p>
+              <p className="tex-white mb-8">{children}</p>
             ),
           }}
         />
 
         {/* Cards Section */}
-        {slice.primary.vacency_card.length > 0 ? (
+        {slice.primary.is_vacancies ? (
           <div
             className="grid md:grid-cols-[repeat(2,minmax(300px,350px))] xl:grid-cols-4 justify-center w-full max-w-[1240px] mx-auto  gap-4 place-items-center"
             data-aos="fade-right"
@@ -82,14 +82,24 @@ const Vacencies: FC<VacenciesProps> = ({ slice }) => {
                   field={item.card_heading}
                   components={{
                     heading1: ({ children }) => (
-                      <h1 className={`text-2xl font-bold  text-[#6FDCD6] ${montserrat.className}`}>
+                      <h1
+                        className={`text-2xl font-bold  text-[#6FDCD6] ${montserrat.className}`}
+                      >
                         {children}
                       </h1>
                     ),
                   }}
                 />
-                <h2 className={`text-2xl font-bold  text-[#6FDCD6] ${montserrat.className}`}>{item.card_sub_heading}</h2>
-                <h3 className={`text-2xl font-bold  text-[#6FDCD6]  ${montserrat.className}`}>{item.card_label}</h3>
+                <h2
+                  className={`text-2xl font-bold  text-[#6FDCD6] ${montserrat.className}`}
+                >
+                  {item.card_sub_heading}
+                </h2>
+                <h3
+                  className={`text-2xl font-bold  text-[#6FDCD6]  ${montserrat.className}`}
+                >
+                  {item.card_label}
+                </h3>
                 {item.card_button && (
                   <PrismicNextLink
                     field={item.card_button}
@@ -103,12 +113,21 @@ const Vacencies: FC<VacenciesProps> = ({ slice }) => {
           </div>
         ) : (
           <div
-            className="text-center text-xl text-[#6FDCD6] font-bold"
+          className="flex justify-center align-items-center"
             data-aos="fade-up"
             data-aos-delay="50"
             data-aos-offset="300"
           >
-            <p>Currently, we do not have any vacancies. Stay tuned for updates!</p>
+            <PrismicRichText
+              field={slice.primary.no_vacancies_label}
+              components={{
+                heading2: ({ children }: any) => (
+                  <h2 className="text-center text-xl text-[#6FDCD6] font-bold">
+                    {children}
+                  </h2>
+                ),
+              }}
+            />
           </div>
         )}
       </div>

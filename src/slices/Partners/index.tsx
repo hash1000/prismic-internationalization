@@ -62,7 +62,7 @@ const Partners: FC<PartnersProps> = ({ slice }) => {
           {slice.primary.partners_card.map((item, index) => (
             <div
               key={index}
-              className=" p-5 rounded-lg shadow-lg bg-white text-black flex flex-col items-center h-full text-center cursor-pointer"
+              className=" p-5 rounded-lg shadow-lg bg-white text-black flex flex-col justify-center items-center h-full text-center cursor-pointer"
               style={{
                 background:
                   "radial-gradient(at top center, #235683 0%, #0D2F4B 100%)",
@@ -70,7 +70,7 @@ const Partners: FC<PartnersProps> = ({ slice }) => {
             >
               <PrismicNextLink field={item.card_link}>
                 {item.card_image && (
-                  <div className="mb-4 flex justify-center items-center w-full h-[80px]">
+                  <div className="mb-4 flex flex-col items-center justify-center gap-3  w-full h-full  text-white hover:text-lg hover:font-bold">
                     <Image
                       src={item.card_image.url || ""}
                       alt="company logo"

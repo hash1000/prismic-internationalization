@@ -46,24 +46,24 @@ const CaeService: FC<CaeServiceProps> = ({ slice }) => {
           data-aos-offset="200"
           className=" mx-auto max-w-[1240px] py-[100px]"
         >
-          <div className="flex gap-6 flex-wrap place-items-center px-6 justify-center">
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3 place-content-center px-6 justify-center">
           {slice.primary.card.map((item, index) => {
             const cardHeadingKey = asText(item.card_heading);
             return (
               <div
                 key={index}
-                className="rounded-md flex flex-col h-full w-[270px]" // Use h-full for equal height
+                className="rounded-md flex flex-col h-full w-5/6 justify-center mx-auto" // Use h-full for equal height
                 style={{
                   background:
                     "radial-gradient(at top center, #235683 0%, #0D2F4B 100%)",
                 }}
               >
-                <div className="w-full h-[250px] relative">
+                <div className="w-full h-[250px] relative bg-white">
                   <Image
                     src={item.card_image.url || ""}
                     alt={item.card_image.alt || ""}
                     layout="fill" // Ensures the image fills the div completely
-                    objectFit="cover" // Maintains aspect ratio while covering the area
+                    objectFit="center" // Maintains aspect ratio while covering the area
                     className="rounded-t-md"
                   />
                 </div>

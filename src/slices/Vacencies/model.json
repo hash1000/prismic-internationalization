@@ -89,6 +89,24 @@
             "allowTargetBlank": true,
             "multi": "paragraph"
           }
+        },
+        "is_vacancies": {
+          "type": "Boolean",
+          "config": {
+            "label": "Is_vacancies",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": true
+          }
+        },
+        "no_vacancies_label": {
+          "type": "StructuredText",
+          "config": {
+            "label": "no vacancies label",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2,heading3,strong"
+          }
         }
       },
       "items": {}

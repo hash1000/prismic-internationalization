@@ -156,14 +156,14 @@ const Team: FC<TeamProps> = ({ slice }) => {
                     )}
                   </div>
 
-                  {item.button && (
+                  {/* {item.button && (
                     <PrismicNextLink
                       field={item.button}
                       className="inline-block text-start bg-[#6FDCD6] text-black px-4 py-2 mt-4 rounded-lg font-medium hover:bg-[#5AC1B9]"
                     >
                       View Profile
                     </PrismicNextLink>
-                  )}
+                  )} */}
                 </div>
               </div>
             </div>

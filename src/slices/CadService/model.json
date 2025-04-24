@@ -58,10 +58,10 @@
             }
           }
         },
-        "konstruktion_rahbau": {
+        "body_in_white": {
           "type": "Group",
           "config": {
-            "label": "Konstruktion Rahbau",
+            "label": "Body in white",
             "repeat": true,
             "fields": {
               "label": {
@@ -74,10 +74,10 @@
             }
           }
         },
-        "konstruktion_exterieur": {
+        "exterior": {
           "type": "Group",
           "config": {
-            "label": "Konstruktion Exterieur",
+            "label": "Exterior",
             "repeat": true,
             "fields": {
               "label": {
@@ -90,10 +90,10 @@
             }
           }
         },
-        "konstruktion_anbaueteile": {
+        "doors_lids_gates": {
           "type": "Group",
           "config": {
-            "label": "Konstruktion Anbaueteile",
+            "label": "Doors lids gates",
             "repeat": true,
             "fields": {
               "lable": {
@@ -106,10 +106,10 @@
             }
           }
         },
-        "konstruktion_interieur": {
+        "interior": {
           "type": "Group",
           "config": {
-            "label": "Konstruktion Interieur",
+            "label": "Interior",
             "repeat": true,
             "fields": {
               "lable": {

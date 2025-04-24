@@ -1180,60 +1180,60 @@ export interface EngineeringServiceSliceDefaultPrimaryCardItem {
 }
 
 /**
- * Item in *CadService → Default → Primary → Konstruktion Rahbau*
+ * Item in *CadService → Default → Primary → Body in white*
  */
-export interface EngineeringServiceSliceDefaultPrimaryKonstruktionRahbauItem {
+export interface EngineeringServiceSliceDefaultPrimaryBodyInWhiteItem {
   /**
-   * label field in *CadService → Default → Primary → Konstruktion Rahbau*
+   * label field in *CadService → Default → Primary → Body in white*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: engineering_service.default.primary.konstruktion_rahbau[].label
+   * - **API ID Path**: engineering_service.default.primary.body_in_white[].label
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   label: prismic.KeyTextField;
 }
 
 /**
- * Item in *CadService → Default → Primary → Konstruktion Exterieur*
+ * Item in *CadService → Default → Primary → Exterior*
  */
-export interface EngineeringServiceSliceDefaultPrimaryKonstruktionExterieurItem {
+export interface EngineeringServiceSliceDefaultPrimaryExteriorItem {
   /**
-   * label field in *CadService → Default → Primary → Konstruktion Exterieur*
+   * label field in *CadService → Default → Primary → Exterior*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: engineering_service.default.primary.konstruktion_exterieur[].label
+   * - **API ID Path**: engineering_service.default.primary.exterior[].label
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   label: prismic.KeyTextField;
 }
 
 /**
- * Item in *CadService → Default → Primary → Konstruktion Anbaueteile*
+ * Item in *CadService → Default → Primary → Doors lids gates*
  */
-export interface EngineeringServiceSliceDefaultPrimaryKonstruktionAnbaueteileItem {
+export interface EngineeringServiceSliceDefaultPrimaryDoorsLidsGatesItem {
   /**
-   * lable field in *CadService → Default → Primary → Konstruktion Anbaueteile*
+   * lable field in *CadService → Default → Primary → Doors lids gates*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: engineering_service.default.primary.konstruktion_anbaueteile[].lable
+   * - **API ID Path**: engineering_service.default.primary.doors_lids_gates[].lable
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   lable: prismic.KeyTextField;
 }
 
 /**
- * Item in *CadService → Default → Primary → Konstruktion Interieur*
+ * Item in *CadService → Default → Primary → Interior*
  */
-export interface EngineeringServiceSliceDefaultPrimaryKonstruktionInterieurItem {
+export interface EngineeringServiceSliceDefaultPrimaryInteriorItem {
   /**
-   * lable field in *CadService → Default → Primary → Konstruktion Interieur*
+   * lable field in *CadService → Default → Primary → Interior*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: engineering_service.default.primary.konstruktion_interieur[].lable
+   * - **API ID Path**: engineering_service.default.primary.interior[].lable
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   lable: prismic.KeyTextField;
@@ -1266,51 +1266,51 @@ export interface EngineeringServiceSliceDefaultPrimary {
   >;
 
   /**
-   * Konstruktion Rahbau field in *CadService → Default → Primary*
+   * Body in white field in *CadService → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: engineering_service.default.primary.konstruktion_rahbau[]
+   * - **API ID Path**: engineering_service.default.primary.body_in_white[]
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  konstruktion_rahbau: prismic.GroupField<
-    Simplify<EngineeringServiceSliceDefaultPrimaryKonstruktionRahbauItem>
+  body_in_white: prismic.GroupField<
+    Simplify<EngineeringServiceSliceDefaultPrimaryBodyInWhiteItem>
   >;
 
   /**
-   * Konstruktion Exterieur field in *CadService → Default → Primary*
+   * Exterior field in *CadService → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: engineering_service.default.primary.konstruktion_exterieur[]
+   * - **API ID Path**: engineering_service.default.primary.exterior[]
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  konstruktion_exterieur: prismic.GroupField<
-    Simplify<EngineeringServiceSliceDefaultPrimaryKonstruktionExterieurItem>
+  exterior: prismic.GroupField<
+    Simplify<EngineeringServiceSliceDefaultPrimaryExteriorItem>
   >;
 
   /**
-   * Konstruktion Anbaueteile field in *CadService → Default → Primary*
+   * Doors lids gates field in *CadService → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: engineering_service.default.primary.konstruktion_anbaueteile[]
+   * - **API ID Path**: engineering_service.default.primary.doors_lids_gates[]
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  konstruktion_anbaueteile: prismic.GroupField<
-    Simplify<EngineeringServiceSliceDefaultPrimaryKonstruktionAnbaueteileItem>
+  doors_lids_gates: prismic.GroupField<
+    Simplify<EngineeringServiceSliceDefaultPrimaryDoorsLidsGatesItem>
   >;
 
   /**
-   * Konstruktion Interieur field in *CadService → Default → Primary*
+   * Interior field in *CadService → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: engineering_service.default.primary.konstruktion_interieur[]
+   * - **API ID Path**: engineering_service.default.primary.interior[]
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  konstruktion_interieur: prismic.GroupField<
-    Simplify<EngineeringServiceSliceDefaultPrimaryKonstruktionInterieurItem>
+  interior: prismic.GroupField<
+    Simplify<EngineeringServiceSliceDefaultPrimaryInteriorItem>
   >;
 
   /**
@@ -2484,6 +2484,27 @@ export interface VacenciesSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   conatct: prismic.RichTextField;
+
+  /**
+   * Is_vacancies field in *Vacencies → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: vacencies.default.primary.is_vacancies
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_vacancies: prismic.BooleanField;
+
+  /**
+   * no vacancies label field in *Vacencies → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: vacencies.default.primary.no_vacancies_label
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  no_vacancies_label: prismic.RichTextField;
 }
 
 /**
@@ -2584,10 +2605,10 @@ declare module "@prismicio/client" {
       CooperateLinkSliceDefault,
       EngineeringServiceSlice,
       EngineeringServiceSliceDefaultPrimaryCardItem,
-      EngineeringServiceSliceDefaultPrimaryKonstruktionRahbauItem,
-      EngineeringServiceSliceDefaultPrimaryKonstruktionExterieurItem,
-      EngineeringServiceSliceDefaultPrimaryKonstruktionAnbaueteileItem,
-      EngineeringServiceSliceDefaultPrimaryKonstruktionInterieurItem,
+      EngineeringServiceSliceDefaultPrimaryBodyInWhiteItem,
+      EngineeringServiceSliceDefaultPrimaryExteriorItem,
+      EngineeringServiceSliceDefaultPrimaryDoorsLidsGatesItem,
+      EngineeringServiceSliceDefaultPrimaryInteriorItem,
       EngineeringServiceSliceDefaultPrimary,
       EngineeringServiceSliceVariation,
       EngineeringServiceSliceDefault,

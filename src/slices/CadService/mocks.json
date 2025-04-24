@@ -76,60 +76,6 @@
 					}
 				]
 			},
-			"konstruktion_exterieur": {
-				"__TYPE__": "GroupContentType",
-				"value": [
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"label",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "level",
-									"type": "Text"
-								}
-							]
-						]
-					}
-				]
-			},
-			"konstruktion_anbaueteile": {
-				"__TYPE__": "GroupContentType",
-				"value": [
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"lable",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "slowly",
-									"type": "Text"
-								}
-							]
-						]
-					}
-				]
-			},
-			"konstruktion_interieur": {
-				"__TYPE__": "GroupContentType",
-				"value": [
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"lable",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "tea",
-									"type": "Text"
-								}
-							]
-						]
-					}
-				]
-			},
 			"backgroung_image": {
 				"origin": {
 					"id": "main",
@@ -153,7 +99,7 @@
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			},
-			"konstruktion_rahbau": {
+			"body_in_white": {
 				"__TYPE__": "GroupContentType",
 				"value": [
 					{
@@ -163,7 +109,61 @@
 								"label",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "would",
+									"value": "indicate",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"exterior": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"label",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "immediately",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"doors_lids_gates": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"lable",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "cabin",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"interior": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"lable",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "foreign",
 									"type": "Text"
 								}
 							]

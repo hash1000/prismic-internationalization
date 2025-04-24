@@ -64,11 +64,12 @@ const SingleImageMask: React.FC<HexagonImageProps> = ({
         <img
           src={imgSrc}
           alt="Hexagon Image"
-          className="object-cover"
+          className="object-center"
           style={{
             width: `${zoom * 100}%`,
             height: `${zoom * 100}%`,
-            objectFit: "cover",
+            backgroundColor: "#031D35",
+            objectFit: "contain",
           }}
         />
       </div>

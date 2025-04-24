@@ -113,6 +113,21 @@
 						}
 					}
 				]
+			},
+			"is_vacancies": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			},
+			"no_vacancies_label": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Choice"
+						}
+					}
+				]
 			}
 		},
 		"items": []

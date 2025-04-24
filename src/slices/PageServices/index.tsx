@@ -78,7 +78,9 @@ const AutomotiveServices: FC<AutomotiveServicesProps> = ({ slice }) => {
                   field={selectedCard?.card_popup_detail}
                   components={{
                     paragraph: ({ children }) => (
-                      <p className="text-left text-xs sm:text-sm mb-8">{children}</p>
+                      <p className="text-left text-xs sm:text-sm mb-8">
+                        {children}
+                      </p>
                     ),
                   }}
                 />
@@ -132,7 +134,7 @@ const AutomotiveServices: FC<AutomotiveServicesProps> = ({ slice }) => {
             ? " grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-fit"
             : "md:grid-cols-4"
     } 
-    gap-6 flex-col sm:flex-row  place-items-center max-w-[1240px] mx-auto`}
+   gap-2 lg:gap-3 flex-col sm:flex-row  place-items-center max-w-[1240px] mx-auto`}
             data-aos="fade-left"
             data-aos-delay="50"
             data-aos-offset="200"
@@ -149,15 +151,15 @@ const AutomotiveServices: FC<AutomotiveServicesProps> = ({ slice }) => {
                       }
                     }
                   }}
-                  className="rounded-lg shadow-lg hover:cursor-pointer text-white transition-colors duration-300 flex flex-col h-full  w-[280px] sm:w-[320px] min-h-[310px]"
+                  className="rounded-lg shadow-lg hover:cursor-pointer text-white transition-colors duration-300 flex flex-col h-full  w-[280px] sm:w-[300px] min-h-[310px]"
                   style={{
                     background:
                       "radial-gradient(at top center, #235683 0%, #0D2F4B 100%)",
                   }}
                 >
-                  {/* Card Link */} 
+                  {/* Card Link */}
                   {item.popup ? (
-                    <div className="flex flex-col h-full w-full py-4">
+                    <div className="flex flex-col h-full w-full p-4">
                       {/* Card Image */}
                       {item.card_image?.url ? (
                         <div className="mb-4 mx-auto max-w-[365px] h-[180px]">
@@ -190,17 +192,20 @@ const AutomotiveServices: FC<AutomotiveServicesProps> = ({ slice }) => {
                       </div>
                     </div>
                   ) : (
-                    <>
-                      <PrismicNextLink field={item.card_link} className="py-4">
+                    <div className="flex flex-col h-full w-full p-4">
+                      <PrismicNextLink field={item.card_link}>
                         {item.card_image?.url ? (
-                          <div className="mb-4 mx-auto max-w-[365px] h-[180px] flex justify-center">
-                            <Image
-                              src={item.card_image.url}
-                              alt={item.card_image.alt || "Card Image"}
-                              width={180}
-                              height={180}
-                              className="object-cover rounded-md max-w-[365px] h-[180px]"
-                            />
+                          <div className="mb-4 mx-auto max-w-[365px] flex justify-center">
+                            <div className="mb-4 mx-auto max-w-[365px] h-[180px]">
+                              <Image
+                                src={item.card_image.url}
+                                alt={item.card_image.alt || "Card Image"}
+                                width={180}
+                                height={180}
+                                layout="intrinsic"
+                                className="object-cover rounded-md max-w-[365px] h-[180px]"
+                              />
+                            </div>
                           </div>
                         ) : (
                           <div className="w-full h-[180px] bg-gray-700 rounded-md flex items-center justify-center">
@@ -250,7 +255,7 @@ const AutomotiveServices: FC<AutomotiveServicesProps> = ({ slice }) => {
                           )}
                         </div>
                       </PrismicNextLink>
-                    </>
+                    </div>
                   )}
                 </div>
               );
