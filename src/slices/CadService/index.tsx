@@ -104,7 +104,7 @@ const Card: FC<CardProps> = ({ item, cardHeadingKey, slicePrimary }) => {
   return (
     <div className="w-full flex justify-center">
       <div className="rounded-md flex flex-col h-full w-4/5 mx-auto bg-gradient-to-b from-[#235683] to-[#0D2F4B]">
-        <div className="w-full h-[250px] relative bg-white">
+        <div className="w-full relative h-64 md:h-80 lg:h-96">
           <Image
             src={item.card_image.url || ""}
             alt={item.card_image.alt || ""}
