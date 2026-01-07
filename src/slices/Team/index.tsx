@@ -23,10 +23,10 @@ const Team: FC<TeamProps> = ({ slice }) => {
   useEffect(() => {
     const mediaQuery = window.matchMedia("(min-width: 768px)");
     setMatches(mediaQuery.matches);
-  
+
     const handler = (e: MediaQueryListEvent) => setMatches(e.matches);
     mediaQuery.addEventListener("change", handler);
-  
+
     return () => mediaQuery.removeEventListener("change", handler);
   }, []);
 
@@ -120,7 +120,7 @@ const Team: FC<TeamProps> = ({ slice }) => {
                   </div>
 
                   <div
-                    className={`${montserrat.className} mt-2 text-sm text-start max-w-xl`}
+                    className={`${montserrat.className} mt-2 text-sm text-start max-w-xl relative`}
                     onClick={() => handleToggle(index)}
                     data-aos="fade-up"
                     data-aos-delay="50"
@@ -133,7 +133,7 @@ const Team: FC<TeamProps> = ({ slice }) => {
                             ? asText(item.description)
                             : asText(item.description).slice(0, 300)}
                         </p>
-                        <span className="text-blue-500 ml-1 underline cursor-pointer">
+                        <span className="mt-5 text-sm text-[#6FDCD6] font-semibold  ml-1  cursor-pointer absolute -right-3 -bottom-3">
                           {expandedIndexes.includes(index)
                             ? "Show less"
                             : "Read more"}
@@ -147,10 +147,10 @@ const Team: FC<TeamProps> = ({ slice }) => {
                             ? asText(item.description)
                             : asText(item.description).slice(0, 200)}
                         </p>
-                        <span className="text-blue-500 ml-1 underline cursor-pointer">
+                        <span className="mt-5 text-sm text-[#6FDCD6] font-semibold  ml-1 underline cursor-pointer">
                           {expandedIndexes.includes(index)
                             ? "Show less"
-                            : "Read more"}
+                            : "Read more nnn"}
                         </span>
                       </>
                     )}
