@@ -72,10 +72,14 @@ const Card: FC<CardProps> = ({ item, cardHeadingKey, slicePrimary }) => {
   const normalizeString = (str: string) => str.toLowerCase().replace(/_/g, " ");
 
   // Get all list items for this card
-  const listItems =
-    Object.entries(slicePrimary).find(
-      ([key]) => normalizeString(key) === normalizeString(cardHeadingKey)
-    )?.[1] || [];
+
+  const matchedEntry = Object.entries(slicePrimary).find(
+    ([key]) => normalizeString(key) === normalizeString(cardHeadingKey)
+  );
+
+  const listItems: any[] = Array.isArray(matchedEntry?.[1])
+    ? matchedEntry![1]
+    : [];
 
   // Calculate total text length
   const fullTextLength = listItems
