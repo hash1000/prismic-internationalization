@@ -26,6 +26,8 @@ export default async function Footer({ lang }: { lang: string }) {
   const locales = await getLocales(data, client);
 
   return (
+    <>
+    <div className="border-b-4 border-white"></div>
     <div className="flex flex-col lg:flex-row justify-between items-center max-w-[80%] mx-auto">
       <div
         className="py-5"
@@ -92,5 +94,7 @@ export default async function Footer({ lang }: { lang: string }) {
         )}
       </div>
     </div>
+    </>
+    
   );
 }

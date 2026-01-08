@@ -116,7 +116,6 @@ const Location: FC<LocationProps> = ({ slice }) => {
         </div>
       </Bounded>
 
-      <div className="border-b-4 border-white"></div>
     </>
   );
 };

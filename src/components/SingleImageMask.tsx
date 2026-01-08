@@ -62,7 +62,7 @@ const SingleImageMask: React.FC<HexagonImageProps> = ({
         }}
       >
         <img
-          src={imgSrc}
+          src={imgSrc || "/fallback-image.jpg"}
           alt="Hexagon Image"
           className="object-center"
           style={{

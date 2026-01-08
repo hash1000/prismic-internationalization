@@ -24,6 +24,7 @@ const Services: FC<ServicesProps> = ({ slice }) => {
   const handleMouseLeave = () => {
     setIsHovered(null);
   };
+  console.log("Services slice data:", slice.primary);
   return (
     <div className="sm:pt-[200px] lg:pt-[20px]">
       <div className="bg-[#51B0AB]">
@@ -60,10 +61,10 @@ const Services: FC<ServicesProps> = ({ slice }) => {
           />
 
           <Image
-            src={slice.primary.iso_image.url || "/placeholder.png"}
-            alt={slice.primary.iso_image.alt || "ISO Certification"}
-            width={150}
-            height={100}
+            src={slice.primary.tixas_image.url || "/placeholder.png"}
+            alt={slice.primary.tixas_image.alt || "ISO Certification"}
+            width={130}
+            height={80}
           />
         </div>
       </div>

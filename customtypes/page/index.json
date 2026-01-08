@@ -18,6 +18,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "footer_tixas": {
+              "type": "SharedSlice"
+            },
             "term_and_condtion": {
               "type": "SharedSlice"
             },

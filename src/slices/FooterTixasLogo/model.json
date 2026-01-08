@@ -1,0 +1,27 @@
+{
+  "id": "footer_tixas",
+  "type": "SharedSlice",
+  "name": "FooterTixasLogo",
+  "description": "FooterTixas",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "tixas_footer": {
+          "type": "Image",
+          "config": {
+            "label": "tixas_footer",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

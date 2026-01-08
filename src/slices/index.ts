@@ -8,6 +8,7 @@ export const components = {
   cooperate_link: dynamic(() => import("./CooperateLink")),
   engineering_service: dynamic(() => import("./CadService")),
   faq: dynamic(() => import("./Faq")),
+  footer_tixas: dynamic(() => import("./FooterTixasLogo")),
   hero: dynamic(() => import("./Hero")),
   location: dynamic(() => import("./Location")),
   partners: dynamic(() => import("./Partners")),
