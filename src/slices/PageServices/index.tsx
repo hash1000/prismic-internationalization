@@ -16,6 +16,36 @@ export type AutomotiveServicesProps =
 /**
  * Component for "AutomotiveServices" Slices.
  */
+
+type ReadMoreProps = {
+  text: string;
+  limit?: number;
+};
+
+const ReadMore = ({ text, limit = 300 }: any) => {
+  const [expanded, setExpanded] = useState(false);
+
+  if (!text) return null;
+
+
+  const isLong = text.length > limit;
+  console.log(isLong)
+  const displayedText = expanded ? text : text.slice(0, limit);
+  return (
+    <div className="text-xs sm:text-sm text-white">
+      {displayedText}
+      {isLong && (
+        <span
+          onClick={() => setExpanded(!expanded)}
+          className="ml-2 cursor-pointer text-[#6FDCD6] font-semibold"
+        >
+          {expanded ? "Show less" : "...Read more"}
+        </span>
+      )}
+    </div>
+  );
+};
+
 const AutomotiveServices: FC<AutomotiveServicesProps> = ({ slice }) => {
   const [selectedCard, setSelectedCard] = useState<any>(null);
   const [showModal, setShowModal] = useState(false);
@@ -78,9 +108,11 @@ const AutomotiveServices: FC<AutomotiveServicesProps> = ({ slice }) => {
                   field={selectedCard?.card_popup_detail}
                   components={{
                     paragraph: ({ children }) => (
-                      <p className="text-left text-xs sm:text-sm mb-8">
-                        {children}
-                      </p>
+                      <>
+                      <ReadMore
+  text={asText(selectedCard?.card_popup_detail)}
+/>
+                      </>
                     ),
                   }}
                 />

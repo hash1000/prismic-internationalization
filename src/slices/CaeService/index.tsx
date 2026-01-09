@@ -13,12 +13,16 @@ import Link from "next/link";
  */
 export type CaeServiceProps = SliceComponentProps<Content.CaeServiceSlice>;
 
-/**
- * Component for "CaeService" and "CadService" Slices.
- */
-const CaeService: FC<CaeServiceProps> = ({ slice }) => {
-  const normalizeString = (str: string) => str.toLowerCase().replace(/_/g, " ");
+const fallbackItems = [
+  { label: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
+  {
+    label:
+      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  { label: "Ut enim ad minim veniam, quis nostrud exercitation ullamco." },
+];
 
+const CaeService: FC<CaeServiceProps> = ({ slice }) => {
   return (
     <>
       <Bounded
@@ -28,43 +32,30 @@ const CaeService: FC<CaeServiceProps> = ({ slice }) => {
         data-slice-variation={slice.variation}
       >
         {/* Heading */}
-        <div>
-          <PrismicRichText
-            field={slice.primary.heading}
-            components={{
-              heading1: ({ children }) => (
-                <h2 className="text-4xl font-bold mb-4 text-center">
-                  {children}
-                </h2>
-              ),
-            }}
-          />
-        </div>
+        <PrismicRichText
+          field={slice.primary.heading}
+          components={{
+            heading1: ({ children }) => (
+              <h2 className="text-4xl font-bold text-center">{children}</h2>
+            ),
+          }}
+        />
 
         {/* Cards */}
-        <div
-          data-aos="fade-right"
-          data-aos-delay="50"
-          data-aos-offset="200"
-          className="mx-auto max-w-[1240px] py-[100px]"
-        >
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3 place-content-center px-6 justify-center">
-            {slice.primary.card.map((item, index) => {
-              const cardHeadingKey = asText(item.card_heading);
-
-              return (
-                <Card
-                  key={index}
-                  item={item}
-                  cardHeadingKey={cardHeadingKey}
-                  slicePrimary={slice.primary}
-                />
-              );
-            })}
+        <div className="mx-auto max-w-[1240px] py-[100px]">
+          <div className="grid gap-6 md:grid-cols-2 px-6">
+            {slice.primary.card.map((item, index) => (
+              <Card
+                key={index}
+                item={item}
+                cardHeadingKey={asText(item.card_heading)}
+                slicePrimary={slice.primary}
+              />
+            ))}
           </div>
         </div>
       </Bounded>
-      <div className="border-b-4"></div>
+      <div className="border-b-4" />
     </>
   );
 };
@@ -80,46 +71,60 @@ const Card: FC<CardProps> = ({ item, cardHeadingKey, slicePrimary }) => {
 
   const normalizeString = (str: string) => str.toLowerCase().replace(/_/g, " ");
 
-  // Get all list items for this card
-const matchedEntry = Object.entries(slicePrimary).find(
-  ([key]) => normalizeString(key) === normalizeString(cardHeadingKey)
-);
+  const matchedEntry = Object.entries(slicePrimary).find(
+    ([key]) => normalizeString(key) === normalizeString(cardHeadingKey)
+  );
 
-const listItems: any[] = Array.isArray(matchedEntry?.[1])
-  ? matchedEntry[1]
-  : [];
+  const listItems: any[] = Array.isArray(matchedEntry?.[1])
+    ? matchedEntry![1]
+    : [];
 
-  // Total text length for Read More logic
-  const fullTextLength = listItems
-    .map((subItem: any) => subItem?.label || subItem?.lable || "")
-    .join(" ").length;
+  const baseItems = listItems.length > 0 ? listItems : fallbackItems;
+
+  // Determine if Read More button is needed
+  const fullTextLength = baseItems
+    .map((i) => i?.label || i?.lable || "")
+    .join(" ")
+    .length;
 
   const isLong = fullTextLength > 500;
 
-  // Determine items to display when collapsed
-  let displayedItems = listItems;
-  if (isLong && !readMore) {
+  // Calculate which items to display
+  let displayedItems: any[] = [];
+
+  if (!readMore && isLong) {
     let charCount = 0;
-    displayedItems = [];
-    for (let i = 0; i < listItems.length; i++) {
-      const text = listItems[i]?.label || listItems[i]?.lable || "";
+
+    for (let i = 0; i < baseItems.length; i++) {
+      const text = baseItems[i]?.label || baseItems[i]?.lable || "";
+
+      // Always show first 3 items
+      if (i < 3) {
+        displayedItems.push(baseItems[i]);
+        charCount += text.length;
+        continue;
+      }
+
+      // After first 3, stop if adding this item exceeds 500 chars
       if (charCount + text.length > 500) break;
-      displayedItems.push(listItems[i]);
+
+      displayedItems.push(baseItems[i]);
       charCount += text.length;
     }
+  } else {
+    displayedItems = baseItems;
   }
 
   return (
-    <div className="w-full flex justify-center">
-      <div className="rounded-md flex flex-col h-full w-5/6 mx-auto bg-gradient-to-b from-[#235683] to-[#0D2F4B] overflow-hidden">
+    <div className="flex justify-center">
+      <div className="w-4/5 bg-gradient-to-b from-[#235683] to-[#0D2F4B] rounded-md flex flex-col">
         {/* Image */}
-        <div className="relative w-full h-64 md:h-72 lg:h-80">
+        <div className="relative h-64 md:h-80 lg:h-96">
           <Image
             src={item.card_image.url || ""}
             alt={item.card_image.alt || ""}
-            layout="fill"
-            objectFit="cover"
-            className="rounded-t-md"
+            fill
+            className="object-cover rounded-t-md"
           />
         </div>
 
@@ -129,14 +134,14 @@ const listItems: any[] = Array.isArray(matchedEntry?.[1])
             <PrismicRichText field={item.card_heading} />
           </h1>
 
-          <div className="flex-grow p-3 mb-3 overflow-hidden text-white relative">
+          <div className="flex-grow p-3 mb-3 text-white relative">
             <ul className="list-disc list-inside">
-              {displayedItems.map((subItem: any, subIndex: number) => (
-                <li key={subIndex}>{subItem?.label || subItem?.lable || ""}</li>
+              {displayedItems.map((subItem, i) => (
+                <li key={i}>{subItem?.label || subItem?.lable}</li>
               ))}
             </ul>
 
-            {/* Read More Button */}
+            {/* Read More button */}
             {isLong && (
               <button
                 className="mt-5 text-sm text-[#6FDCD6] font-semibold absolute right-3 bottom-3"
@@ -147,11 +152,10 @@ const listItems: any[] = Array.isArray(matchedEntry?.[1])
             )}
           </div>
 
-          {/* Optional Card Link */}
           {item.card_link?.text && (
             <Link
+              href="/it-software-solution"
               className="underline text-xl text-[#56AFB0] p-3"
-              href={"/it-software-solution"}
             >
               {item.card_link.text}
             </Link>

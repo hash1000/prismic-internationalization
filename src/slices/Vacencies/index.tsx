@@ -18,7 +18,7 @@ const Vacencies: FC<VacenciesProps> = ({ slice }) => {
   return (
     <Bounded
       id="career"
-      className="pt-[100px] w-full max-w-[1240px] mx-auto"
+      className="pt-[100px] w-full max-w-[1240px] mx-auto "
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
@@ -91,12 +91,12 @@ const Vacencies: FC<VacenciesProps> = ({ slice }) => {
                   }}
                 />
                 <h2
-                  className={`text-2xl font-bold  text-[#6FDCD6] ${montserrat.className}`}
+                  className={`text-2xl font-bold  text-white ${montserrat.className}`}
                 >
                   {item.card_sub_heading}
                 </h2>
                 <h3
-                  className={`text-2xl font-bold  text-[#6FDCD6]  ${montserrat.className}`}
+                  className={`text-xl  text-white ${montserrat.className}`}
                 >
                   {item.card_label}
                 </h3>

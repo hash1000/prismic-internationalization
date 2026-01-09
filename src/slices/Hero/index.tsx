@@ -36,7 +36,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
     setIsExpanded(!isExpanded);
   };
 
-  console.log("Hero slice data:", slice.primary);
+  // console.log("Hero slice data:", slice.primary);
   return (
     <Bounded
       id="hero"
@@ -94,7 +94,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
               {fullText}
             </p>
           )}
-          <div className="flex items-center gap-4 my-4">
+          {/* <div className="flex items-center gap-4 my-4">
             <PrismicNextImage
               field={slice.primary.tisax_logo}
               alt=""
@@ -141,7 +141,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
                 },
               }}
             />
-          </div>
+          </div> */}
 
           {!matches && (
             <>

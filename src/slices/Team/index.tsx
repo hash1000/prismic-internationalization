@@ -150,7 +150,7 @@ const Team: FC<TeamProps> = ({ slice }) => {
                         <span className="mt-5 text-sm text-[#6FDCD6] font-semibold  ml-1 underline cursor-pointer">
                           {expandedIndexes.includes(index)
                             ? "Show less"
-                            : "Read more nnn"}
+                            : "Read more"}
                         </span>
                       </>
                     )}

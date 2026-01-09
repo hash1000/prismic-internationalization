@@ -5,6 +5,8 @@ import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import Bounded from "@/components/Bounded";
 import { FaLocationDot } from "react-icons/fa6";
 import Map from "@/components/Map";
+import tixasLogo from "../../../public/tixas.png";
+import Image from "next/image";
 
 export type LocationProps = SliceComponentProps<Content.LocationSlice>;
 
@@ -19,7 +21,7 @@ const Location: FC<LocationProps> = ({ slice }) => {
   }
 
   return (
-    <>
+    <div className="relative">
       <Bounded
         className="pt-[100px] w-full max-w-[1920px] mx-auto"
         data-slice-type={slice.slice_type}
@@ -115,8 +117,14 @@ const Location: FC<LocationProps> = ({ slice }) => {
           </div>
         </div>
       </Bounded>
-
-    </>
+  <div className="absolute bottom-0 right-2 w-16 h-16 md:w-20 md:h-20">
+    <Image
+      src= {tixasLogo} 
+      alt="Txas Logo"
+      className="w-full h-full object-contain"
+    />
+  </div>
+    </div>
   );
 };
 
