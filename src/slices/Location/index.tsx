@@ -11,13 +11,13 @@ import Image from "next/image";
 export type LocationProps = SliceComponentProps<Content.LocationSlice>;
 
 const Location: FC<LocationProps> = ({ slice }) => {
-  const [location, setLocation]= useState({
+  const [location, setLocation] = useState({
     latitude: slice.primary.longitude_latitude.latitude,
     longitude: slice.primary.longitude_latitude.longitude,
-  } );
+  });
 
-  function Location(location: any){
-    setLocation(location)
+  function Location(location: any) {
+    setLocation(location);
   }
 
   return (
@@ -106,7 +106,10 @@ const Location: FC<LocationProps> = ({ slice }) => {
               </div>
               <div className="flex-grow">
                 {location.latitude && location.longitude ? (
-                  <Map latitude={location.latitude} longitude={location.longitude} />
+                  <Map
+                    latitude={location.latitude}
+                    longitude={location.longitude}
+                  />
                 ) : (
                   <p className="tex-white flex justify-center items-center h-full">
                     Location data not available.
@@ -117,13 +120,13 @@ const Location: FC<LocationProps> = ({ slice }) => {
           </div>
         </div>
       </Bounded>
-  <div className="absolute bottom-0 right-2 w-16 h-16 md:w-20 md:h-20">
-    <Image
-      src= {tixasLogo} 
-      alt="Txas Logo"
-      className="w-full h-full object-contain"
-    />
-  </div>
+      <div className="absolute bottom-0 right-2 w-16 h-16 md:w-20 md:h-20">
+        <Image
+          src={tixasLogo}
+          alt="Txas Logo"
+          className="w-full h-full object-contain"
+        />
+      </div>
     </div>
   );
 };

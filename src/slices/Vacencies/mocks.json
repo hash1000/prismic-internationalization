@@ -128,6 +128,17 @@
 						}
 					}
 				]
+			},
+			"sub_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Irure dolore excepteur sint exercitation aute laboris amet. Nostrud velit anim reprehenderit aliqua eu irure qui."
+						}
+					}
+				]
 			}
 		},
 		"items": []

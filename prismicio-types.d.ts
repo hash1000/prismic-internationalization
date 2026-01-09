@@ -2666,6 +2666,16 @@ export interface VacenciesSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
   no_vacancies_label: prismic.RichTextField;
+
+  /**
+   * sub title field in *Vacencies → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: vacencies.default.primary.sub_title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  sub_title: prismic.RichTextField;
 }
 
 /**

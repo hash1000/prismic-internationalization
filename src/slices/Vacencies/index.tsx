@@ -40,6 +40,15 @@ const Vacencies: FC<VacenciesProps> = ({ slice }) => {
           />
         </div>
 
+<PrismicRichText
+          field={slice.primary.sub_title}
+          components={{
+            paragraph: ({ children }) => (
+              <p className="tex-white mb-8">{children}</p>
+            ),
+          }}
+        />
+
         {/* Description */}
         <PrismicRichText
           field={slice.primary.conatct}
