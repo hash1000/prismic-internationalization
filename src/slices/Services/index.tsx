@@ -45,7 +45,6 @@ const Services: FC<ServicesProps> = ({ slice }) => {
                   {
                     <PrismicRichText
                       field={slice.primary.iso_license}
-
                       components={{
                         paragraph: ({ children }) => (
                           <span className=" block text-5xl text-white px-4 py-2 ">
@@ -59,13 +58,14 @@ const Services: FC<ServicesProps> = ({ slice }) => {
               ),
             }}
           />
-
-          {/* <Image
-            src={slice.primary.tixas_image.url || "/placeholder.png"}
-            alt={slice.primary.tixas_image.alt || "ISO Certification"}
-            width={130}
-            height={80}
-          /> */}
+          {slice.primary.tixas_image && slice.primary.tixas_image.url ? (
+            <Image
+              src={slice.primary.tixas_image.url}
+              alt={slice.primary.tixas_image.alt ?? "TISAX Certification"}
+              width={130}
+              height={80}
+            />
+          ) : null}
         </div>
       </div>
 
