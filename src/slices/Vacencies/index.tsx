@@ -40,7 +40,7 @@ const Vacencies: FC<VacenciesProps> = ({ slice }) => {
           />
         </div>
 
-<PrismicRichText
+        <PrismicRichText
           field={slice.primary.sub_title}
           components={{
             paragraph: ({ children }) => (
@@ -70,7 +70,7 @@ const Vacencies: FC<VacenciesProps> = ({ slice }) => {
             {slice.primary.vacency_card.map((item, index) => (
               <div
                 key={index}
-                className="rounded-lg pt-1 pb-5 px-2 min-w-[17rem] shadow-lg bg-white text-black flex flex-col justify-center items-center text-center "
+                className="rounded-lg pt-1 pb-5 px-2 min-w-[17rem] min-h-[30rem] shadow-lg bg-white text-black flex flex-col justify-center items-center text-center "
                 style={{
                   background:
                     "radial-gradient(at top center, #235683 0%, #0D2F4B 100%)",
@@ -104,9 +104,7 @@ const Vacencies: FC<VacenciesProps> = ({ slice }) => {
                 >
                   {item.card_sub_heading}
                 </h2>
-                <h3
-                  className={`text-xl  text-white ${montserrat.className}`}
-                >
+                <h3 className={`text-xl  text-white ${montserrat.className}`}>
                   {item.card_label}
                 </h3>
                 {item.card_button && (
@@ -122,7 +120,7 @@ const Vacencies: FC<VacenciesProps> = ({ slice }) => {
           </div>
         ) : (
           <div
-          className="flex justify-center align-items-center"
+            className="flex justify-center align-items-center"
             data-aos="fade-up"
             data-aos-delay="50"
             data-aos-offset="300"
