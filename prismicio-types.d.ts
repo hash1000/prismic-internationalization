@@ -2746,6 +2746,7 @@ declare module "@prismicio/client" {
       SettingsDocumentDataSlicesSlice,
       AllDocumentTypes,
       AutomotiveServicesSlice,
+      IndustrialCaeSlice,
       AutomotiveServicesSliceDefaultPrimaryCardItem,
       AutomotiveServicesSliceDefaultPrimaryOptimizationItem,
       AutomotiveServicesSliceDefaultPrimaryNvhItem,

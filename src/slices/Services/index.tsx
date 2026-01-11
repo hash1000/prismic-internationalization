@@ -60,12 +60,12 @@ const Services: FC<ServicesProps> = ({ slice }) => {
             }}
           />
 
-          <Image
+          {/* <Image
             src={slice.primary.tixas_image.url || "/placeholder.png"}
             alt={slice.primary.tixas_image.alt || "ISO Certification"}
             width={130}
             height={80}
-          />
+          /> */}
         </div>
       </div>
 

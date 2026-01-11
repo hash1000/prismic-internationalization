@@ -10,6 +10,7 @@ export const components = {
   faq: dynamic(() => import("./Faq")),
   footer_tixas: dynamic(() => import("./FooterTixasLogo")),
   hero: dynamic(() => import("./Hero")),
+  industrial_cae: dynamic(() => import("./IndustrialCae")),
   location: dynamic(() => import("./Location")),
   partners: dynamic(() => import("./Partners")),
   privacy_policy: dynamic(() => import("./PrivacyPolicy")),

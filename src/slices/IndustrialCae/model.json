@@ -1,0 +1,184 @@
+{
+  "id": "industrial_cae",
+  "type": "SharedSlice",
+  "name": "IndustrialCae",
+  "description": "IndustrialCae",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "cards": {
+          "type": "Group",
+          "config": {
+            "label": "cards",
+            "repeat": true,
+            "fields": {
+              "card_image": {
+                "type": "Image",
+                "config": {
+                  "label": "card image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "card_heading": {
+                "type": "Text",
+                "config": {
+                  "label": "card heading",
+                  "placeholder": ""
+                }
+              },
+              "card_link": {
+                "type": "Text",
+                "config": {
+                  "label": "card link",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "dynamics": {
+          "type": "Group",
+          "config": {
+            "label": "Dynamics",
+            "repeat": true,
+            "fields": {
+              "label": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "label",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              }
+            }
+          }
+        },
+        "nvh": {
+          "type": "Group",
+          "config": {
+            "label": "NVH",
+            "repeat": true,
+            "fields": {
+              "label": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "label",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              }
+            }
+          }
+        },
+        "strength": {
+          "type": "Group",
+          "config": {
+            "label": "STrength",
+            "repeat": true,
+            "fields": {
+              "label": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "label",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              }
+            }
+          }
+        },
+        "kinematics": {
+          "type": "Group",
+          "config": {
+            "label": "Kinematics",
+            "repeat": true,
+            "fields": {
+              "label": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "label",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              }
+            }
+          }
+        },
+        "aero_and_thermal_analysis": {
+          "type": "Group",
+          "config": {
+            "label": "Aero and thermal analysis",
+            "repeat": true,
+            "fields": {
+              "label": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "label",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              }
+            }
+          }
+        },
+        "optimization": {
+          "type": "Group",
+          "config": {
+            "label": "Optimization",
+            "repeat": true,
+            "fields": {
+              "label": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "label",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              }
+            }
+          }
+        },
+        "backgroung_image": {
+          "type": "Image",
+          "config": {
+            "label": "Backgroung Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "sub_heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "sub heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
