@@ -15,8 +15,8 @@ export default async function Header({ lang }: { lang: string }) {
   const data = await client.getSingle("settings", { lang });
 
   return (
-    <div className="relative">
-      <div className="flex flex-col lg:flex-row justify-between items-center absolute top-0 w-full z-10">
+    <div className="relative ">
+      <div className="flex flex-col lg:flex-row justify-between items-center fixed top-0 w-full z-10 ">
         <div className=" relative self-start h-20 w-36 sm:w-56 sm:h-28 md:w-60 md:h-32 lg:w-64 lg:h-36 xl:w-72 xl:h-40 aspect-[3/2]">
           <Image
             src={data.data.logo.url ?? "/fallback-image.jpg"}
