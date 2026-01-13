@@ -33,13 +33,13 @@ export default async function Footer({ lang }: { lang: string }) {
         {/* Certifications - 20% */}
         <div className="w-full lg:max-w-[10%] flex justify-center lg:justify-start gap-4">
           <Image
-            src={isoLogo}
-            alt="ISO Certified"
+            src={tixasLogo}
+            alt="TISAX Certified"
             className="h-12 w-auto object-contain"
           />
           <Image
-            src={tixasLogo}
-            alt="TISAX Certified"
+            src={isoLogo}
+            alt="ISO Certified"
             className="h-12 w-auto object-contain"
           />
         </div>
