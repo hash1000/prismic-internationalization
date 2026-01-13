@@ -30,7 +30,6 @@ export default async function Footer({ lang }: { lang: string }) {
       <div className="border-t-4 border-white" />
 
       <div className=" mx-auto px-6 py-6 flex flex-col lg:flex-row items-center gap-6">
-
         {/* Footer Content - 80% */}
         <div className="w-[80%] flex flex-col lg:flex-row items-center justify-between gap-6 m-auto">
           {/* Footer Logo */}
@@ -80,23 +79,21 @@ export default async function Footer({ lang }: { lang: string }) {
                 </PrismicNextLink>
               );
             })}
-             {/* Certifications - 20% */}
-        <div className=" flex justify-center lg:justify-start gap-4">
-          <Image
-            src={tixasLogo}
-            alt="TISAX Certified"
-            className="h-12 w-auto object-contain"
-          />
-          <Image
-            src={isoLogo}
-            alt="ISO Certified"
-            className="h-12 w-auto object-contain"
-          />
-        </div>
+            {/* Certifications - 20% */}
+            <div className=" flex justify-center lg:justify-start gap-4">
+              <Image
+                src={tixasLogo}
+                alt="TISAX Certified"
+                className="h-12 w-auto object-contain"
+              />
+              <Image
+                src={isoLogo}
+                alt="ISO Certified"
+                className="h-12 w-auto object-contain"
+              />
+            </div>
           </div>
         </div>
-
-       
       </div>
     </footer>
   );
