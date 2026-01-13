@@ -295,7 +295,6 @@ const AutomotiveServices: FC<AutomotiveServicesProps> = ({ slice }) => {
           </div>
         </div>
       </Bounded>
-      <div className="border-b-4 border-white"></div>
     </>
   );
 };
