@@ -30,22 +30,9 @@ export default async function Footer({ lang }: { lang: string }) {
       <div className="border-t-4 border-white" />
 
       <div className=" mx-auto px-6 py-6 flex flex-col lg:flex-row items-center gap-6">
-        {/* Certifications - 20% */}
-        <div className="w-full lg:max-w-[10%] flex justify-center lg:justify-start gap-4">
-          <Image
-            src={tixasLogo}
-            alt="TISAX Certified"
-            className="h-12 w-auto object-contain"
-          />
-          <Image
-            src={isoLogo}
-            alt="ISO Certified"
-            className="h-12 w-auto object-contain"
-          />
-        </div>
 
         {/* Footer Content - 80% */}
-        <div className="w-[80%] flex flex-col lg:flex-row items-center justify-between gap-6">
+        <div className="w-[80%] flex flex-col lg:flex-row items-center justify-between gap-6 m-auto">
           {/* Footer Logo */}
           <div>
             <Image
@@ -77,7 +64,7 @@ export default async function Footer({ lang }: { lang: string }) {
           </div>
 
           {/* Social Icons */}
-          <div className="flex gap-3">
+          <div className="flex gap-3 item-center">
             {data.data.footer_icon.map((item, index) => {
               const IconComponent =
                 item.icon?.toLowerCase() &&
@@ -87,14 +74,29 @@ export default async function Footer({ lang }: { lang: string }) {
                 <PrismicNextLink
                   key={index}
                   href={item.link?.text ?? "#"}
-                  className="bg-[#6FDCD6] text-black p-2 rounded-full hover:scale-110 transition"
+                  className="bg-[#6FDCD6] h-8 w-auto text-black p-2 rounded-full hover:scale-110 transition"
                 >
                   {IconComponent && <IconComponent size={18} />}
                 </PrismicNextLink>
               );
             })}
+             {/* Certifications - 20% */}
+        <div className=" flex justify-center lg:justify-start gap-4">
+          <Image
+            src={tixasLogo}
+            alt="TISAX Certified"
+            className="h-12 w-auto object-contain"
+          />
+          <Image
+            src={isoLogo}
+            alt="ISO Certified"
+            className="h-12 w-auto object-contain"
+          />
+        </div>
           </div>
         </div>
+
+       
       </div>
     </footer>
   );
