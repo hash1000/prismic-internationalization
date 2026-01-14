@@ -55,7 +55,7 @@ const CaeService: FC<CaeServiceProps> = ({ slice }) => {
           </div>
         </div>
       </Bounded>
-      <div className="border-b-4" />
+      {/* <div className="border-b-4" /> */}
     </>
   );
 };
