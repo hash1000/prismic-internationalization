@@ -14,12 +14,12 @@ import Link from "next/link";
 export type CaeServiceProps = SliceComponentProps<Content.CaeServiceSlice>;
 
 const fallbackItems = [
-  { label: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
+  { label: "" },
   {
     label:
-      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "",
   },
-  { label: "Ut enim ad minim veniam, quis nostrud exercitation ullamco." },
+  { label: "" },
 ];
 
 const CaeService: FC<CaeServiceProps> = ({ slice }) => {
@@ -79,6 +79,7 @@ const Card: FC<CardProps> = ({ item, cardHeadingKey, slicePrimary }) => {
     ? matchedEntry![1]
     : [];
 
+    console.log(listItems.length);
   const baseItems = listItems.length > 0 ? listItems : fallbackItems;
 
   // Determine if Read More button is needed
