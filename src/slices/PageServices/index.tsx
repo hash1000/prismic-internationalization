@@ -29,7 +29,6 @@ const ReadMore = ({ text, limit = 300 }: any) => {
 
 
   const isLong = text.length > limit;
-  console.log(isLong)
   const displayedText = expanded ? text : text.slice(0, limit);
   return (
     <div className="text-xs sm:text-sm text-white">

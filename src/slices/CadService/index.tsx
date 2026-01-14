@@ -14,7 +14,7 @@ export type CaeServiceProps = SliceComponentProps<Content.CaeServiceSlice>;
 /**
  * Component for "CaeService" and "CadService" Slices.
  */
-const CaeService: FC<CaeServiceProps> = ({ slice }) => {
+const CadService: FC<CaeServiceProps> = ({ slice }) => {
   const normalizeString = (str: string) => str.toLowerCase().replace(/_/g, " ");
 
   return (
@@ -138,4 +138,4 @@ const Card: FC<CardProps> = ({ item, cardHeadingKey, slicePrimary }) => {
   );
 };
 
-export default CaeService;
+export default CadService;

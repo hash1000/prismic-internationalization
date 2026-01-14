@@ -14,7 +14,6 @@ export type PartnersProps = SliceComponentProps<Content.PartnersSlice>;
  * Component for "Partners" Slices.
  */
 const Partners: FC<PartnersProps> = ({ slice }) => {
-  console.log("slice", slice);
   return (
     <Bounded
       id="partners"

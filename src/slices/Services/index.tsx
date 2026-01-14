@@ -24,7 +24,6 @@ const Services: FC<ServicesProps> = ({ slice }) => {
   const handleMouseLeave = () => {
     setIsHovered(null);
   };
-  console.log("Services slice data:", slice.primary);
   return (
     <div className="sm:pt-[200px] lg:pt-[20px]">
       <div className="bg-[#51B0AB]">

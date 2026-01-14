@@ -58,10 +58,10 @@
             }
           }
         },
-        "vernetzung_und_modellaufbau": {
+        "networking_and_model_development": {
           "type": "Group",
           "config": {
-            "label": "Vernetzung und Modellaufbau",
+            "label": "Networking and Model Development",
             "repeat": true,
             "fields": {
               "label": {
@@ -74,10 +74,10 @@
             }
           }
         },
-        "steifigkeit": {
+        "stiffness": {
           "type": "Group",
           "config": {
-            "label": "Steifigkeit",
+            "label": "Stiffness",
             "repeat": true,
             "fields": {
               "lable": {
@@ -90,10 +90,10 @@
             }
           }
         },
-        "festigkeit_und_lebensdauer": {
+        "strength_and_durability": {
           "type": "Group",
           "config": {
-            "label": "Festigkeit und Lebensdauer",
+            "label": "Strength and Durability",
             "repeat": true,
             "fields": {
               "lable": {
@@ -122,10 +122,10 @@
             }
           }
         },
-        "stromungssimulationen": {
+        "fluid_simulation": {
           "type": "Group",
           "config": {
-            "label": "Strömungssimulationen",
+            "label": "Fluid Simulation",
             "repeat": true,
             "fields": {
               "label": {
@@ -138,10 +138,10 @@
             }
           }
         },
-        "mehrkorper_simulation": {
+        "multi_body_simulation": {
           "type": "Group",
           "config": {
-            "label": "Mehrkörper Simulation",
+            "label": "Multi Body Simulation",
             "repeat": true,
             "fields": {
               "label": {
@@ -154,10 +154,10 @@
             }
           }
         },
-        "passive_sicherheit": {
+        "passive_safety": {
           "type": "Group",
           "config": {
-            "label": "Passive Sicherheit",
+            "label": "Passive Safety",
             "repeat": true,
             "fields": {
               "lable": {
@@ -170,10 +170,10 @@
             }
           }
         },
-        "skripten_und_programmierung": {
+        "scripts_and_programming": {
           "type": "Group",
           "config": {
-            "label": "Skripten und Programmierung",
+            "label": " Scripts and Programming",
             "repeat": true,
             "fields": {
               "lable": {

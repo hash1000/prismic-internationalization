@@ -71,6 +71,8 @@ const Card: FC<CardProps> = ({ item, cardHeadingKey, slicePrimary }) => {
 
   const normalizeString = (str: string) => str.toLowerCase().replace(/_/g, " ");
 
+  console.log("cardHeadingKey:", cardHeadingKey);
+  // Find the matching entry in slicePrimary
   const matchedEntry = Object.entries(slicePrimary).find(
     ([key]) => normalizeString(key) === normalizeString(cardHeadingKey)
   );
@@ -79,11 +81,9 @@ const Card: FC<CardProps> = ({ item, cardHeadingKey, slicePrimary }) => {
     ? matchedEntry![1]
     : [];
 
-    console.log(listItems.length);
-  const baseItems = listItems.length > 0 ? listItems : fallbackItems;
-
+console.log("listItems Entry:", listItems);
   // Determine if Read More button is needed
-  const fullTextLength = baseItems
+  const fullTextLength = listItems
     .map((i) => i?.label || i?.lable || "")
     .join(" ")
     .length;
@@ -95,25 +95,22 @@ const Card: FC<CardProps> = ({ item, cardHeadingKey, slicePrimary }) => {
 
   if (!readMore && isLong) {
     let charCount = 0;
+console.log("Full text length:", fullTextLength);
+    for (let i = 0; i < listItems.length; i++) {
+      const text = listItems[i]?.label || listItems[i]?.lable || "";
 
-    for (let i = 0; i < baseItems.length; i++) {
-      const text = baseItems[i]?.label || baseItems[i]?.lable || "";
-
-      // Always show first 3 items
-      if (i < 3) {
-        displayedItems.push(baseItems[i]);
+      console.log("Current charCount:", charCount, "Adding text length:", text.length);
+        displayedItems.push(listItems[i]);
         charCount += text.length;
-        continue;
-      }
-
+       
       // After first 3, stop if adding this item exceeds 500 chars
       if (charCount + text.length > 500) break;
 
-      displayedItems.push(baseItems[i]);
+      displayedItems.push(listItems[i]);
       charCount += text.length;
     }
   } else {
-    displayedItems = baseItems;
+    displayedItems = listItems;
   }
 
   return (
