@@ -14,15 +14,14 @@ export type PrivacyPolicyProps =
  */
 const PrivacyPolicy: FC<PrivacyPolicyProps> = ({ slice }) => {
   return (
-
-      <>
-          <Bounded
-      className="py-[100px] mx-auto !w-4/5"
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
+    <>
+      <Bounded
+        className="py-[100px] mx-auto !w-4/5"
+        data-slice-type={slice.slice_type}
+        data-slice-variation={slice.variation}
+      >
         <div className="max-w-7xl mx-auto pt-[150px] pb-[50px]">
-          <div className="text-center text-3xl font-bold  my-4">
+          <div className="text-5xl font-bold text-[#5AB7B5] font-bold  my-4 pb-[50px]">
             <PrismicRichText
               field={slice.primary.label}
               components={{
@@ -67,9 +66,8 @@ const PrivacyPolicy: FC<PrivacyPolicyProps> = ({ slice }) => {
             ))}
           </section>
         </div>
-        </Bounded>
-        <div className="border-b-4 border-white"></div>
-      </>
+      </Bounded>
+    </>
   );
 };
 

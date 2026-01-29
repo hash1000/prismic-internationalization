@@ -3,17 +3,6 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"heading": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Sint veniam pariatur et in laboris ut officia officia qui amet ex ex nulla cupidatat officia. Do nulla quis cillum pariatur esse deserunt sit fugiat aliquip nulla culpa anim."
-						}
-					}
-				]
-			},
 			"cards": {
 				"__TYPE__": "GroupContentType",
 				"value": [
@@ -240,6 +229,17 @@
 						"type": "paragraph",
 						"content": {
 							"text": "Quis non aliqua mollit aute enim laborum reprehenderit."
+						}
+					}
+				]
+			},
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Aliquip elit anim eiusmod. In cillum enim sint laboris sunt ad anim minim magna et labore aliquip aute commodo."
 						}
 					}
 				]

@@ -5,11 +5,6 @@ import { CiPhone, CiMail } from "react-icons/ci";
 import { TiSocialLinkedinCircular } from "react-icons/ti";
 import { IconType } from "react-icons";
 import { PrismicNextLink } from "@prismicio/next";
-import {
-  SettingsDocumentDataFooterIconItem,
-  SettingsDocumentDataFooterLinkItem,
-  Simplify,
-} from "../../prismicio-types";
 import tixasLogo from "../../public/tixas.png";
 import isoLogo from "../../public/isoCertified.png";
 import { getLocales } from "@/utils/getLocales";

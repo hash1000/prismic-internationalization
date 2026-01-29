@@ -17,32 +17,32 @@ export type IndustrialCaeProps =
 const IndustrialCae: FC<IndustrialCaeProps> = ({ slice }) => {
   const normalizeString = (str: string) => str.toLowerCase().replace(/_/g, " ");
   return (
-  <Bounded
+    <Bounded
       backgroundImage={slice.primary.backgroung_image?.url || ""}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
       <div data-aos="fade-right" data-aos-delay="100" data-aos-offset="200">
-        {/* HEADING */}
+        {/* Heading */}
+
         <PrismicRichText
           field={slice.primary.heading}
           components={{
-            heading1: ({ children }) => (
-              <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl text-[#6FDCD6] font-bold text-center mb-3">
+            paragraph: ({ children }) => (
+              <h1 className="text-4xl font-bold text-center mb-4">
                 {children}
-              </h2>
+              </h1>
             ),
           }}
         />
-
         {/* SUB HEADING */}
         <PrismicRichText
           field={slice.primary.sub_heading}
           components={{
             paragraph: ({ children }) => (
-              <p className="text-sm md:text-base lg:text-lg text-center  max-w-3xl mx-auto">
+              <h1 className="text-sm lg:text-lg text-center  max-w-3xl mx-auto">
                 {children}
-              </p>
+              </h1>
             ),
           }}
         />
@@ -73,7 +73,6 @@ const IndustrialCae: FC<IndustrialCaeProps> = ({ slice }) => {
         </div>
       </div>
     </Bounded>
-
   );
 };
 
@@ -94,7 +93,7 @@ const Card: FC<CardProps> = ({ item, cardHeadingKey, slicePrimary }) => {
       .replace(/_+/g, "_");
 
   const matchedEntry = Object.entries(slicePrimary).find(
-    ([key]) => normalizeKey(key) === normalizeKey(cardHeadingKey)
+    ([key]) => normalizeKey(key) === normalizeKey(cardHeadingKey),
   );
 
   const listItems: any[] = Array.isArray(matchedEntry?.[1])
@@ -118,7 +117,6 @@ const Card: FC<CardProps> = ({ item, cardHeadingKey, slicePrimary }) => {
       charCount += text.length;
     }
   }
-
 
   return (
     <div className="w-full flex justify-center">

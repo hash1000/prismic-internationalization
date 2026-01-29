@@ -187,6 +187,8 @@ export type HeaderDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | IndustrialCaeSlice
+  | DisclaimerSlice
   | FooterTixasSlice
   | TermAndCondtionSlice
   | PrivacyPolicySlice
@@ -812,45 +814,45 @@ export interface CaeServiceSliceDefaultPrimaryCardItem {
 }
 
 /**
- * Item in *CaeService → Default → Primary → Vernetzung und Modellaufbau*
+ * Item in *CaeService → Default → Primary → Networking and Model Development*
  */
-export interface CaeServiceSliceDefaultPrimaryVernetzungUndModellaufbauItem {
+export interface CaeServiceSliceDefaultPrimaryNetworkingAndModelDevelopmentItem {
   /**
-   * label field in *CaeService → Default → Primary → Vernetzung und Modellaufbau*
+   * label field in *CaeService → Default → Primary → Networking and Model Development*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: cae_service.default.primary.vernetzung_und_modellaufbau[].label
+   * - **API ID Path**: cae_service.default.primary.networking_and_model_development[].label
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   label: prismic.KeyTextField;
 }
 
 /**
- * Item in *CaeService → Default → Primary → Steifigkeit*
+ * Item in *CaeService → Default → Primary → Stiffness*
  */
-export interface CaeServiceSliceDefaultPrimarySteifigkeitItem {
+export interface CaeServiceSliceDefaultPrimaryStiffnessItem {
   /**
-   * lable field in *CaeService → Default → Primary → Steifigkeit*
+   * lable field in *CaeService → Default → Primary → Stiffness*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: cae_service.default.primary.steifigkeit[].lable
+   * - **API ID Path**: cae_service.default.primary.stiffness[].lable
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   lable: prismic.KeyTextField;
 }
 
 /**
- * Item in *CaeService → Default → Primary → Festigkeit und Lebensdauer*
+ * Item in *CaeService → Default → Primary → Strength and Durability*
  */
-export interface CaeServiceSliceDefaultPrimaryFestigkeitUndLebensdauerItem {
+export interface CaeServiceSliceDefaultPrimaryStrengthAndDurabilityItem {
   /**
-   * lable field in *CaeService → Default → Primary → Festigkeit und Lebensdauer*
+   * lable field in *CaeService → Default → Primary → Strength and Durability*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: cae_service.default.primary.festigkeit_und_lebensdauer[].lable
+   * - **API ID Path**: cae_service.default.primary.strength_and_durability[].lable
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   lable: prismic.KeyTextField;
@@ -872,60 +874,60 @@ export interface CaeServiceSliceDefaultPrimaryCrashSimulationItem {
 }
 
 /**
- * Item in *CaeService → Default → Primary → Strömungssimulationen*
+ * Item in *CaeService → Default → Primary → Fluid Simulation*
  */
-export interface CaeServiceSliceDefaultPrimaryStromungssimulationenItem {
+export interface CaeServiceSliceDefaultPrimaryFluidSimulationItem {
   /**
-   * label field in *CaeService → Default → Primary → Strömungssimulationen*
+   * label field in *CaeService → Default → Primary → Fluid Simulation*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: cae_service.default.primary.stromungssimulationen[].label
+   * - **API ID Path**: cae_service.default.primary.fluid_simulation[].label
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   label: prismic.KeyTextField;
 }
 
 /**
- * Item in *CaeService → Default → Primary → Mehrkörper Simulation*
+ * Item in *CaeService → Default → Primary → Multi Body Simulation*
  */
-export interface CaeServiceSliceDefaultPrimaryMehrkorperSimulationItem {
+export interface CaeServiceSliceDefaultPrimaryMultiBodySimulationItem {
   /**
-   * label field in *CaeService → Default → Primary → Mehrkörper Simulation*
+   * label field in *CaeService → Default → Primary → Multi Body Simulation*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: cae_service.default.primary.mehrkorper_simulation[].label
+   * - **API ID Path**: cae_service.default.primary.multi_body_simulation[].label
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   label: prismic.KeyTextField;
 }
 
 /**
- * Item in *CaeService → Default → Primary → Passive Sicherheit*
+ * Item in *CaeService → Default → Primary → Passive Safety*
  */
-export interface CaeServiceSliceDefaultPrimaryPassiveSicherheitItem {
+export interface CaeServiceSliceDefaultPrimaryPassiveSafetyItem {
   /**
-   * lable field in *CaeService → Default → Primary → Passive Sicherheit*
+   * lable field in *CaeService → Default → Primary → Passive Safety*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: cae_service.default.primary.passive_sicherheit[].lable
+   * - **API ID Path**: cae_service.default.primary.passive_safety[].lable
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   lable: prismic.KeyTextField;
 }
 
 /**
- * Item in *CaeService → Default → Primary → Skripten und Programmierung*
+ * Item in *CaeService → Default → Primary →  Scripts and Programming*
  */
-export interface CaeServiceSliceDefaultPrimarySkriptenUndProgrammierungItem {
+export interface CaeServiceSliceDefaultPrimaryScriptsAndProgrammingItem {
   /**
-   * lable field in *CaeService → Default → Primary → Skripten und Programmierung*
+   * lable field in *CaeService → Default → Primary →  Scripts and Programming*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: cae_service.default.primary.skripten_und_programmierung[].lable
+   * - **API ID Path**: cae_service.default.primary.scripts_and_programming[].lable
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   lable: prismic.KeyTextField;
@@ -956,39 +958,39 @@ export interface CaeServiceSliceDefaultPrimary {
   card: prismic.GroupField<Simplify<CaeServiceSliceDefaultPrimaryCardItem>>;
 
   /**
-   * Vernetzung und Modellaufbau field in *CaeService → Default → Primary*
+   * Networking and Model Development field in *CaeService → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: cae_service.default.primary.vernetzung_und_modellaufbau[]
+   * - **API ID Path**: cae_service.default.primary.networking_and_model_development[]
    * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
    */
-  vernetzung_und_modellaufbau: prismic.GroupField<
-    Simplify<CaeServiceSliceDefaultPrimaryVernetzungUndModellaufbauItem>
+  networking_and_model_development: prismic.GroupField<
+    Simplify<CaeServiceSliceDefaultPrimaryNetworkingAndModelDevelopmentItem>
   >;
 
   /**
-   * Steifigkeit field in *CaeService → Default → Primary*
+   * Stiffness field in *CaeService → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: cae_service.default.primary.steifigkeit[]
+   * - **API ID Path**: cae_service.default.primary.stiffness[]
    * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
    */
-  steifigkeit: prismic.GroupField<
-    Simplify<CaeServiceSliceDefaultPrimarySteifigkeitItem>
+  stiffness: prismic.GroupField<
+    Simplify<CaeServiceSliceDefaultPrimaryStiffnessItem>
   >;
 
   /**
-   * Festigkeit und Lebensdauer field in *CaeService → Default → Primary*
+   * Strength and Durability field in *CaeService → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: cae_service.default.primary.festigkeit_und_lebensdauer[]
+   * - **API ID Path**: cae_service.default.primary.strength_and_durability[]
    * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
    */
-  festigkeit_und_lebensdauer: prismic.GroupField<
-    Simplify<CaeServiceSliceDefaultPrimaryFestigkeitUndLebensdauerItem>
+  strength_and_durability: prismic.GroupField<
+    Simplify<CaeServiceSliceDefaultPrimaryStrengthAndDurabilityItem>
   >;
 
   /**
@@ -1004,51 +1006,51 @@ export interface CaeServiceSliceDefaultPrimary {
   >;
 
   /**
-   * Strömungssimulationen field in *CaeService → Default → Primary*
+   * Fluid Simulation field in *CaeService → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: cae_service.default.primary.stromungssimulationen[]
+   * - **API ID Path**: cae_service.default.primary.fluid_simulation[]
    * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
    */
-  stromungssimulationen: prismic.GroupField<
-    Simplify<CaeServiceSliceDefaultPrimaryStromungssimulationenItem>
+  fluid_simulation: prismic.GroupField<
+    Simplify<CaeServiceSliceDefaultPrimaryFluidSimulationItem>
   >;
 
   /**
-   * Mehrkörper Simulation field in *CaeService → Default → Primary*
+   * Multi Body Simulation field in *CaeService → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: cae_service.default.primary.mehrkorper_simulation[]
+   * - **API ID Path**: cae_service.default.primary.multi_body_simulation[]
    * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
    */
-  mehrkorper_simulation: prismic.GroupField<
-    Simplify<CaeServiceSliceDefaultPrimaryMehrkorperSimulationItem>
+  multi_body_simulation: prismic.GroupField<
+    Simplify<CaeServiceSliceDefaultPrimaryMultiBodySimulationItem>
   >;
 
   /**
-   * Passive Sicherheit field in *CaeService → Default → Primary*
+   * Passive Safety field in *CaeService → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: cae_service.default.primary.passive_sicherheit[]
+   * - **API ID Path**: cae_service.default.primary.passive_safety[]
    * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
    */
-  passive_sicherheit: prismic.GroupField<
-    Simplify<CaeServiceSliceDefaultPrimaryPassiveSicherheitItem>
+  passive_safety: prismic.GroupField<
+    Simplify<CaeServiceSliceDefaultPrimaryPassiveSafetyItem>
   >;
 
   /**
-   * Skripten und Programmierung field in *CaeService → Default → Primary*
+   *  Scripts and Programming field in *CaeService → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: cae_service.default.primary.skripten_und_programmierung[]
+   * - **API ID Path**: cae_service.default.primary.scripts_and_programming[]
    * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
    */
-  skripten_und_programmierung: prismic.GroupField<
-    Simplify<CaeServiceSliceDefaultPrimarySkriptenUndProgrammierungItem>
+  scripts_and_programming: prismic.GroupField<
+    Simplify<CaeServiceSliceDefaultPrimaryScriptsAndProgrammingItem>
   >;
 
   /**
@@ -1202,6 +1204,98 @@ type CooperateLinkSliceVariation = CooperateLinkSliceDefault;
 export type CooperateLinkSlice = prismic.SharedSlice<
   "cooperate_link",
   CooperateLinkSliceVariation
+>;
+
+/**
+ * Item in *Disclaimer → Default → Primary → disclaimer *
+ */
+export interface DisclaimerSliceDefaultPrimaryDisclaimerItem {
+  /**
+   * heading field in *Disclaimer → Default → Primary → disclaimer *
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: disclaimer.default.primary.disclaimer[].heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * description field in *Disclaimer → Default → Primary → disclaimer *
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: disclaimer.default.primary.disclaimer[].description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Disclaimer → Default → Primary*
+ */
+export interface DisclaimerSliceDefaultPrimary {
+  /**
+   * label field in *Disclaimer → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: disclaimer.default.primary.label
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  label: prismic.RichTextField;
+
+  /**
+   * contant field in *Disclaimer → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: disclaimer.default.primary.contant
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  contant: prismic.RichTextField;
+
+  /**
+   * disclaimer  field in *Disclaimer → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: disclaimer.default.primary.disclaimer[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  disclaimer: prismic.GroupField<
+    Simplify<DisclaimerSliceDefaultPrimaryDisclaimerItem>
+  >;
+}
+
+/**
+ * Default variation for Disclaimer Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type DisclaimerSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<DisclaimerSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Disclaimer*
+ */
+type DisclaimerSliceVariation = DisclaimerSliceDefault;
+
+/**
+ * Disclaimer Shared Slice
+ *
+ * - **API ID**: `disclaimer`
+ * - **Description**: Disclaimer
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type DisclaimerSlice = prismic.SharedSlice<
+  "disclaimer",
+  DisclaimerSliceVariation
 >;
 
 /**
@@ -1698,6 +1792,278 @@ type HeroSliceVariation = HeroSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slices
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
+
+/**
+ * Item in *IndustrialCae → Default → Primary → cards*
+ */
+export interface IndustrialCaeSliceDefaultPrimaryCardsItem {
+  /**
+   * card image field in *IndustrialCae → Default → Primary → cards*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: industrial_cae.default.primary.cards[].card_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  card_image: prismic.ImageField<never>;
+
+  /**
+   * card heading field in *IndustrialCae → Default → Primary → cards*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: industrial_cae.default.primary.cards[].card_heading
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  card_heading: prismic.KeyTextField;
+
+  /**
+   * card link field in *IndustrialCae → Default → Primary → cards*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: industrial_cae.default.primary.cards[].card_link
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  card_link: prismic.KeyTextField;
+}
+
+/**
+ * Item in *IndustrialCae → Default → Primary → Dynamics*
+ */
+export interface IndustrialCaeSliceDefaultPrimaryDynamicsItem {
+  /**
+   * label field in *IndustrialCae → Default → Primary → Dynamics*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: industrial_cae.default.primary.dynamics[].label
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  label: prismic.RichTextField;
+}
+
+/**
+ * Item in *IndustrialCae → Default → Primary → NVH*
+ */
+export interface IndustrialCaeSliceDefaultPrimaryNvhItem {
+  /**
+   * label field in *IndustrialCae → Default → Primary → NVH*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: industrial_cae.default.primary.nvh[].label
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  label: prismic.RichTextField;
+}
+
+/**
+ * Item in *IndustrialCae → Default → Primary → Strength*
+ */
+export interface IndustrialCaeSliceDefaultPrimaryStrengthItem {
+  /**
+   * label field in *IndustrialCae → Default → Primary → Strength*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: industrial_cae.default.primary.strength[].label
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  label: prismic.RichTextField;
+}
+
+/**
+ * Item in *IndustrialCae → Default → Primary → Kinematics*
+ */
+export interface IndustrialCaeSliceDefaultPrimaryKinematicsItem {
+  /**
+   * label field in *IndustrialCae → Default → Primary → Kinematics*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: industrial_cae.default.primary.kinematics[].label
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  label: prismic.RichTextField;
+}
+
+/**
+ * Item in *IndustrialCae → Default → Primary → Aero and thermal analysis*
+ */
+export interface IndustrialCaeSliceDefaultPrimaryAeroAndThermalAnalysisItem {
+  /**
+   * label field in *IndustrialCae → Default → Primary → Aero and thermal analysis*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: industrial_cae.default.primary.aero_and_thermal_analysis[].label
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  label: prismic.RichTextField;
+}
+
+/**
+ * Item in *IndustrialCae → Default → Primary → Optimization*
+ */
+export interface IndustrialCaeSliceDefaultPrimaryOptimizationItem {
+  /**
+   * label field in *IndustrialCae → Default → Primary → Optimization*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: industrial_cae.default.primary.optimization[].label
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  label: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *IndustrialCae → Default → Primary*
+ */
+export interface IndustrialCaeSliceDefaultPrimary {
+  /**
+   * cards field in *IndustrialCae → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: industrial_cae.default.primary.cards[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  cards: prismic.GroupField<
+    Simplify<IndustrialCaeSliceDefaultPrimaryCardsItem>
+  >;
+
+  /**
+   * Dynamics field in *IndustrialCae → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: industrial_cae.default.primary.dynamics[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  dynamics: prismic.GroupField<
+    Simplify<IndustrialCaeSliceDefaultPrimaryDynamicsItem>
+  >;
+
+  /**
+   * NVH field in *IndustrialCae → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: industrial_cae.default.primary.nvh[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  nvh: prismic.GroupField<Simplify<IndustrialCaeSliceDefaultPrimaryNvhItem>>;
+
+  /**
+   * Strength field in *IndustrialCae → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: industrial_cae.default.primary.strength[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  strength: prismic.GroupField<
+    Simplify<IndustrialCaeSliceDefaultPrimaryStrengthItem>
+  >;
+
+  /**
+   * Kinematics field in *IndustrialCae → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: industrial_cae.default.primary.kinematics[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  kinematics: prismic.GroupField<
+    Simplify<IndustrialCaeSliceDefaultPrimaryKinematicsItem>
+  >;
+
+  /**
+   * Aero and thermal analysis field in *IndustrialCae → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: industrial_cae.default.primary.aero_and_thermal_analysis[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  aero_and_thermal_analysis: prismic.GroupField<
+    Simplify<IndustrialCaeSliceDefaultPrimaryAeroAndThermalAnalysisItem>
+  >;
+
+  /**
+   * Optimization field in *IndustrialCae → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: industrial_cae.default.primary.optimization[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  optimization: prismic.GroupField<
+    Simplify<IndustrialCaeSliceDefaultPrimaryOptimizationItem>
+  >;
+
+  /**
+   * Backgroung Image field in *IndustrialCae → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: industrial_cae.default.primary.backgroung_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  backgroung_image: prismic.ImageField<never>;
+
+  /**
+   * sub heading field in *IndustrialCae → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: industrial_cae.default.primary.sub_heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  sub_heading: prismic.RichTextField;
+
+  /**
+   * heading field in *IndustrialCae → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: industrial_cae.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+}
+
+/**
+ * Default variation for IndustrialCae Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type IndustrialCaeSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<IndustrialCaeSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *IndustrialCae*
+ */
+type IndustrialCaeSliceVariation = IndustrialCaeSliceDefault;
+
+/**
+ * IndustrialCae Shared Slice
+ *
+ * - **API ID**: `industrial_cae`
+ * - **Description**: IndustrialCae
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type IndustrialCaeSlice = prismic.SharedSlice<
+  "industrial_cae",
+  IndustrialCaeSliceVariation
+>;
 
 /**
  * Item in *Location → Default → Primary → location card*
@@ -2746,7 +3112,6 @@ declare module "@prismicio/client" {
       SettingsDocumentDataSlicesSlice,
       AllDocumentTypes,
       AutomotiveServicesSlice,
-      IndustrialCaeSlice,
       AutomotiveServicesSliceDefaultPrimaryCardItem,
       AutomotiveServicesSliceDefaultPrimaryOptimizationItem,
       AutomotiveServicesSliceDefaultPrimaryNvhItem,
@@ -2759,14 +3124,14 @@ declare module "@prismicio/client" {
       AutomotiveServicesSliceDefault,
       CaeServiceSlice,
       CaeServiceSliceDefaultPrimaryCardItem,
-      CaeServiceSliceDefaultPrimaryVernetzungUndModellaufbauItem,
-      CaeServiceSliceDefaultPrimarySteifigkeitItem,
-      CaeServiceSliceDefaultPrimaryFestigkeitUndLebensdauerItem,
+      CaeServiceSliceDefaultPrimaryNetworkingAndModelDevelopmentItem,
+      CaeServiceSliceDefaultPrimaryStiffnessItem,
+      CaeServiceSliceDefaultPrimaryStrengthAndDurabilityItem,
       CaeServiceSliceDefaultPrimaryCrashSimulationItem,
-      CaeServiceSliceDefaultPrimaryStromungssimulationenItem,
-      CaeServiceSliceDefaultPrimaryMehrkorperSimulationItem,
-      CaeServiceSliceDefaultPrimaryPassiveSicherheitItem,
-      CaeServiceSliceDefaultPrimarySkriptenUndProgrammierungItem,
+      CaeServiceSliceDefaultPrimaryFluidSimulationItem,
+      CaeServiceSliceDefaultPrimaryMultiBodySimulationItem,
+      CaeServiceSliceDefaultPrimaryPassiveSafetyItem,
+      CaeServiceSliceDefaultPrimaryScriptsAndProgrammingItem,
       CaeServiceSliceDefaultPrimary,
       CaeServiceSliceVariation,
       CaeServiceSliceDefault,
@@ -2775,6 +3140,11 @@ declare module "@prismicio/client" {
       CooperateLinkSliceDefaultPrimary,
       CooperateLinkSliceVariation,
       CooperateLinkSliceDefault,
+      DisclaimerSlice,
+      DisclaimerSliceDefaultPrimaryDisclaimerItem,
+      DisclaimerSliceDefaultPrimary,
+      DisclaimerSliceVariation,
+      DisclaimerSliceDefault,
       EngineeringServiceSlice,
       EngineeringServiceSliceDefaultPrimaryCardItem,
       EngineeringServiceSliceDefaultPrimaryBodyInWhiteItem,
@@ -2798,6 +3168,17 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      IndustrialCaeSlice,
+      IndustrialCaeSliceDefaultPrimaryCardsItem,
+      IndustrialCaeSliceDefaultPrimaryDynamicsItem,
+      IndustrialCaeSliceDefaultPrimaryNvhItem,
+      IndustrialCaeSliceDefaultPrimaryStrengthItem,
+      IndustrialCaeSliceDefaultPrimaryKinematicsItem,
+      IndustrialCaeSliceDefaultPrimaryAeroAndThermalAnalysisItem,
+      IndustrialCaeSliceDefaultPrimaryOptimizationItem,
+      IndustrialCaeSliceDefaultPrimary,
+      IndustrialCaeSliceVariation,
+      IndustrialCaeSliceDefault,
       LocationSlice,
       LocationSliceDefaultPrimaryLocationCardItem,
       LocationSliceDefaultPrimary,

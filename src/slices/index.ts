@@ -6,6 +6,7 @@ export const components = {
   automotive_services: dynamic(() => import("./PageServices")),
   cae_service: dynamic(() => import("./CaeService")),
   cooperate_link: dynamic(() => import("./CooperateLink")),
+  disclaimer: dynamic(() => import("./Disclaimer")),
   engineering_service: dynamic(() => import("./CadService")),
   faq: dynamic(() => import("./Faq")),
   footer_tixas: dynamic(() => import("./FooterTixasLogo")),

@@ -18,6 +18,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "industrial_cae": {
+              "type": "SharedSlice"
+            },
+            "disclaimer": {
+              "type": "SharedSlice"
+            },
             "footer_tixas": {
               "type": "SharedSlice"
             },
