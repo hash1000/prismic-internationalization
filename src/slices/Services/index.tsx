@@ -107,7 +107,7 @@ const Services: FC<ServicesProps> = ({ slice }) => {
               field={slice.primary.description}
               components={{
                 paragraph: ({ children }) => (
-                  <p className="text-white mb-8">{children}</p>
+                  <p className="text-white text-center text-lg mb-8">{children}</p>
                 ),
               }}
             />

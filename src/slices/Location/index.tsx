@@ -17,7 +17,6 @@ const Location: FC<LocationProps> = ({ slice }) => {
   function Location(location: any) {
     setLocation(location);
   }
-  console.log(location.latitude , location.longitude );
 
   return (
     <div className="relative">
@@ -26,6 +25,7 @@ const Location: FC<LocationProps> = ({ slice }) => {
         data-slice-type={slice.slice_type}
         data-slice-variation={slice.variation}
       >
+
         <div className="text-center">
           {/* Heading and Subheading */}
           <div data-aos="fade-right" data-aos-delay="100" data-aos-offset="200">
@@ -44,17 +44,18 @@ const Location: FC<LocationProps> = ({ slice }) => {
             />
           </div>
 
-          {/* Description */}
-          <div data-aos="fade-right" data-aos-delay="50" data-aos-offset="200">
-            <PrismicRichText
-              field={slice.primary.contact}
-              components={{
-                paragraph: ({ children }) => (
-                  <p className="tex-white mb-8">{children}</p>
-                ),
-              }}
-            />
-          </div>
+    {/* Description */}
+    <div data-aos="fade-right" data-aos-delay="50" data-aos-offset="500">
+          <PrismicRichText
+            field={slice.primary.contant}
+            components={{
+              paragraph: ({ children }) => (
+                <p className="text-white text-center text-lg mb-8">{children}</p>
+              ),
+            }}
+          />
+        </div>
+       
 
           {/* Cards and Map Section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-[80%] mx-auto">

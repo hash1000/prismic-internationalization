@@ -63,7 +63,14 @@ const Team: FC<TeamProps> = ({ slice }) => {
 
         {/* Render the description */}
         <div data-aos="fade-right" data-aos-delay="50" data-aos-offset="200">
-          <PrismicRichText field={slice.primary.contact} />
+        <PrismicRichText
+            field={slice.primary.contact}
+            components={{
+              paragraph: ({ children }) => (
+                <p className="text-white mb-8 text-center text-lg">{children}</p>
+              ),
+            }}
+          />
         </div>
 
         {/* Render the cards */}
@@ -109,18 +116,18 @@ const Team: FC<TeamProps> = ({ slice }) => {
                     data-aos-delay="50"
                     data-aos-offset="200"
                   >
-                    <div className="flex gap-2 text-sm opacity-75">
+                    <div className="flex gap-2  text-lg opacity-75">
                       <RiRadioButtonFill color="#6FDCD6" />
                       <PrismicRichText field={item.desigation} />
                     </div>
-                    <div className="flex gap-2 text-sm opacity-75 text-[#39B48E]">
+                    <div className="flex gap-2  text-lg opacity-75 text-[#39B48E]">
                       <RiRadioButtonFill color="#6FDCD6" />{" "}
                       <PrismicRichText field={item.feild} />
                     </div>
                   </div>
 
                   <div
-                    className={`${montserrat.className} mt-2 text-sm text-start max-w-xl relative`}
+                    className={`${montserrat.className} mt-2  text-lg text-start max-w-xl relative`}
                     onClick={() => handleToggle(index)}
                     data-aos="fade-up"
                     data-aos-delay="50"
@@ -133,7 +140,7 @@ const Team: FC<TeamProps> = ({ slice }) => {
                             ? asText(item.description)
                             : asText(item.description).slice(0, 300)}
                         </p>
-                        <span className="mt-5 text-sm text-[#6FDCD6] font-semibold  ml-1  cursor-pointer absolute -right-3 -bottom-3">
+                        <span className="mt-5  text-lg text-[#6FDCD6] font-semibold  ml-1  cursor-pointer absolute -right-3 -bottom-3">
                           {expandedIndexes.includes(index)
                             ? "Show less"
                             : "Read more"}
@@ -147,7 +154,7 @@ const Team: FC<TeamProps> = ({ slice }) => {
                             ? asText(item.description)
                             : asText(item.description).slice(0, 200)}
                         </p>
-                        <span className="mt-5 text-sm text-[#6FDCD6] font-semibold  ml-1 underline cursor-pointer">
+                        <span className="mt-5 text-lg text-[#6FDCD6] font-semibold  ml-1 underline cursor-pointer">
                           {expandedIndexes.includes(index)
                             ? "Show less"
                             : "Read more"}

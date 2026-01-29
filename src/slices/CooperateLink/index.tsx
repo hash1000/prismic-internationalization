@@ -16,7 +16,7 @@ export type CooperateLinkProps =
 // Define the icon mapping
 const iconComponents: Record<string, IconType> = {
   phone: CiPhone,
-  linkdine: TiSocialLinkedinCircular, // Corrected key from 'Linkdine'
+  linkedin: TiSocialLinkedinCircular, // Corrected key from 'Linkdine'
   email: CiMail,
   mail: CiMail,
 };
@@ -56,7 +56,7 @@ const CooperateLink: FC<CooperateLinkProps> = ({ slice }) => {
             field={slice.primary.contact}
             components={{
               paragraph: ({ children }) => (
-                <p className="tex-white mb-8">{children}</p>
+                <p className="text-white text-center text-lg mb-8">{children}</p>
               ),
             }}
           />
@@ -89,14 +89,14 @@ const CooperateLink: FC<CooperateLinkProps> = ({ slice }) => {
                     field={item.title}
                     components={{
                       paragraph: ({ children }) => (
-                        <p className="text-white font-semibold">{children}</p>
+                        <p className="text-white font-semibold text-lg">{children}</p>
                       ),
                     }}
                   />
                   {item.link && (
                     <PrismicNextLink
                       field={item.link}
-                      className="text-[#6FDCD6] hover:underline"
+                      className="text-[#6FDCD6] hover:underline text-lg"
                     >
                       {item.link.text}
                     </PrismicNextLink>

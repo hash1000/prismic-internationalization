@@ -44,7 +44,7 @@ const Vacencies: FC<VacenciesProps> = ({ slice }) => {
           field={slice.primary.sub_title}
           components={{
             paragraph: ({ children }) => (
-              <p className="tex-white mb-8">{children}</p>
+              <p className="text-white text-center text-lg mb-8">{children}</p>
             ),
           }}
         />
@@ -54,7 +54,7 @@ const Vacencies: FC<VacenciesProps> = ({ slice }) => {
           field={slice.primary.conatct}
           components={{
             paragraph: ({ children }) => (
-              <p className="tex-white mb-8">{children}</p>
+              <p className="text-white text-center text-lg mb-8">{children}</p>
             ),
           }}
         />

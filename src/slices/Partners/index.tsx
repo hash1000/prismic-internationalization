@@ -45,7 +45,7 @@ const Partners: FC<PartnersProps> = ({ slice }) => {
             field={slice.primary.contact}
             components={{
               paragraph: ({ children }) => (
-                <p className="tex-white mb-8">{children}</p>
+                <p className="text-white text-center text-lg mb-8">{children}</p>
               ),
             }}
           />

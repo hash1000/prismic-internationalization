@@ -1469,6 +1469,16 @@ export interface LocationSliceDefaultPrimary {
   location_card: prismic.GroupField<
     Simplify<LocationSliceDefaultPrimaryLocationCardItem>
   >;
+
+  /**
+   * contant field in *Location → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: location.default.primary.contant
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  contant: prismic.RichTextField;
 }
 
 /**
