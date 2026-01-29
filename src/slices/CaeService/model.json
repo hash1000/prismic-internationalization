@@ -54,133 +54,14 @@
                   "allowText": true,
                   "repeat": false
                 }
-              }
-            }
-          }
-        },
-        "networking_and_model_development": {
-          "type": "Group",
-          "config": {
-            "label": "Networking and Model Development",
-            "repeat": true,
-            "fields": {
-              "label": {
-                "type": "Text",
+              },
+              "card_points": {
+                "type": "StructuredText",
                 "config": {
-                  "label": "label",
-                  "placeholder": ""
-                }
-              }
-            }
-          }
-        },
-        "stiffness": {
-          "type": "Group",
-          "config": {
-            "label": "Stiffness",
-            "repeat": true,
-            "fields": {
-              "lable": {
-                "type": "Text",
-                "config": {
-                  "label": "lable",
-                  "placeholder": ""
-                }
-              }
-            }
-          }
-        },
-        "strength_and_durability": {
-          "type": "Group",
-          "config": {
-            "label": "Strength and Durability",
-            "repeat": true,
-            "fields": {
-              "lable": {
-                "type": "Text",
-                "config": {
-                  "label": "lable",
-                  "placeholder": ""
-                }
-              }
-            }
-          }
-        },
-        "crash_simulation": {
-          "type": "Group",
-          "config": {
-            "label": "Crash Simulation",
-            "repeat": true,
-            "fields": {
-              "lable": {
-                "type": "Text",
-                "config": {
-                  "label": "lable",
-                  "placeholder": ""
-                }
-              }
-            }
-          }
-        },
-        "fluid_simulation": {
-          "type": "Group",
-          "config": {
-            "label": "Fluid Simulation",
-            "repeat": true,
-            "fields": {
-              "label": {
-                "type": "Text",
-                "config": {
-                  "label": "label",
-                  "placeholder": ""
-                }
-              }
-            }
-          }
-        },
-        "multi_body_simulation": {
-          "type": "Group",
-          "config": {
-            "label": "Multi Body Simulation",
-            "repeat": true,
-            "fields": {
-              "label": {
-                "type": "Text",
-                "config": {
-                  "label": "label",
-                  "placeholder": ""
-                }
-              }
-            }
-          }
-        },
-        "passive_safety": {
-          "type": "Group",
-          "config": {
-            "label": "Passive Safety",
-            "repeat": true,
-            "fields": {
-              "lable": {
-                "type": "Text",
-                "config": {
-                  "label": "lable",
-                  "placeholder": ""
-                }
-              }
-            }
-          }
-        },
-        "scripts_and_programming": {
-          "type": "Group",
-          "config": {
-            "label": " Scripts and Programming",
-            "repeat": true,
-            "fields": {
-              "lable": {
-                "type": "Text",
-                "config": {
-                  "label": "lable",
-                  "placeholder": ""
+                  "label": "card points",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "list-item,o-list-item"
                 }
               }
             }

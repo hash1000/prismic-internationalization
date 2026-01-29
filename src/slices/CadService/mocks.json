@@ -71,6 +71,20 @@
 										"text": "pen"
 									}
 								}
+							],
+							[
+								"card_points",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Anim nisi enim enim labore mollit sint veniam esse voluptate excepteur cupidatat laboris."
+											}
+										}
+									]
+								}
 							]
 						]
 					}
@@ -98,78 +112,6 @@
 				"alt": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
-			},
-			"body_in_white": {
-				"__TYPE__": "GroupContentType",
-				"value": [
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"label",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "indicate",
-									"type": "Text"
-								}
-							]
-						]
-					}
-				]
-			},
-			"exterior": {
-				"__TYPE__": "GroupContentType",
-				"value": [
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"label",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "immediately",
-									"type": "Text"
-								}
-							]
-						]
-					}
-				]
-			},
-			"doors_lids_gates": {
-				"__TYPE__": "GroupContentType",
-				"value": [
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"lable",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "cabin",
-									"type": "Text"
-								}
-							]
-						]
-					}
-				]
-			},
-			"interior": {
-				"__TYPE__": "GroupContentType",
-				"value": [
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"lable",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "foreign",
-									"type": "Text"
-								}
-							]
-						]
-					}
-				]
 			}
 		},
 		"items": []

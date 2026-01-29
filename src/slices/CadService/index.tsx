@@ -1,26 +1,31 @@
 "use client";
-import { FC, useState } from "react";
-import { Content } from "@prismicio/client";
+
+import { FC, useMemo, useState } from "react";
+import { Content, asText } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import Bounded from "@/components/Bounded";
 import Image from "next/image";
-import { asText } from "@prismicio/client";
+import { usePathname } from "next/navigation";
 
 /**
- * Props for `CaeService`.
+ * Props for CadService.
  */
-export type CaeServiceProps = SliceComponentProps<Content.CaeServiceSlice>;
+export type CadServiceProps = SliceComponentProps<Content.CaeServiceSlice>;
+
+function getLocaleFromPath(pathname: string) {
+  if (pathname?.startsWith("/de")) return "de";
+  return "en";
+}
 
 /**
- * Component for "CaeService" and "CadService" Slices.
+ * Component for "CadService" Slice.
+ * ✅ New flow: bullet points come from item.card_points.
  */
-const CadService: FC<CaeServiceProps> = ({ slice }) => {
-  const normalizeString = (str: string) => str.toLowerCase().replace(/_/g, " ");
-
+const CadService: FC<CadServiceProps> = ({ slice }) => {
   return (
     <Bounded
       className="pt-[100px] mx-auto w-full"
-      backgroundImage={slice.primary.backgroung_image?.url || ""}
+      backgroundImage={slice.primary.background_image?.url || ""}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
@@ -42,18 +47,9 @@ const CadService: FC<CaeServiceProps> = ({ slice }) => {
         className="mx-auto max-w-[1240px] py-[100px]"
       >
         <div className="grid gap-6 md:grid-cols-2 place-content-center px-6 justify-center">
-          {slice.primary.card.map((item, index) => {
-            const cardHeadingKey = asText(item.card_heading);
-
-            return (
-              <Card
-                key={index}
-                item={item}
-                cardHeadingKey={cardHeadingKey}
-                slicePrimary={slice.primary}
-              />
-            );
-          })}
+          {slice.primary.card.map((item, index) => (
+            <Card key={index} item={item} />
+          ))}
         </div>
       </div>
     </Bounded>
@@ -62,73 +58,64 @@ const CadService: FC<CaeServiceProps> = ({ slice }) => {
 
 type CardProps = {
   item: any;
-  cardHeadingKey: string;
-  slicePrimary: any;
 };
 
-const Card: FC<CardProps> = ({ item, cardHeadingKey, slicePrimary }) => {
+const Card: FC<CardProps> = ({ item }) => {
   const [readMore, setReadMore] = useState(false);
 
-  const normalizeString = (str: string) => str.toLowerCase().replace(/_/g, " ");
+  const pathname = usePathname();
+  const locale = useMemo(() => getLocaleFromPath(pathname), [pathname]);
 
-  // Get all list items for this card
+  const t = useMemo(() => {
+    return locale === "de"
+      ? { more: "Mehr lesen", less: "Weniger anzeigen" }
+      : { more: "Read More", less: "Read Less" };
+  }, [locale]);
 
-  const matchedEntry = Object.entries(slicePrimary).find(
-    ([key]) => normalizeString(key) === normalizeString(cardHeadingKey)
-  );
-
-  const listItems: any[] = Array.isArray(matchedEntry?.[1])
-    ? matchedEntry![1]
-    : [];
-
-  // Calculate total text length
-  const fullTextLength = listItems
-    .map((subItem: any) => subItem?.label || subItem?.lable || "")
-    .join(" ").length;
-
-  const isLong = fullTextLength > 300;
-
-  // Determine which items to show
-  let displayedItems = listItems;
-  if (isLong && !readMore) {
-    let charCount = 0;
-    displayedItems = [];
-    for (let i = 0; i < listItems.length; i++) {
-      const text = listItems[i]?.label || listItems[i]?.lable || "";
-      if (charCount + text.length > 500) break;
-      displayedItems.push(listItems[i]);
-      charCount += text.length;
-    }
-  }
+  const pointsText = asText(item.card_points);
+  const isLong = (pointsText || "").length > 300;
 
   return (
     <div className="w-full flex justify-center">
       <div className="rounded-md flex flex-col h-full w-4/5 mx-auto bg-gradient-to-b from-[#235683] to-[#0D2F4B]">
         <div className="w-full relative h-64 md:h-80 lg:h-96">
           <Image
-            src={item.card_image.url || ""}
-            alt={item.card_image.alt || ""}
-            layout="fill"
-            objectFit="cover"
-            className="rounded-t-md"
+            src={item.card_image?.url || ""}
+            alt={item.card_image?.alt || ""}
+            fill
+            className="rounded-t-md object-cover"
           />
         </div>
+
         <div className="flex flex-col flex-grow py-3 relative">
           <h1 className="text-xl font-bold text-[#5AB7B5] p-2 text-center">
             <PrismicRichText field={item.card_heading} />
           </h1>
-          <div className="flex-grow p-3 mb-3 overflow-hidden text-white">
-            <ul className="list-disc list-inside">
-              {displayedItems.map((subItem: any, subIndex: number) => (
-                <li key={subIndex}>{subItem?.label || subItem?.lable || ""}</li>
-              ))}
-            </ul>
+
+          <div className="flex-grow p-3 mb-3 overflow-hidden text-white relative">
+            <div className={`${isLong && !readMore ? "max-h-[230px]" : ""} overflow-hidden my-3`}>
+              <PrismicRichText
+                field={item.card_points}
+                components={{
+                  list: ({ children }) => (
+                    <ul className="list-disc list-inside">{children}</ul>
+                  ),
+                  oList: ({ children }) => (
+                    <ol className="list-decimal list-inside">{children}</ol>
+                  ),
+                  listItem: ({ children }) => <li>{children}</li>,
+                  oListItem: ({ children }) => <li>{children}</li>,
+                  paragraph: ({ children }) => <>{children}</>,
+                }}
+              />
+            </div>
+
             {isLong && (
               <button
-                className="mt-5 text-sm text-[#6FDCD6] font-semibold absolute right-3 bottom-3"
+                className="mt-10 text-sm text-[#6FDCD6] font-semibold absolute right-3 bottom-0 z-30"
                 onClick={() => setReadMore(!readMore)}
               >
-                {readMore ? "Read Less" : "Read More"}
+                {readMore ? t.less : t.more}
               </button>
             )}
           </div>

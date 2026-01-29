@@ -10,13 +10,14 @@ export type LocationProps = SliceComponentProps<Content.LocationSlice>;
 
 const Location: FC<LocationProps> = ({ slice }) => {
   const [location, setLocation] = useState({
-    latitude: slice.primary.longitude_latitude.latitude,
-    longitude: slice.primary.longitude_latitude.longitude,
+    latitude: slice.primary.location_card[0]?.longitude_latitude.latitude,
+    longitude: slice.primary.location_card[0]?.longitude_latitude.longitude,
   });
 
   function Location(location: any) {
     setLocation(location);
   }
+  console.log(location.latitude , location.longitude );
 
   return (
     <div className="relative">

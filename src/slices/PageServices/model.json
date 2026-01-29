@@ -12,15 +12,6 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "lable": {
-          "type": "StructuredText",
-          "config": {
-            "label": "lable",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
-        },
         "content": {
           "type": "StructuredText",
           "config": {
@@ -119,116 +110,22 @@
             "thumbnails": []
           }
         },
-        "span_lable": {
-          "type": "Text",
-          "config": {
-            "label": "span lable",
-            "placeholder": ""
-          }
-        },
-        "optimization": {
-          "type": "Group",
-          "config": {
-            "label": "Optimization",
-            "repeat": true,
-            "fields": {
-              "label": {
-                "type": "Text",
-                "config": {
-                  "label": "label",
-                  "placeholder": ""
-                }
-              }
-            }
-          }
-        },
-        "chemical_engineering_contant": {
+        "heading": {
           "type": "StructuredText",
           "config": {
-            "label": "chemical engineering contant",
+            "label": "heading",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading1,strong"
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
-        "nvh": {
-          "type": "Group",
+        "sub_heading": {
+          "type": "StructuredText",
           "config": {
-            "label": "NVH",
-            "repeat": true,
-            "fields": {
-              "label": {
-                "type": "Text",
-                "config": {
-                  "label": "label",
-                  "placeholder": ""
-                }
-              }
-            }
-          }
-        },
-        "strength": {
-          "type": "Group",
-          "config": {
-            "label": "strength",
-            "repeat": true,
-            "fields": {
-              "label": {
-                "type": "Text",
-                "config": {
-                  "label": "label",
-                  "placeholder": ""
-                }
-              }
-            }
-          }
-        },
-        "kinematics": {
-          "type": "Group",
-          "config": {
-            "label": "Kinematics",
-            "repeat": true,
-            "fields": {
-              "label": {
-                "type": "Text",
-                "config": {
-                  "label": "label",
-                  "placeholder": ""
-                }
-              }
-            }
-          }
-        },
-        "dynamics": {
-          "type": "Group",
-          "config": {
-            "label": "Dynamics",
-            "repeat": true,
-            "fields": {
-              "label": {
-                "type": "Text",
-                "config": {
-                  "label": "label",
-                  "placeholder": ""
-                }
-              }
-            }
-          }
-        },
-        "aero_and_thermal_analysis": {
-          "type": "Group",
-          "config": {
-            "label": "Aero and thermal analysis",
-            "repeat": true,
-            "fields": {
-              "label": {
-                "type": "Text",
-                "config": {
-                  "label": "label",
-                  "placeholder": ""
-                }
-              }
-            }
+            "label": "sub heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         }
       },

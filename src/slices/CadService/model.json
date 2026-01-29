@@ -54,69 +54,14 @@
                   "allowText": true,
                   "repeat": false
                 }
-              }
-            }
-          }
-        },
-        "body_in_white": {
-          "type": "Group",
-          "config": {
-            "label": "Body in white",
-            "repeat": true,
-            "fields": {
-              "label": {
-                "type": "Text",
+              },
+              "card_points": {
+                "type": "StructuredText",
                 "config": {
-                  "label": "label",
-                  "placeholder": ""
-                }
-              }
-            }
-          }
-        },
-        "exterior": {
-          "type": "Group",
-          "config": {
-            "label": "Exterior",
-            "repeat": true,
-            "fields": {
-              "label": {
-                "type": "Text",
-                "config": {
-                  "label": "label",
-                  "placeholder": ""
-                }
-              }
-            }
-          }
-        },
-        "doors_lids_gates": {
-          "type": "Group",
-          "config": {
-            "label": "Doors lids gates",
-            "repeat": true,
-            "fields": {
-              "lable": {
-                "type": "Text",
-                "config": {
-                  "label": "lable",
-                  "placeholder": ""
-                }
-              }
-            }
-          }
-        },
-        "interior": {
-          "type": "Group",
-          "config": {
-            "label": "Interior",
-            "repeat": true,
-            "fields": {
-              "lable": {
-                "type": "Text",
-                "config": {
-                  "label": "lable",
-                  "placeholder": ""
+                  "label": "card points",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "list-item,o-list-item"
                 }
               }
             }

@@ -1,9 +1,10 @@
 "use client";
-import { FC, useState } from "react";
+import { FC, useMemo, useState } from "react";
 import { asText, Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import Bounded from "@/components/Bounded";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 /**
  * Props for `IndustrialCae`.
@@ -11,11 +12,17 @@ import Image from "next/image";
 export type IndustrialCaeProps =
   SliceComponentProps<Content.IndustrialCaeSlice>;
 
+/** Locale helper (based on /de path) */
+function getLocaleFromPath(pathname: string) {
+  if (pathname?.startsWith("/de")) return "de";
+  return "en";
+}
+
 /**
  * Component for "IndustrialCae" Slices.
+ * ✅ New flow: bullets come from item.card_bullets, no matching keys/labels.
  */
 const IndustrialCae: FC<IndustrialCaeProps> = ({ slice }) => {
-  const normalizeString = (str: string) => str.toLowerCase().replace(/_/g, " ");
   return (
     <Bounded
       backgroundImage={slice.primary.backgroung_image?.url || ""}
@@ -24,7 +31,6 @@ const IndustrialCae: FC<IndustrialCaeProps> = ({ slice }) => {
     >
       <div data-aos="fade-right" data-aos-delay="100" data-aos-offset="200">
         {/* Heading */}
-
         <PrismicRichText
           field={slice.primary.heading}
           components={{
@@ -35,12 +41,13 @@ const IndustrialCae: FC<IndustrialCaeProps> = ({ slice }) => {
             ),
           }}
         />
-        {/* SUB HEADING */}
+
+        {/* Sub Heading */}
         <PrismicRichText
           field={slice.primary.sub_heading}
           components={{
             paragraph: ({ children }) => (
-              <h1 className="text-sm lg:text-lg text-center  max-w-3xl mx-auto">
+              <h1 className="text-sm lg:text-lg text-center max-w-3xl mx-auto">
                 {children}
               </h1>
             ),
@@ -55,21 +62,9 @@ const IndustrialCae: FC<IndustrialCaeProps> = ({ slice }) => {
         className="mx-auto max-w-[1240px] py-[100px]"
       >
         <div className="grid gap-6 md:grid-cols-2 place-content-center px-6 justify-center">
-          {slice.primary.cards.map((item: any, index: any) => {
-            const cardHeadingKey =
-              typeof item.card_heading === "string"
-                ? item.card_heading
-                : (asText(item.card_heading) ?? "");
-
-            return (
-              <Card
-                key={index}
-                item={item}
-                cardHeadingKey={cardHeadingKey}
-                slicePrimary={slice.primary}
-              />
-            );
-          })}
+          {slice.primary.cards.map((item: any, index: any) => (
+            <Card key={index} item={item} />
+          ))}
         </div>
       </div>
     </Bounded>
@@ -78,46 +73,31 @@ const IndustrialCae: FC<IndustrialCaeProps> = ({ slice }) => {
 
 type CardProps = {
   item: any;
-  cardHeadingKey: string;
-  slicePrimary: any;
 };
 
-const Card: FC<CardProps> = ({ item, cardHeadingKey, slicePrimary }) => {
+const Card: FC<CardProps> = ({ item }) => {
   const [readMore, setReadMore] = useState(false);
 
-  const normalizeKey = (str: string) =>
-    str
-      .toLowerCase()
-      .trim()
-      .replace(/\s+/g, "_") // spaces → underscore
-      .replace(/_+/g, "_");
+  const pathname = usePathname();
+  const locale = useMemo(() => getLocaleFromPath(pathname), [pathname]);
 
-  const matchedEntry = Object.entries(slicePrimary).find(
-    ([key]) => normalizeKey(key) === normalizeKey(cardHeadingKey),
-  );
+  const t = useMemo(() => {
+    return locale === "de"
+      ? { more: "Mehr lesen", less: "Weniger anzeigen" }
+      : { more: "Read More", less: "Read Less" };
+  }, [locale]);
 
-  const listItems: any[] = Array.isArray(matchedEntry?.[1])
-    ? matchedEntry![1]
-    : [];
+  // ✅ Convert bullets to plain text for "Read More" decision
+  const bulletsText = asText(item.card_bullets);
+  const isLong = (bulletsText || "").length > 300;
 
-  const fullTextLength = listItems
-    .map((subItem) => subItem?.label || subItem?.lable || "")
-    .join(" ").length;
+  // ✅ If not readMore, we show only first ~500 chars worth of list items (same behavior as your old code)
+  // But we keep the design the same: still render list using PrismicRichText.
+  // The simple safe version: show full list always, and only toggle based on length.
+  // (If you want strict truncation per bullet item, tell me and I’ll do it, but it requires parsing rich text nodes.)
+  const shouldHide = isLong && !readMore;
 
-  const isLong = fullTextLength > 300;
-
-  let displayedItems = listItems;
-  if (isLong && !readMore) {
-    let charCount = 0;
-    displayedItems = [];
-    for (const item of listItems) {
-      const text = item?.label || item?.lable || "";
-      if (charCount + text.length > 500) break;
-      displayedItems.push(item);
-      charCount += text.length;
-    }
-  }
-
+  console.log(item.card_heading, "item");
   return (
     <div className="w-full flex justify-center">
       <div className="rounded-md flex flex-col h-full w-4/5 mx-auto bg-gradient-to-b from-[#235683] to-[#0D2F4B]">
@@ -133,32 +113,41 @@ const Card: FC<CardProps> = ({ item, cardHeadingKey, slicePrimary }) => {
 
         {/* CONTENT */}
         <div className="flex flex-col flex-grow py-3 relative">
+          {/* Heading (translated per locale automatically) */}
+
           <h1 className="text-xl font-bold text-[#5AB7B5] p-2 text-center">
-            {cardHeadingKey}
+            {asText(item.card_heading)}
           </h1>
 
+          {/* Bullets (translated per locale automatically) */}
           <div className="flex-grow p-3 mb-8 overflow-hidden text-white">
-            <ul className="list-disc list-inside space-y-2">
-              {displayedItems.map((point, idx) => {
-                return (
-                  <li className="list-disc list-inside text-white">
-                    <PrismicRichText
-                      field={point.label}
-                      components={{
-                        paragraph: ({ children }) => <>{children}</>,
-                      }}
-                    />
-                  </li>
-                );
-              })}
-            </ul>
+            <div className={`${shouldHide ? "max-h-[220px]" : ""} overflow-hidden`}>
+              <PrismicRichText
+                field={item.card_bullets}
+                components={{
+                  // list: ({ children }) => (
+                  //   <ul className="list-disc list-inside space-y-2">{children}</ul>
+                  // ),
+                  oList: ({ children }) => (
+                    <ol className="list-decimal list-inside space-y-2">{children}</ol>
+                  ),
+                  listItem: ({ children }) => (
+                    <li className="list-disc list-inside text-white">{children}</li>
+                  ),
+                  oListItem: ({ children }) => (
+                    <li className="list-decimal list-inside text-white">{children}</li>
+                  ),
+                  paragraph: ({ children }) => <>{children}</>,
+                }}
+              />
+            </div>
 
             {isLong && (
               <button
                 className="mt-4 text-sm text-[#6FDCD6] font-semibold absolute right-3 bottom-3"
                 onClick={() => setReadMore(!readMore)}
               >
-                {readMore ? "Read Less" : "Read More"}
+                {readMore ? t.less : t.more}
               </button>
             )}
           </div>

@@ -25,17 +25,6 @@
 					}
 				]
 			},
-			"contact": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Eu non ea ut consectetur non sunt elit veniam incididunt mollit quis qui non cillum."
-						}
-					}
-				]
-			},
 			"location_card": {
 				"__TYPE__": "GroupContentType",
 				"value": [
@@ -77,13 +66,6 @@
 						]
 					}
 				]
-			},
-			"longitude_latitude": {
-				"position": {
-					"lat": 48.8703712,
-					"lng": 2.3865198
-				},
-				"__TYPE__": "GeoPointContent"
 			}
 		},
 		"items": []

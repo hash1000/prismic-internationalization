@@ -1,116 +1,72 @@
 "use client";
 
-import { FC, useState } from "react";
-import { Content } from "@prismicio/client";
+import { FC, useMemo, useState } from "react";
+import { Content, asText } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import Bounded from "@/components/Bounded";
 import Image from "next/image";
-import { asText } from "@prismicio/client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 /**
- * Props for `CaeService`.
+ * Props for CaeService.
  */
 export type CaeServiceProps = SliceComponentProps<Content.CaeServiceSlice>;
 
-const fallbackItems = [
-  { label: "" },
-  {
-    label:
-      "",
-  },
-  { label: "" },
-];
+function getLocaleFromPath(pathname: string) {
+  if (pathname?.startsWith("/de")) return "de";
+  return "en";
+}
 
 const CaeService: FC<CaeServiceProps> = ({ slice }) => {
   return (
-    <>
-      <Bounded
-        className="pt-[100px] mx-auto w-full"
-        backgroundImage={slice.primary.backgroung_image?.url || ""}
-        data-slice-type={slice.slice_type}
-        data-slice-variation={slice.variation}
-      >
-        {/* Heading */}
-        <PrismicRichText
-          field={slice.primary.heading}
-          components={{
-            heading1: ({ children }) => (
-              <h2 className="text-4xl font-bold text-center">{children}</h2>
-            ),
-          }}
-        />
+    <Bounded
+      className="pt-[100px] mx-auto w-full"
+      backgroundImage={slice.primary.background_image?.url || ""}
+      data-slice-type={slice.slice_type}
+      data-slice-variation={slice.variation}
+    >
+      {/* Heading */}
+      <PrismicRichText
+        field={slice.primary.heading}
+        components={{
+          heading1: ({ children }) => (
+            <h2 className="text-4xl font-bold text-center">{children}</h2>
+          ),
+        }}
+      />
 
-        {/* Cards */}
-        <div className="mx-auto max-w-[1240px] py-[100px]">
-          <div className="grid gap-6 md:grid-cols-2 px-6">
-            {slice.primary.card.map((item, index) => (
-              <Card
-                key={index}
-                item={item}
-                cardHeadingKey={asText(item.card_heading)}
-                slicePrimary={slice.primary}
-              />
-            ))}
-          </div>
+      {/* Cards */}
+      <div className="mx-auto max-w-[1240px] py-[100px]">
+        <div className="grid gap-6 md:grid-cols-2 px-6">
+          {slice.primary.card.map((item, index) => (
+            <Card key={index} item={item} />
+          ))}
         </div>
-      </Bounded>
-    </>
+      </div>
+    </Bounded>
   );
 };
 
 type CardProps = {
   item: any;
-  cardHeadingKey: string;
-  slicePrimary: any;
 };
 
-const Card: FC<CardProps> = ({ item, cardHeadingKey, slicePrimary }) => {
+const Card: FC<CardProps> = ({ item }) => {
   const [readMore, setReadMore] = useState(false);
 
-  const normalizeString = (str: string) => str.toLowerCase().replace(/_/g, " ");
+  const pathname = usePathname();
+  const locale = useMemo(() => getLocaleFromPath(pathname), [pathname]);
 
-  console.log("cardHeadingKey:", cardHeadingKey);
-  // Find the matching entry in slicePrimary
-  const matchedEntry = Object.entries(slicePrimary).find(
-    ([key]) => normalizeString(key) === normalizeString(cardHeadingKey)
-  );
+  const t = useMemo(() => {
+    return locale === "de"
+      ? { more: "Mehr lesen", less: "Weniger anzeigen" }
+      : { more: "Read More", less: "Read Less" };
+  }, [locale]);
 
-  const listItems: any[] = Array.isArray(matchedEntry?.[1])
-    ? matchedEntry![1]
-    : [];
-
-console.log("listItems Entry:", listItems);
-  // Determine if Read More button is needed
-  const fullTextLength = listItems
-    .map((i) => i?.label || i?.lable || "")
-    .join(" ")
-    .length;
-
-  const isLong = fullTextLength > 500;
-
-  // Calculate which items to display
-  let displayedItems: any[] = [];
-
-  if (!readMore && isLong) {
-    let charCount = 0;
-console.log("Full text length:", fullTextLength);
-    for (let i = 0; i < listItems.length; i++) {
-      const text = listItems[i]?.label || listItems[i]?.lable || "";
-
-      console.log("Current charCount:", charCount, "Adding text length:", text.length);
-        displayedItems.push(listItems[i]);
-        charCount += text.length;
-       
-      // After first 3, stop if adding this item exceeds 500 chars
-      if (charCount + text.length > 500) break;
-
-      displayedItems.push(listItems[i]);
-      charCount += text.length;
-    }
-  } else {
-    displayedItems = listItems;
-  }
+  // ✅ New flow: points live inside the card
+  const pointsText = asText(item.card_points);
+  const isLong = (pointsText || "").length > 500;
 
   return (
     <div className="flex justify-center">
@@ -118,8 +74,8 @@ console.log("Full text length:", fullTextLength);
         {/* Image */}
         <div className="relative h-64 md:h-80 lg:h-96">
           <Image
-            src={item.card_image.url || ""}
-            alt={item.card_image.alt || ""}
+            src={item.card_image?.url || ""}
+            alt={item.card_image?.alt || ""}
             fill
             className="object-cover rounded-t-md"
           />
@@ -132,11 +88,23 @@ console.log("Full text length:", fullTextLength);
           </h1>
 
           <div className="flex-grow p-3 mb-3 text-white relative">
-            <ul className="list-disc list-inside">
-              {displayedItems.map((subItem, i) => (
-                <li key={i}>{subItem?.label || subItem?.lable}</li>
-              ))}
-            </ul>
+            {/* ✅ Keep design: list-disc list-inside */}
+            <div className={`${isLong && !readMore ? "max-h-[220px]" : ""} overflow-hidden`}>
+              <PrismicRichText
+                field={item.card_points}
+                components={{
+                  list: ({ children }) => (
+                    <ul className="list-disc list-inside">{children}</ul>
+                  ),
+                  oList: ({ children }) => (
+                    <ol className="list-decimal list-inside">{children}</ol>
+                  ),
+                  listItem: ({ children }) => <li>{children}</li>,
+                  oListItem: ({ children }) => <li>{children}</li>,
+                  paragraph: ({ children }) => <>{children}</>,
+                }}
+              />
+            </div>
 
             {/* Read More button */}
             {isLong && (
@@ -144,11 +112,12 @@ console.log("Full text length:", fullTextLength);
                 className="mt-5 text-sm text-[#6FDCD6] font-semibold absolute right-3 bottom-3"
                 onClick={() => setReadMore(!readMore)}
               >
-                {readMore ? "Read Less" : "Read More"}
+                {readMore ? t.less : t.more}
               </button>
             )}
           </div>
 
+          {/* Link text (kept your design) */}
           {item.card_link?.text && (
             <Link
               href="/it-software-solution"

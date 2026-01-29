@@ -5,7 +5,7 @@ import { createClient } from '@/prismicio';
 
 export async function middleware(request: NextRequest) {
   const client = createClient();
-  const repository = await client.getRepository();
+  const repository = await client?.getRepository();
 
   const locales = repository.languages.map((lang) => lang.id);
   const defaultLocale = locales[0];

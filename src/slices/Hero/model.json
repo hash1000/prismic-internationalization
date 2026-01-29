@@ -82,40 +82,6 @@
             "constraint": {},
             "thumbnails": []
           }
-        },
-        "tisax_before_content": {
-          "type": "StructuredText",
-          "config": {
-            "label": "tisax_before_content",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
-        },
-        "tisax_logo": {
-          "type": "Image",
-          "config": {
-            "label": "tisax_logo",
-            "constraint": {},
-            "thumbnails": []
-          }
-        },
-        "tisax_after_content": {
-          "type": "StructuredText",
-          "config": {
-            "label": "tisax_after_content",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
-        },
-        "tisax_logo_content": {
-          "type": "Image",
-          "config": {
-            "label": "tisax_logo_content",
-            "constraint": {},
-            "thumbnails": []
-          }
         }
       },
       "items": {}

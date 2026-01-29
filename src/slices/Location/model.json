@@ -30,15 +30,6 @@
             "multi": "heading4"
           }
         },
-        "contact": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Contact",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph"
-          }
-        },
         "location_card": {
           "type": "Group",
           "config": {
@@ -68,12 +59,6 @@
                 }
               }
             }
-          }
-        },
-        "longitude_latitude": {
-          "type": "GeoPoint",
-          "config": {
-            "label": "longitude latitude"
           }
         }
       },
