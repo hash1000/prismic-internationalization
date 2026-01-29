@@ -153,7 +153,7 @@ const AutomotiveServices: FC<AutomotiveServicesProps> = ({ slice }) => {
           <PrismicRichText
             field={slice.primary.content}
             components={{
-              paragraph: ({ children }) => <p className="text-white mb-8">{children}</p>,
+              paragraph: ({ children }) => <p className="text-white mb-8 text-center text-lg">{children}</p>,
             }}
           />
         </div>
