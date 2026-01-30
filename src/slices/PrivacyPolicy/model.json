@@ -12,28 +12,10 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "label": {
-          "type": "StructuredText",
-          "config": {
-            "label": "label",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
-        },
-        "contant": {
-          "type": "StructuredText",
-          "config": {
-            "label": "contant",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "preformatted,heading1,heading2,heading3,heading4,heading5,heading6,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
-        },
-        "privacypolicy": {
+        "repeatable": {
           "type": "Group",
           "config": {
-            "label": "privacypolicy",
+            "label": "Repeatable",
             "repeat": true,
             "fields": {
               "heading": {
@@ -42,16 +24,41 @@
                   "label": "heading",
                   "placeholder": "",
                   "allowTargetBlank": true,
-                  "multi": "paragraph,preformatted,heading1,heading3,heading4,heading5,heading6,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
                 }
               },
-              "description": {
+              "body": {
                 "type": "StructuredText",
                 "config": {
-                  "label": "description",
+                  "label": "body",
                   "placeholder": "",
                   "allowTargetBlank": true,
-                  "multi": "preformatted,heading1,heading2,heading3,heading4,heading5,heading6,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              }
+            }
+          }
+        },
+        "non_repeated": {
+          "type": "Group",
+          "config": {
+            "label": "Non Repeated",
+            "repeat": false,
+            "fields": {
+              "heading": {
+                "type": "Text",
+                "config": {
+                  "label": "heading",
+                  "placeholder": ""
+                }
+              },
+              "contant": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "contant",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
                 }
               }
             }

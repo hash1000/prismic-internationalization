@@ -3,29 +3,7 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"label": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Reprehenderit laborum cupidatat amet duis sunt veniam incididunt laborum ea consequat anim deserunt dolore in. Aliquip cillum non incididunt non do ut aute occaecat anim minim incididunt."
-						}
-					}
-				]
-			},
-			"contant": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading1",
-						"content": {
-							"text": "Motion"
-						}
-					}
-				]
-			},
-			"terms_and_conditions": {
+			"non_repeated": {
 				"__TYPE__": "GroupContentType",
 				"value": [
 					{
@@ -39,21 +17,59 @@
 										{
 											"type": "paragraph",
 											"content": {
-												"text": "Laborum commodo aliqua esse minim veniam ex ad amet commodo non. Tempor minim aliquip commodo sunt aute laborum dolore irure pariatur irure labore consectetur. Ipsum esse elit qui."
+												"text": "Elit qui esse excepteur mollit nisi exercitation proident proident."
 											}
 										}
 									]
 								}
 							],
 							[
-								"description",
+								"contant",
 								{
 									"__TYPE__": "StructuredTextContent",
 									"value": [
 										{
-											"type": "heading1",
+											"type": "paragraph",
 											"content": {
-												"text": "Difficulty"
+												"text": "Adipisicing fugiat consectetur ullamco dolore eiusmod nisi nostrud ut eu culpa pariatur. Veniam magna laborum incididunt Lorem. Reprehenderit dolor aute voluptate labore aliqua velit id nulla."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			},
+			"repeatable": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"heading",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Et enim dolor consectetur sint. Officia do occaecat nostrud mollit mollit duis."
+											}
+										}
+									]
+								}
+							],
+							[
+								"body",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Proident deserunt qui esse dolore aute consequat officia est dolore fugiat cupidatat laborum. Officia officia ut proident nulla aliqua sint veniam."
 											}
 										}
 									]

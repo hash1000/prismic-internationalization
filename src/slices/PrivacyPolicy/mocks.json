@@ -3,29 +3,39 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"label": {
-				"__TYPE__": "StructuredTextContent",
+			"non_repeated": {
+				"__TYPE__": "GroupContentType",
 				"value": [
 					{
-						"type": "paragraph",
-						"content": {
-							"text": "Cillum officia voluptate qui pariatur anim culpa eu amet magna laboris velit consectetur. Aliqua adipisicing ex Lorem."
-						}
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"heading",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "worried",
+									"type": "Text"
+								}
+							],
+							[
+								"contant",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Voluptate esse exercitation est."
+											}
+										}
+									]
+								}
+							]
+						]
 					}
 				]
 			},
-			"contant": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading1",
-						"content": {
-							"text": "Musical"
-						}
-					}
-				]
-			},
-			"privacypolicy": {
+			"repeatable": {
 				"__TYPE__": "GroupContentType",
 				"value": [
 					{
@@ -39,21 +49,21 @@
 										{
 											"type": "paragraph",
 											"content": {
-												"text": "Ad laborum ex elit dolore occaecat in consectetur consectetur."
+												"text": "Eu est adipisicing aliqua id adipisicing consequat aute cillum magna sint veniam. Ad ex nisi dolor minim id consectetur irure cillum amet aute consequat ad irure sit culpa."
 											}
 										}
 									]
 								}
 							],
 							[
-								"description",
+								"body",
 								{
 									"__TYPE__": "StructuredTextContent",
 									"value": [
 										{
-											"type": "heading1",
+											"type": "paragraph",
 											"content": {
-												"text": "Fought"
+												"text": "Exercitation proident pariatur quis qui sint reprehenderit ex."
 											}
 										}
 									]

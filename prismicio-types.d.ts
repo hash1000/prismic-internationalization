@@ -829,28 +829,53 @@ export type CooperateLinkSlice = prismic.SharedSlice<
 >;
 
 /**
- * Item in *Disclaimer → Default → Primary → disclaimer *
+ * Item in *Disclaimer → Default → Primary → Non Repeated*
  */
-export interface DisclaimerSliceDefaultPrimaryDisclaimerItem {
+export interface DisclaimerSliceDefaultPrimaryNonRepeatedItem {
   /**
-   * heading field in *Disclaimer → Default → Primary → disclaimer *
+   * heading field in *Disclaimer → Default → Primary → Non Repeated*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: disclaimer.default.primary.disclaimer[].heading
+   * - **API ID Path**: disclaimer.default.primary.non_repeated[].heading
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
   heading: prismic.RichTextField;
 
   /**
-   * description field in *Disclaimer → Default → Primary → disclaimer *
+   * contant field in *Disclaimer → Default → Primary → Non Repeated*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: disclaimer.default.primary.disclaimer[].description
+   * - **API ID Path**: disclaimer.default.primary.non_repeated[].contant
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  description: prismic.RichTextField;
+  contant: prismic.RichTextField;
+}
+
+/**
+ * Item in *Disclaimer → Default → Primary → Repeatable*
+ */
+export interface DisclaimerSliceDefaultPrimaryRepeatableItem {
+  /**
+   * heading field in *Disclaimer → Default → Primary → Repeatable*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: disclaimer.default.primary.repeatable[].heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Body field in *Disclaimer → Default → Primary → Repeatable*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: disclaimer.default.primary.repeatable[].body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  body: prismic.RichTextField;
 }
 
 /**
@@ -858,35 +883,27 @@ export interface DisclaimerSliceDefaultPrimaryDisclaimerItem {
  */
 export interface DisclaimerSliceDefaultPrimary {
   /**
-   * label field in *Disclaimer → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: disclaimer.default.primary.label
-   * - **Documentation**: https://prismic.io/docs/fields/rich-text
-   */
-  label: prismic.RichTextField;
-
-  /**
-   * contant field in *Disclaimer → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: disclaimer.default.primary.contant
-   * - **Documentation**: https://prismic.io/docs/fields/rich-text
-   */
-  contant: prismic.RichTextField;
-
-  /**
-   * disclaimer  field in *Disclaimer → Default → Primary*
+   * Non Repeated field in *Disclaimer → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: disclaimer.default.primary.disclaimer[]
+   * - **API ID Path**: disclaimer.default.primary.non_repeated[]
    * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
    */
-  disclaimer: prismic.GroupField<
-    Simplify<DisclaimerSliceDefaultPrimaryDisclaimerItem>
+  non_repeated: prismic.GroupField<
+    Simplify<DisclaimerSliceDefaultPrimaryNonRepeatedItem>
+  >;
+
+  /**
+   * Repeatable field in *Disclaimer → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: disclaimer.default.primary.repeatable[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  repeatable: prismic.GroupField<
+    Simplify<DisclaimerSliceDefaultPrimaryRepeatableItem>
   >;
 }
 
@@ -1620,28 +1637,53 @@ export type PartnersSlice = prismic.SharedSlice<
 >;
 
 /**
- * Item in *PrivacyPolicy → Default → Primary → privacypolicy*
+ * Item in *PrivacyPolicy → Default → Primary → Repeatable*
  */
-export interface PrivacyPolicySliceDefaultPrimaryPrivacypolicyItem {
+export interface PrivacyPolicySliceDefaultPrimaryRepeatableItem {
   /**
-   * heading field in *PrivacyPolicy → Default → Primary → privacypolicy*
+   * heading field in *PrivacyPolicy → Default → Primary → Repeatable*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: privacy_policy.default.primary.privacypolicy[].heading
+   * - **API ID Path**: privacy_policy.default.primary.repeatable[].heading
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
   heading: prismic.RichTextField;
 
   /**
-   * description field in *PrivacyPolicy → Default → Primary → privacypolicy*
+   * body field in *PrivacyPolicy → Default → Primary → Repeatable*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: privacy_policy.default.primary.privacypolicy[].description
+   * - **API ID Path**: privacy_policy.default.primary.repeatable[].body
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  description: prismic.RichTextField;
+  body: prismic.RichTextField;
+}
+
+/**
+ * Item in *PrivacyPolicy → Default → Primary → Non Repeated*
+ */
+export interface PrivacyPolicySliceDefaultPrimaryNonRepeatedItem {
+  /**
+   * heading field in *PrivacyPolicy → Default → Primary → Non Repeated*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: privacy_policy.default.primary.non_repeated[].heading
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * contant field in *PrivacyPolicy → Default → Primary → Non Repeated*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: privacy_policy.default.primary.non_repeated[].contant
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  contant: prismic.RichTextField;
 }
 
 /**
@@ -1649,35 +1691,27 @@ export interface PrivacyPolicySliceDefaultPrimaryPrivacypolicyItem {
  */
 export interface PrivacyPolicySliceDefaultPrimary {
   /**
-   * label field in *PrivacyPolicy → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: privacy_policy.default.primary.label
-   * - **Documentation**: https://prismic.io/docs/fields/rich-text
-   */
-  label: prismic.RichTextField;
-
-  /**
-   * contant field in *PrivacyPolicy → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: privacy_policy.default.primary.contant
-   * - **Documentation**: https://prismic.io/docs/fields/rich-text
-   */
-  contant: prismic.RichTextField;
-
-  /**
-   * privacypolicy field in *PrivacyPolicy → Default → Primary*
+   * Repeatable field in *PrivacyPolicy → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: privacy_policy.default.primary.privacypolicy[]
+   * - **API ID Path**: privacy_policy.default.primary.repeatable[]
    * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
    */
-  privacypolicy: prismic.GroupField<
-    Simplify<PrivacyPolicySliceDefaultPrimaryPrivacypolicyItem>
+  repeatable: prismic.GroupField<
+    Simplify<PrivacyPolicySliceDefaultPrimaryRepeatableItem>
+  >;
+
+  /**
+   * Non Repeated field in *PrivacyPolicy → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: privacy_policy.default.primary.non_repeated[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  non_repeated: prismic.GroupField<
+    Simplify<PrivacyPolicySliceDefaultPrimaryNonRepeatedItem>
   >;
 }
 
@@ -2041,28 +2075,53 @@ type TeamSliceVariation = TeamSliceDefault;
 export type TeamSlice = prismic.SharedSlice<"team", TeamSliceVariation>;
 
 /**
- * Item in *TermAndCondtion → Default → Primary → Terms and Conditions*
+ * Item in *TermAndCondtion → Default → Primary → Non Repeated*
  */
-export interface TermAndCondtionSliceDefaultPrimaryTermsAndConditionsItem {
+export interface TermAndCondtionSliceDefaultPrimaryNonRepeatedItem {
   /**
-   * heading field in *TermAndCondtion → Default → Primary → Terms and Conditions*
+   * heading field in *TermAndCondtion → Default → Primary → Non Repeated*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: term_and_condtion.default.primary.terms_and_conditions[].heading
+   * - **API ID Path**: term_and_condtion.default.primary.non_repeated[].heading
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
   heading: prismic.RichTextField;
 
   /**
-   * description field in *TermAndCondtion → Default → Primary → Terms and Conditions*
+   * contant field in *TermAndCondtion → Default → Primary → Non Repeated*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: term_and_condtion.default.primary.terms_and_conditions[].description
+   * - **API ID Path**: term_and_condtion.default.primary.non_repeated[].contant
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  description: prismic.RichTextField;
+  contant: prismic.RichTextField;
+}
+
+/**
+ * Item in *TermAndCondtion → Default → Primary → Repeatable*
+ */
+export interface TermAndCondtionSliceDefaultPrimaryRepeatableItem {
+  /**
+   * heading field in *TermAndCondtion → Default → Primary → Repeatable*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: term_and_condtion.default.primary.repeatable[].heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Body field in *TermAndCondtion → Default → Primary → Repeatable*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: term_and_condtion.default.primary.repeatable[].body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  body: prismic.RichTextField;
 }
 
 /**
@@ -2070,35 +2129,27 @@ export interface TermAndCondtionSliceDefaultPrimaryTermsAndConditionsItem {
  */
 export interface TermAndCondtionSliceDefaultPrimary {
   /**
-   * label field in *TermAndCondtion → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: term_and_condtion.default.primary.label
-   * - **Documentation**: https://prismic.io/docs/fields/rich-text
-   */
-  label: prismic.RichTextField;
-
-  /**
-   * contant field in *TermAndCondtion → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: term_and_condtion.default.primary.contant
-   * - **Documentation**: https://prismic.io/docs/fields/rich-text
-   */
-  contant: prismic.RichTextField;
-
-  /**
-   * Terms and Conditions field in *TermAndCondtion → Default → Primary*
+   * Non Repeated field in *TermAndCondtion → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: term_and_condtion.default.primary.terms_and_conditions[]
+   * - **API ID Path**: term_and_condtion.default.primary.non_repeated[]
    * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
    */
-  terms_and_conditions: prismic.GroupField<
-    Simplify<TermAndCondtionSliceDefaultPrimaryTermsAndConditionsItem>
+  non_repeated: prismic.GroupField<
+    Simplify<TermAndCondtionSliceDefaultPrimaryNonRepeatedItem>
+  >;
+
+  /**
+   * Repeatable field in *TermAndCondtion → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: term_and_condtion.default.primary.repeatable[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  repeatable: prismic.GroupField<
+    Simplify<TermAndCondtionSliceDefaultPrimaryRepeatableItem>
   >;
 }
 
@@ -2451,7 +2502,8 @@ declare module "@prismicio/client" {
       CooperateLinkSliceVariation,
       CooperateLinkSliceDefault,
       DisclaimerSlice,
-      DisclaimerSliceDefaultPrimaryDisclaimerItem,
+      DisclaimerSliceDefaultPrimaryNonRepeatedItem,
+      DisclaimerSliceDefaultPrimaryRepeatableItem,
       DisclaimerSliceDefaultPrimary,
       DisclaimerSliceVariation,
       DisclaimerSliceDefault,
@@ -2490,7 +2542,8 @@ declare module "@prismicio/client" {
       PartnersSliceVariation,
       PartnersSliceDefault,
       PrivacyPolicySlice,
-      PrivacyPolicySliceDefaultPrimaryPrivacypolicyItem,
+      PrivacyPolicySliceDefaultPrimaryRepeatableItem,
+      PrivacyPolicySliceDefaultPrimaryNonRepeatedItem,
       PrivacyPolicySliceDefaultPrimary,
       PrivacyPolicySliceVariation,
       PrivacyPolicySliceDefault,
@@ -2505,7 +2558,8 @@ declare module "@prismicio/client" {
       TeamSliceVariation,
       TeamSliceDefault,
       TermAndCondtionSlice,
-      TermAndCondtionSliceDefaultPrimaryTermsAndConditionsItem,
+      TermAndCondtionSliceDefaultPrimaryNonRepeatedItem,
+      TermAndCondtionSliceDefaultPrimaryRepeatableItem,
       TermAndCondtionSliceDefaultPrimary,
       TermAndCondtionSliceVariation,
       TermAndCondtionSliceDefault,

@@ -1,73 +1,72 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { PrismicRichText, PrismicText, SliceComponentProps } from "@prismicio/react";
 import Bounded from "@/components/Bounded";
 
-/**
- * Props for `PrivacyPolicy`.
- */
-export type PrivacyPolicyProps =
-  SliceComponentProps<Content.PrivacyPolicySlice>;
+export type PrivacyPolicyProps = SliceComponentProps<Content.PrivacyPolicySlice>;
 
 /**
- * Component for "PrivacyPolicy" Slices.
+ * Small helper:
+ * - Text fields => PrismicText
+ * - Rich Text fields => PrismicRichText
+ *
+ * (If your "heading" is Rich Text, switch PrismicText -> PrismicRichText)
  */
+
 const PrivacyPolicy: FC<PrivacyPolicyProps> = ({ slice }) => {
+  const nonRepeated = slice.primary.non_repeated;
+  const repeatable = slice.primary.repeatable;
+
   return (
-    <>
-      <Bounded
-        className="py-[100px] mx-auto !w-4/5"
-        data-slice-type={slice.slice_type}
-        data-slice-variation={slice.variation}
-      >
-        <div className="max-w-7xl mx-auto pt-[150px] pb-[50px]">
-          <div className="text-5xl font-bold text-[#5AB7B5] font-bold  my-4 pb-[50px]">
-            <PrismicRichText
-              field={slice.primary.label}
-              components={{
-                // Use a component from another file.
-                heading1: ({ children }) => <h1>{children}</h1>,
-              }}
-            />
-          </div>
+    <Bounded
+      className="py-[100px] mx-auto !w-4/5"
+      data-slice-type={slice.slice_type}
+      data-slice-variation={slice.variation}
+    >
+      <div className="max-w-7xl mx-auto pt-[50px]">
+        {/* Non Repeated (one time) */}
+        {Array.isArray(nonRepeated) &&
 
-          <section>
-            <PrismicRichText
-              field={slice.primary.contant}
-              components={{
-                // Use a component from another file.
-                paragraph: ({ children }) => (
-                  <p className="text-lg mb-4">{children}</p>
-                ),
-              }}
-            />
-
-            {slice.primary.privacypolicy.map((item, index) => (
-              <div key={index}>
+          nonRepeated.map((item, index) => (
+            <div key={index} className="mb-8">
+              <div className="text-5xl font-bold text-[#5AB7B5] my-4 pb-[50px]">
+                {item.heading}
+              </div>
+              <div className="mb-10">
+                {/* content should be Rich Text (paragraphs) */}
                 <PrismicRichText
-                  field={item.heading}
+                  field={item.contant}
                   components={{
-                    // Use a component from another file.
                     paragraph: ({ children }) => (
-                      <p className="text-2xl font-semibold mb-2">{children}</p>
+                      <p className="text-lg mb-4">{children}</p>
                     ),
-                  }}
-                />
-                <PrismicRichText
-                  field={item.description}
-                  components={{
-                    // Use a component from another file.
-                    paragraph: ({ children }) => (
-                      <p className="mb-4">{children}</p>
-                    ),
+                    listItem: ({ children }) => <li className="ml-6 list-disc">{children}</li>,
+                    oListItem: ({ children }) => <li className="ml-6 list-decimal">{children}</li>,
                   }}
                 />
               </div>
-            ))}
-          </section>
-        </div>
-      </Bounded>
-    </>
+            </div>))}
+
+        {/* Repeatable (many sections) */}
+        {Array.isArray(repeatable) &&
+          repeatable.map((item, index) => (
+            <div key={index} className="mb-8">
+              <div className="text-2xl font-semibold mb-2">
+                <PrismicText field={item.heading} />
+              </div>
+
+              <PrismicRichText
+                field={item.body}
+                components={{
+                  paragraph: ({ children }) => <p className="mb-4">{children}</p>,
+                  listItem: ({ children }) => <li className="ml-6 list-disc">{children}</li>,
+                  oListItem: ({ children }) => <li className="ml-6 list-decimal">{children}</li>,
+                }}
+              />
+            </div>
+          ))}
+      </div>
+    </Bounded>
   );
 };
 
