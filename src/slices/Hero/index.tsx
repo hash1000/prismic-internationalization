@@ -175,14 +175,14 @@ const Hero: FC<HeroProps> = ({ slice }) => {
 
         {slice.primary.hexa_grid?.length > 0 ? (
           <>
-            <div className="hidden sm:block relative sm:max-w-[472px] md:max-w-[672px] min-w-[672px] mx-auto mt-52 xl:-mt-52">
+            <div className="hidden sm:block relative sm:max-w-[480px] md:max-w-[680px] min-w-[680px] mx-auto mt-52 xl:-mt-52">
               {slice.primary.hexa_grid.map((item, index) => {
                 let positionClass = "";
                 let size = 0;
 
                 // Setting positions and sizes dynamically
                 if (index === 0) {
-                  positionClass = "absolute left-0";
+                  positionClass = "absolute -left-1";
                   size = 250;
                 } else if (index === 1) {
                   positionClass = "absolute right-[10px]";
