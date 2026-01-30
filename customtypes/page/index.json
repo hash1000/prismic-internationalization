@@ -18,6 +18,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "information_obligations": {
+              "type": "SharedSlice"
+            },
             "industrial_cae": {
               "type": "SharedSlice"
             },

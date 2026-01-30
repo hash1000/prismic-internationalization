@@ -12,6 +12,7 @@ export const components = {
   footer_tixas: dynamic(() => import("./FooterTixasLogo")),
   hero: dynamic(() => import("./Hero")),
   industrial_cae: dynamic(() => import("./IndustrialCae")),
+  information_obligations: dynamic(() => import("./InformationObligations")),
   location: dynamic(() => import("./Location")),
   partners: dynamic(() => import("./Partners")),
   privacy_policy: dynamic(() => import("./PrivacyPolicy")),

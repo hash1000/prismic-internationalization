@@ -187,6 +187,7 @@ export type HeaderDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | InformationObligationsSlice
   | IndustrialCaeSlice
   | DisclaimerSlice
   | FooterTixasSlice
@@ -1417,6 +1418,115 @@ export type IndustrialCaeSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *InformationObligations → Default → Primary → Non Repeated*
+ */
+export interface InformationObligationsSliceDefaultPrimaryNonRepeatedItem {
+  /**
+   * heading field in *InformationObligations → Default → Primary → Non Repeated*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: information_obligations.default.primary.non_repeated[].heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * contant field in *InformationObligations → Default → Primary → Non Repeated*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: information_obligations.default.primary.non_repeated[].contant
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  contant: prismic.RichTextField;
+}
+
+/**
+ * Item in *InformationObligations → Default → Primary → Repeatable*
+ */
+export interface InformationObligationsSliceDefaultPrimaryRepeatableItem {
+  /**
+   * heading field in *InformationObligations → Default → Primary → Repeatable*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: information_obligations.default.primary.repeatable[].heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Body field in *InformationObligations → Default → Primary → Repeatable*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: information_obligations.default.primary.repeatable[].body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  body: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *InformationObligations → Default → Primary*
+ */
+export interface InformationObligationsSliceDefaultPrimary {
+  /**
+   * Non Repeated field in *InformationObligations → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: information_obligations.default.primary.non_repeated[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  non_repeated: prismic.GroupField<
+    Simplify<InformationObligationsSliceDefaultPrimaryNonRepeatedItem>
+  >;
+
+  /**
+   * Repeatable field in *InformationObligations → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: information_obligations.default.primary.repeatable[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  repeatable: prismic.GroupField<
+    Simplify<InformationObligationsSliceDefaultPrimaryRepeatableItem>
+  >;
+}
+
+/**
+ * Default variation for InformationObligations Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type InformationObligationsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<InformationObligationsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *InformationObligations*
+ */
+type InformationObligationsSliceVariation = InformationObligationsSliceDefault;
+
+/**
+ * InformationObligations Shared Slice
+ *
+ * - **API ID**: `information_obligations`
+ * - **Description**: InformationObligations
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type InformationObligationsSlice = prismic.SharedSlice<
+  "information_obligations",
+  InformationObligationsSliceVariation
+>;
+
+/**
  * Item in *Location → Default → Primary → location card*
  */
 export interface LocationSliceDefaultPrimaryLocationCardItem {
@@ -2531,6 +2641,12 @@ declare module "@prismicio/client" {
       IndustrialCaeSliceDefaultPrimary,
       IndustrialCaeSliceVariation,
       IndustrialCaeSliceDefault,
+      InformationObligationsSlice,
+      InformationObligationsSliceDefaultPrimaryNonRepeatedItem,
+      InformationObligationsSliceDefaultPrimaryRepeatableItem,
+      InformationObligationsSliceDefaultPrimary,
+      InformationObligationsSliceVariation,
+      InformationObligationsSliceDefault,
       LocationSlice,
       LocationSliceDefaultPrimaryLocationCardItem,
       LocationSliceDefaultPrimary,
