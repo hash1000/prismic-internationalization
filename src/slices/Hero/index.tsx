@@ -41,7 +41,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
     <Bounded
       id="hero"
       className=" flex justify-center lg:items-start xl:items-center"
-      backgroundImage={slice.primary.backgroung_image?.url || ""}
+      backgroundImage={slice.primary.background_image?.url || ""}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
