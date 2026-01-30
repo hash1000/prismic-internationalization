@@ -188,10 +188,10 @@ const Hero: FC<HeroProps> = ({ slice }) => {
                   positionClass = "absolute right-[10px]";
                   size = 250;
                 } else if (index === 2) {
-                  positionClass = "absolute -top-[130px] left-[30%]";
+                  positionClass = "absolute -top-[120px] left-[30%]";
                   size = 250;
                 } else if (index === 3) {
-                  positionClass = "absolute top-[130px] left-[30%]";
+                  positionClass = "absolute top-[120px] left-[30%]";
                   size = 250;
                 }
 
