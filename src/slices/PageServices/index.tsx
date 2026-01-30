@@ -116,11 +116,11 @@ const AutomotiveServices: FC<AutomotiveServicesProps> = ({ slice }) => {
 
               <div data-aos="fade-right" data-aos-delay="50" data-aos-offset="200">
                 <PrismicRichText
-                  field={selectedCard?.card_popup_detail}
+                  field={selectedCard?.card_popup_detail || "No description available"}
                   components={{
                     paragraph: () => (
                       <ReadMore
-                        text={asText(selectedCard?.card_popup_detail)}
+                        text={asText(selectedCard?.card_popup_detail) || "No description available"}
                         t={t}
                       />
                     ),
@@ -220,12 +220,6 @@ const AutomotiveServices: FC<AutomotiveServicesProps> = ({ slice }) => {
                       )}
                     </div>
 
-                    {/* ✅ Bullets inside the card item (Rich Text list) */}
-                    {item.card_points && (
-                      <div className="mt-2 text-gray-300 text-start">
-                        <PrismicRichText field={item.card_points} />
-                      </div>
-                    )}
                   </div>
                 ) : (
                   <div className="flex flex-col h-full w-full p-4">
