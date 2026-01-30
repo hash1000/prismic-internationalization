@@ -38,7 +38,7 @@ const CadService: FC<CadServiceProps> = ({ slice }) => {
             ),
           }}
         />
-      </div>
+      </div> 
 
       <div
         data-aos="fade-right"

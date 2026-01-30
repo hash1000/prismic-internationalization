@@ -676,14 +676,14 @@ export interface CaeServiceSliceDefaultPrimary {
   card: prismic.GroupField<Simplify<CaeServiceSliceDefaultPrimaryCardItem>>;
 
   /**
-   * Backgroung Image field in *CaeService → Default → Primary*
+   * Background Image field in *CaeService → Default → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: cae_service.default.primary.backgroung_image
+   * - **API ID Path**: cae_service.default.primary.background_image
    * - **Documentation**: https://prismic.io/docs/fields/image
    */
-  backgroung_image: prismic.ImageField<never>;
+  background_image: prismic.ImageField<never>;
 }
 
 /**
@@ -998,14 +998,14 @@ export interface EngineeringServiceSliceDefaultPrimary {
   >;
 
   /**
-   * Backgroung Image field in *CadService → Default → Primary*
+   * Background Image field in *CadService → Default → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: engineering_service.default.primary.backgroung_image
+   * - **API ID Path**: engineering_service.default.primary.background_image
    * - **Documentation**: https://prismic.io/docs/fields/image
    */
-  backgroung_image: prismic.ImageField<never>;
+  background_image: prismic.ImageField<never>;
 }
 
 /**
@@ -1200,14 +1200,14 @@ export interface HeroSliceDefaultPrimary {
   contant: prismic.RichTextField;
 
   /**
-   * Backgroung Image field in *Hero → Default → Primary*
+   * Background Image field in *Hero → Default → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.backgroung_image
+   * - **API ID Path**: hero.default.primary.background_image
    * - **Documentation**: https://prismic.io/docs/fields/image
    */
-  backgroung_image: prismic.ImageField<never>;
+  background_image: prismic.ImageField<never>;
 
   /**
    * Sub Headeing field in *Hero → Default → Primary*

@@ -67,10 +67,10 @@
             }
           }
         },
-        "backgroung_image": {
+        "background_image": {
           "type": "Image",
           "config": {
-            "label": "Backgroung Image",
+            "label": "Background Image",
             "constraint": {},
             "thumbnails": []
           }
