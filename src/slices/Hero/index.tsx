@@ -64,7 +64,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
             components={{
               heading1: ({ children }) => (
                 <h1
-                  className={`${montserrat.className}  text-2xl sm:text-3xl md:text-5xl font-normal`}
+                  className={`${montserrat.className}   text-4xl sm:text-6xl md:text-8xl font-bold leading-tight`}
                 >
                   {children}
                 </h1>
@@ -78,7 +78,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
             components={{
               heading1: ({ children }) => (
                 <h1
-                  className={`${montserrat.className} text-4xl sm:text-6xl md:text-8xl text-[#5AB7B5] font-bold leading-tight`}
+                  className={`${montserrat.className}  text-[#5AB7B5] text-2xl sm:text-3xl md:text-5xl font-bold `}
                 >
                   {children}
                 </h1>
@@ -188,11 +188,11 @@ const Hero: FC<HeroProps> = ({ slice }) => {
                   positionClass = "absolute right-[10px]";
                   size = 250;
                 } else if (index === 2) {
-                  positionClass = "absolute -top-[93px] left-[30%]";
-                  size = 220;
+                  positionClass = "absolute -top-[130px] left-[30%]";
+                  size = 250;
                 } else if (index === 3) {
-                  positionClass = "absolute top-[122px] left-[30%]";
-                  size = 220;
+                  positionClass = "absolute top-[130px] left-[30%]";
+                  size = 250;
                 }
 
                 return (
