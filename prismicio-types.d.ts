@@ -667,16 +667,6 @@ export interface CaeServiceSliceDefaultPrimary {
   heading: prismic.RichTextField;
 
   /**
-   * card field in *CaeService → Default → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: cae_service.default.primary.card[]
-   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
-   */
-  card: prismic.GroupField<Simplify<CaeServiceSliceDefaultPrimaryCardItem>>;
-
-  /**
    * Background Image field in *CaeService → Default → Primary*
    *
    * - **Field Type**: Image
@@ -685,6 +675,16 @@ export interface CaeServiceSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/image
    */
   background_image: prismic.ImageField<never>;
+
+  /**
+   * card field in *CaeService → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cae_service.default.primary.card[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  card: prismic.GroupField<Simplify<CaeServiceSliceDefaultPrimaryCardItem>>;
 }
 
 /**
@@ -1004,6 +1004,16 @@ export interface EngineeringServiceSliceDefaultPrimary {
   heading: prismic.RichTextField;
 
   /**
+   * Background Image field in *CadService → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: engineering_service.default.primary.background_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  background_image: prismic.ImageField<never>;
+
+  /**
    * card field in *CadService → Default → Primary*
    *
    * - **Field Type**: Group
@@ -1014,16 +1024,6 @@ export interface EngineeringServiceSliceDefaultPrimary {
   card: prismic.GroupField<
     Simplify<EngineeringServiceSliceDefaultPrimaryCardItem>
   >;
-
-  /**
-   * Background Image field in *CadService → Default → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: engineering_service.default.primary.background_image
-   * - **Documentation**: https://prismic.io/docs/fields/image
-   */
-  background_image: prismic.ImageField<never>;
 }
 
 /**
@@ -1300,6 +1300,16 @@ export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
  */
 export interface IndustrialCaeSliceDefaultPrimaryCardsItem {
   /**
+   * card heading field in *IndustrialCae → Default → Primary → cards*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: industrial_cae.default.primary.cards[].card_heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  card_heading: prismic.RichTextField;
+
+  /**
    * card image field in *IndustrialCae → Default → Primary → cards*
    *
    * - **Field Type**: Image
@@ -1308,16 +1318,6 @@ export interface IndustrialCaeSliceDefaultPrimaryCardsItem {
    * - **Documentation**: https://prismic.io/docs/fields/image
    */
   card_image: prismic.ImageField<never>;
-
-  /**
-   * card link field in *IndustrialCae → Default → Primary → cards*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: industrial_cae.default.primary.cards[].card_link
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  card_link: prismic.KeyTextField;
 
   /**
    * card points field in *IndustrialCae → Default → Primary → cards*
@@ -1330,14 +1330,14 @@ export interface IndustrialCaeSliceDefaultPrimaryCardsItem {
   card_points: prismic.RichTextField;
 
   /**
-   * card heading field in *IndustrialCae → Default → Primary → cards*
+   * card link field in *IndustrialCae → Default → Primary → cards*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: industrial_cae.default.primary.cards[].card_heading
-   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   * - **API ID Path**: industrial_cae.default.primary.cards[].card_link
+   * - **Documentation**: https://prismic.io/docs/fields/text
    */
-  card_heading: prismic.RichTextField;
+  card_link: prismic.KeyTextField;
 }
 
 /**
@@ -1345,26 +1345,14 @@ export interface IndustrialCaeSliceDefaultPrimaryCardsItem {
  */
 export interface IndustrialCaeSliceDefaultPrimary {
   /**
-   * cards field in *IndustrialCae → Default → Primary*
+   * heading field in *IndustrialCae → Default → Primary*
    *
-   * - **Field Type**: Group
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: industrial_cae.default.primary.cards[]
-   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   * - **API ID Path**: industrial_cae.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  cards: prismic.GroupField<
-    Simplify<IndustrialCaeSliceDefaultPrimaryCardsItem>
-  >;
-
-  /**
-   * Backgroung Image field in *IndustrialCae → Default → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: industrial_cae.default.primary.backgroung_image
-   * - **Documentation**: https://prismic.io/docs/fields/image
-   */
-  backgroung_image: prismic.ImageField<never>;
+  heading: prismic.RichTextField;
 
   /**
    * sub heading field in *IndustrialCae → Default → Primary*
@@ -1377,14 +1365,26 @@ export interface IndustrialCaeSliceDefaultPrimary {
   sub_heading: prismic.RichTextField;
 
   /**
-   * heading field in *IndustrialCae → Default → Primary*
+   * Backgroung Image field in *IndustrialCae → Default → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: industrial_cae.default.primary.heading
-   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   * - **API ID Path**: industrial_cae.default.primary.backgroung_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
    */
-  heading: prismic.RichTextField;
+  backgroung_image: prismic.ImageField<never>;
+
+  /**
+   * cards field in *IndustrialCae → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: industrial_cae.default.primary.cards[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  cards: prismic.GroupField<
+    Simplify<IndustrialCaeSliceDefaultPrimaryCardsItem>
+  >;
 }
 
 /**

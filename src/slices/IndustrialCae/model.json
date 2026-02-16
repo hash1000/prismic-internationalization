@@ -12,54 +12,13 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "cards": {
-          "type": "Group",
+        "heading": {
+          "type": "StructuredText",
           "config": {
-            "label": "cards",
-            "repeat": true,
-            "fields": {
-              "card_image": {
-                "type": "Image",
-                "config": {
-                  "label": "card image",
-                  "constraint": {},
-                  "thumbnails": []
-                }
-              },
-              "card_link": {
-                "type": "Text",
-                "config": {
-                  "label": "card link",
-                  "placeholder": ""
-                }
-              },
-              "card_points": {
-                "type": "StructuredText",
-                "config": {
-                  "label": "card points",
-                  "placeholder": "",
-                  "allowTargetBlank": true,
-                  "multi": "list-item,o-list-item"
-                }
-              },
-              "card_heading": {
-                "type": "StructuredText",
-                "config": {
-                  "label": "card heading",
-                  "placeholder": "",
-                  "allowTargetBlank": true,
-                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-                }
-              }
-            }
-          }
-        },
-        "backgroung_image": {
-          "type": "Image",
-          "config": {
-            "label": "Backgroung Image",
-            "constraint": {},
-            "thumbnails": []
+            "label": "heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
         "sub_heading": {
@@ -71,13 +30,54 @@
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
-        "heading": {
-          "type": "StructuredText",
+        "backgroung_image": {
+          "type": "Image",
           "config": {
-            "label": "heading",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+            "label": "Backgroung Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "cards": {
+          "type": "Group",
+          "config": {
+            "label": "cards",
+            "repeat": true,
+            "fields": {
+              "card_heading": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "card heading",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "card_image": {
+                "type": "Image",
+                "config": {
+                  "label": "card image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "card_points": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "card points",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "list-item,o-list-item"
+                }
+              },
+              "card_link": {
+                "type": "Text",
+                "config": {
+                  "label": "card link",
+                  "placeholder": ""
+                }
+              }
+            }
           }
         }
       },

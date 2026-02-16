@@ -21,6 +21,14 @@
             "multi": "heading1,strong"
           }
         },
+        "background_image": {
+          "type": "Image",
+          "config": {
+            "label": "Background Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
         "card": {
           "type": "Group",
           "config": {
@@ -65,14 +73,6 @@
                 }
               }
             }
-          }
-        },
-        "background_image": {
-          "type": "Image",
-          "config": {
-            "label": "Background Image",
-            "constraint": {},
-            "thumbnails": []
           }
         }
       },
