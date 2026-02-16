@@ -30,6 +30,15 @@
             "multi": "heading1,strong"
           }
         },
+        "contact": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Contact",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
         "partners_card": {
           "type": "Group",
           "config": {
@@ -56,15 +65,6 @@
                 }
               }
             }
-          }
-        },
-        "contact": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Contact",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph"
           }
         }
       },

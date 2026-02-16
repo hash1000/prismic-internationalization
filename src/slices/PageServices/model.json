@@ -12,6 +12,24 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "sub_heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "sub heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
         "content": {
           "type": "StructuredText",
           "config": {
@@ -19,6 +37,14 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph"
+          }
+        },
+        "background_image": {
+          "type": "Image",
+          "config": {
+            "label": "Background Image",
+            "constraint": {},
+            "thumbnails": []
           }
         },
         "card": {
@@ -53,6 +79,17 @@
                   "multi": "heading1,strong"
                 }
               },
+              "card_link": {
+                "type": "Link",
+                "config": {
+                  "label": "card link",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
+                }
+              },
               "card_popup_detail": {
                 "type": "StructuredText",
                 "config": {
@@ -69,17 +106,6 @@
                   "placeholder": "",
                   "allowTargetBlank": true,
                   "multi": "heading1,strong"
-                }
-              },
-              "card_link": {
-                "type": "Link",
-                "config": {
-                  "label": "card link",
-                  "placeholder": "",
-                  "select": null,
-                  "allowTargetBlank": true,
-                  "allowText": true,
-                  "repeat": false
                 }
               },
               "card_popup_background": {
@@ -100,32 +126,6 @@
                 }
               }
             }
-          }
-        },
-        "background_image": {
-          "type": "Image",
-          "config": {
-            "label": "Background Image",
-            "constraint": {},
-            "thumbnails": []
-          }
-        },
-        "heading": {
-          "type": "StructuredText",
-          "config": {
-            "label": "heading",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
-        },
-        "sub_heading": {
-          "type": "StructuredText",
-          "config": {
-            "label": "sub heading",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         }
       },

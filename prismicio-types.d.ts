@@ -457,6 +457,22 @@ export interface AutomotiveServicesSliceDefaultPrimaryCardItem {
   card_sub_heading: prismic.RichTextField;
 
   /**
+   * card link field in *PageServices → PageServices → Primary → card*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: automotive_services.default.primary.card[].card_link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  card_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
    * card popup detail field in *PageServices → PageServices → Primary → card*
    *
    * - **Field Type**: Rich Text
@@ -475,22 +491,6 @@ export interface AutomotiveServicesSliceDefaultPrimaryCardItem {
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
   card_popup_heading: prismic.RichTextField;
-
-  /**
-   * card link field in *PageServices → PageServices → Primary → card*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: automotive_services.default.primary.card[].card_link
-   * - **Documentation**: https://prismic.io/docs/fields/link
-   */
-  card_link: prismic.LinkField<
-    string,
-    string,
-    unknown,
-    prismic.FieldState,
-    never
-  >;
 
   /**
    * card popup background field in *PageServices → PageServices → Primary → card*
@@ -519,38 +519,6 @@ export interface AutomotiveServicesSliceDefaultPrimaryCardItem {
  */
 export interface AutomotiveServicesSliceDefaultPrimary {
   /**
-   * content field in *PageServices → PageServices → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: automotive_services.default.primary.content
-   * - **Documentation**: https://prismic.io/docs/fields/rich-text
-   */
-  content: prismic.RichTextField;
-
-  /**
-   * card field in *PageServices → PageServices → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: automotive_services.default.primary.card[]
-   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
-   */
-  card: prismic.GroupField<
-    Simplify<AutomotiveServicesSliceDefaultPrimaryCardItem>
-  >;
-
-  /**
-   * Background Image field in *PageServices → PageServices → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: automotive_services.default.primary.background_image
-   * - **Documentation**: https://prismic.io/docs/fields/image
-   */
-  background_image: prismic.ImageField<never>;
-
-  /**
    * heading field in *PageServices → PageServices → Primary*
    *
    * - **Field Type**: Rich Text
@@ -569,6 +537,38 @@ export interface AutomotiveServicesSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
   sub_heading: prismic.RichTextField;
+
+  /**
+   * content field in *PageServices → PageServices → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: automotive_services.default.primary.content
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Background Image field in *PageServices → PageServices → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: automotive_services.default.primary.background_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  background_image: prismic.ImageField<never>;
+
+  /**
+   * card field in *PageServices → PageServices → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: automotive_services.default.primary.card[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  card: prismic.GroupField<
+    Simplify<AutomotiveServicesSliceDefaultPrimaryCardItem>
+  >;
 }
 
 /**
@@ -1208,6 +1208,16 @@ export interface HeroSliceDefaultPrimary {
   heading: prismic.RichTextField;
 
   /**
+   * Sub Headeing field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.sub_headeing
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  sub_headeing: prismic.RichTextField;
+
+  /**
    * contant field in *Hero → Default → Primary*
    *
    * - **Field Type**: Rich Text
@@ -1228,16 +1238,6 @@ export interface HeroSliceDefaultPrimary {
   background_image: prismic.ImageField<never>;
 
   /**
-   * Sub Headeing field in *Hero → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.sub_headeing
-   * - **Documentation**: https://prismic.io/docs/fields/rich-text
-   */
-  sub_headeing: prismic.RichTextField;
-
-  /**
    * Button field in *Hero → Default → Primary*
    *
    * - **Field Type**: Link
@@ -1248,16 +1248,6 @@ export interface HeroSliceDefaultPrimary {
   button: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
 
   /**
-   * Hexa Grid field in *Hero → Default → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.hexa_grid[]
-   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
-   */
-  hexa_grid: prismic.GroupField<Simplify<HeroSliceDefaultPrimaryHexaGridItem>>;
-
-  /**
    * Header Image field in *Hero → Default → Primary*
    *
    * - **Field Type**: Image
@@ -1266,6 +1256,16 @@ export interface HeroSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/image
    */
   header_image: prismic.ImageField<never>;
+
+  /**
+   * Hexa Grid field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.hexa_grid[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  hexa_grid: prismic.GroupField<Simplify<HeroSliceDefaultPrimaryHexaGridItem>>;
 }
 
 /**
@@ -1586,6 +1586,16 @@ export interface LocationSliceDefaultPrimary {
   sub_headeing: prismic.RichTextField;
 
   /**
+   * contant field in *Location → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: location.default.primary.contant
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  contant: prismic.RichTextField;
+
+  /**
    * location card field in *Location → Default → Primary*
    *
    * - **Field Type**: Group
@@ -1596,16 +1606,6 @@ export interface LocationSliceDefaultPrimary {
   location_card: prismic.GroupField<
     Simplify<LocationSliceDefaultPrimaryLocationCardItem>
   >;
-
-  /**
-   * contant field in *Location → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: location.default.primary.contant
-   * - **Documentation**: https://prismic.io/docs/fields/rich-text
-   */
-  contant: prismic.RichTextField;
 }
 
 /**
@@ -1694,6 +1694,16 @@ export interface PartnersSliceDefaultPrimary {
   sub_headeing: prismic.RichTextField;
 
   /**
+   * Contact field in *Partners → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partners.default.primary.contact
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  contact: prismic.RichTextField;
+
+  /**
    * Partners card field in *Partners → Default → Primary*
    *
    * - **Field Type**: Group
@@ -1704,16 +1714,6 @@ export interface PartnersSliceDefaultPrimary {
   partners_card: prismic.GroupField<
     Simplify<PartnersSliceDefaultPrimaryPartnersCardItem>
   >;
-
-  /**
-   * Contact field in *Partners → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: partners.default.primary.contact
-   * - **Documentation**: https://prismic.io/docs/fields/rich-text
-   */
-  contact: prismic.RichTextField;
 }
 
 /**
@@ -1911,44 +1911,14 @@ export interface ServicesSliceDefaultPrimaryCardItem {
  */
 export interface ServicesSliceDefaultPrimary {
   /**
-   * lable field in *Services → Default → Primary*
+   * iso label field in *Services → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: services.default.primary.lable
+   * - **API ID Path**: services.default.primary.iso_label
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  lable: prismic.RichTextField;
-
-  /**
-   * description field in *Services → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: services.default.primary.description
-   * - **Documentation**: https://prismic.io/docs/fields/rich-text
-   */
-  description: prismic.RichTextField;
-
-  /**
-   * card field in *Services → Default → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: services.default.primary.card[]
-   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
-   */
-  card: prismic.GroupField<Simplify<ServicesSliceDefaultPrimaryCardItem>>;
-
-  /**
-   * span lable field in *Services → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: services.default.primary.span_lable
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  span_lable: prismic.KeyTextField;
+  iso_label: prismic.RichTextField;
 
   /**
    * ISO image field in *Services → Default → Primary*
@@ -1959,26 +1929,6 @@ export interface ServicesSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/image
    */
   iso_image: prismic.ImageField<never>;
-
-  /**
-   * QR Code field in *Services → Default → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: services.default.primary.qr_code
-   * - **Documentation**: https://prismic.io/docs/fields/image
-   */
-  qr_code: prismic.ImageField<never>;
-
-  /**
-   * iso label field in *Services → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: services.default.primary.iso_label
-   * - **Documentation**: https://prismic.io/docs/fields/rich-text
-   */
-  iso_label: prismic.RichTextField;
 
   /**
    * iso license field in *Services → Default → Primary*
@@ -1999,6 +1949,56 @@ export interface ServicesSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/image
    */
   tixas_image: prismic.ImageField<never>;
+
+  /**
+   * QR Code field in *Services → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.default.primary.qr_code
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  qr_code: prismic.ImageField<never>;
+
+  /**
+   * lable field in *Services → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.default.primary.lable
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  lable: prismic.RichTextField;
+
+  /**
+   * span lable field in *Services → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.default.primary.span_lable
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  span_lable: prismic.KeyTextField;
+
+  /**
+   * description field in *Services → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * card field in *Services → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.default.primary.card[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  card: prismic.GroupField<Simplify<ServicesSliceDefaultPrimaryCardItem>>;
 }
 
 /**
@@ -2395,14 +2395,14 @@ export type TopNavbarSlice = prismic.SharedSlice<
  */
 export interface VacenciesSliceDefaultPrimaryVacencyCardItem {
   /**
-   * card image field in *Vacencies → Default → Primary → vacency card*
+   * card label field in *Vacencies → Default → Primary → vacency card*
    *
-   * - **Field Type**: Image
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: vacencies.default.primary.vacency_card[].card_image
-   * - **Documentation**: https://prismic.io/docs/fields/image
+   * - **API ID Path**: vacencies.default.primary.vacency_card[].card_label
+   * - **Documentation**: https://prismic.io/docs/fields/text
    */
-  card_image: prismic.ImageField<never>;
+  card_label: prismic.KeyTextField;
 
   /**
    * card heading field in *Vacencies → Default → Primary → vacency card*
@@ -2413,6 +2413,26 @@ export interface VacenciesSliceDefaultPrimaryVacencyCardItem {
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
   card_heading: prismic.RichTextField;
+
+  /**
+   * Card Sub heading field in *Vacencies → Default → Primary → vacency card*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: vacencies.default.primary.vacency_card[].card_sub_heading
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  card_sub_heading: prismic.KeyTextField;
+
+  /**
+   * card image field in *Vacencies → Default → Primary → vacency card*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: vacencies.default.primary.vacency_card[].card_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  card_image: prismic.ImageField<never>;
 
   /**
    * card Button field in *Vacencies → Default → Primary → vacency card*
@@ -2429,26 +2449,6 @@ export interface VacenciesSliceDefaultPrimaryVacencyCardItem {
     prismic.FieldState,
     never
   >;
-
-  /**
-   * Card Sub heading field in *Vacencies → Default → Primary → vacency card*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: vacencies.default.primary.vacency_card[].card_sub_heading
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  card_sub_heading: prismic.KeyTextField;
-
-  /**
-   * card label field in *Vacencies → Default → Primary → vacency card*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: vacencies.default.primary.vacency_card[].card_label
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  card_label: prismic.KeyTextField;
 }
 
 /**
@@ -2476,16 +2476,14 @@ export interface VacenciesSliceDefaultPrimary {
   sub_headeing: prismic.RichTextField;
 
   /**
-   * vacency card field in *Vacencies → Default → Primary*
+   * sub title field in *Vacencies → Default → Primary*
    *
-   * - **Field Type**: Group
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: vacencies.default.primary.vacency_card[]
-   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   * - **API ID Path**: vacencies.default.primary.sub_title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  vacency_card: prismic.GroupField<
-    Simplify<VacenciesSliceDefaultPrimaryVacencyCardItem>
-  >;
+  sub_title: prismic.RichTextField;
 
   /**
    * Conatct field in *Vacencies → Default → Primary*
@@ -2509,6 +2507,18 @@ export interface VacenciesSliceDefaultPrimary {
   is_vacancies: prismic.BooleanField;
 
   /**
+   * vacency card field in *Vacencies → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: vacencies.default.primary.vacency_card[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  vacency_card: prismic.GroupField<
+    Simplify<VacenciesSliceDefaultPrimaryVacencyCardItem>
+  >;
+
+  /**
    * no vacancies label field in *Vacencies → Default → Primary*
    *
    * - **Field Type**: Rich Text
@@ -2517,16 +2527,6 @@ export interface VacenciesSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
   no_vacancies_label: prismic.RichTextField;
-
-  /**
-   * sub title field in *Vacencies → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: vacencies.default.primary.sub_title
-   * - **Documentation**: https://prismic.io/docs/fields/rich-text
-   */
-  sub_title: prismic.RichTextField;
 }
 
 /**

@@ -30,55 +30,13 @@
             "multi": "heading1"
           }
         },
-        "vacency_card": {
-          "type": "Group",
+        "sub_title": {
+          "type": "StructuredText",
           "config": {
-            "label": "vacency card",
-            "repeat": true,
-            "fields": {
-              "card_image": {
-                "type": "Image",
-                "config": {
-                  "label": "card image",
-                  "constraint": {},
-                  "thumbnails": []
-                }
-              },
-              "card_heading": {
-                "type": "StructuredText",
-                "config": {
-                  "label": "card heading",
-                  "placeholder": "",
-                  "allowTargetBlank": true,
-                  "multi": "heading1"
-                }
-              },
-              "card_button": {
-                "type": "Link",
-                "config": {
-                  "label": "card Button",
-                  "placeholder": "",
-                  "select": null,
-                  "allowTargetBlank": true,
-                  "allowText": true,
-                  "repeat": false
-                }
-              },
-              "card_sub_heading": {
-                "type": "Text",
-                "config": {
-                  "label": "Card Sub heading",
-                  "placeholder": ""
-                }
-              },
-              "card_label": {
-                "type": "Text",
-                "config": {
-                  "label": "card label",
-                  "placeholder": ""
-                }
-              }
-            }
+            "label": "sub title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
         "conatct": {
@@ -99,6 +57,57 @@
             "default_value": true
           }
         },
+        "vacency_card": {
+          "type": "Group",
+          "config": {
+            "label": "vacency card",
+            "repeat": true,
+            "fields": {
+              "card_label": {
+                "type": "Text",
+                "config": {
+                  "label": "card label",
+                  "placeholder": ""
+                }
+              },
+              "card_heading": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "card heading",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "heading1"
+                }
+              },
+              "card_sub_heading": {
+                "type": "Text",
+                "config": {
+                  "label": "Card Sub heading",
+                  "placeholder": ""
+                }
+              },
+              "card_image": {
+                "type": "Image",
+                "config": {
+                  "label": "card image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "card_button": {
+                "type": "Link",
+                "config": {
+                  "label": "card Button",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
+                }
+              }
+            }
+          }
+        },
         "no_vacancies_label": {
           "type": "StructuredText",
           "config": {
@@ -106,15 +115,6 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "heading2,heading3,strong"
-          }
-        },
-        "sub_title": {
-          "type": "StructuredText",
-          "config": {
-            "label": "sub title",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         }
       },

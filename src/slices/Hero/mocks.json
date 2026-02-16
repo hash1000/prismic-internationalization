@@ -111,7 +111,6 @@
 				"thumbnails": {}
 			},
 			"background_image": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a",
@@ -130,6 +129,8 @@
 					"background": "transparent"
 				},
 				"alt": "best",
+				"credits": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			}
 		},

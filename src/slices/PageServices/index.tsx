@@ -196,7 +196,7 @@ const AutomotiveServices: FC<AutomotiveServicesProps> = ({ slice }) => {
                   <div className="flex flex-col h-full w-full p-4">
                     {/* Card Image */}
                     {item.card_image?.url ? (
-                      <div className="mb-4 mx-auto max-w-[365px] h-[180px]">
+                      <div className="mb-4 mx-auto max-w-[365px] h-[180px] flex justify-center">
                         <Image
                           src={item.card_image.url}
                           alt={item.card_image.alt || "Card Image"}
@@ -226,7 +226,7 @@ const AutomotiveServices: FC<AutomotiveServicesProps> = ({ slice }) => {
                     <PrismicNextLink field={item.card_link}>
                       {/* Card Image */}
                       {item.card_image?.url ? (
-                        <div className="mb-4 mx-auto max-w-[365px] h-[180px]">
+                        <div className="mb-4 mx-auto max-w-[365px] h-[180px] flex justify-center">
                           <Image
                             src={item.card_image.url}
                             alt={item.card_image.alt || "Card Image"}

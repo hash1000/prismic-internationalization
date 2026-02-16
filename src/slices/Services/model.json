@@ -12,6 +12,48 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "iso_label": {
+          "type": "StructuredText",
+          "config": {
+            "label": "iso label",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "iso_image": {
+          "type": "Image",
+          "config": {
+            "label": "ISO image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "iso_license": {
+          "type": "StructuredText",
+          "config": {
+            "label": "iso license",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "tixas_image": {
+          "type": "Image",
+          "config": {
+            "label": "TIXAS image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "qr_code": {
+          "type": "Image",
+          "config": {
+            "label": "QR Code",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
         "lable": {
           "type": "StructuredText",
           "config": {
@@ -19,6 +61,13 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "heading1,strong"
+          }
+        },
+        "span_lable": {
+          "type": "Text",
+          "config": {
+            "label": "span lable",
+            "placeholder": ""
           }
         },
         "description": {
@@ -74,55 +123,6 @@
                 }
               }
             }
-          }
-        },
-        "span_lable": {
-          "type": "Text",
-          "config": {
-            "label": "span lable",
-            "placeholder": ""
-          }
-        },
-        "iso_image": {
-          "type": "Image",
-          "config": {
-            "label": "ISO image",
-            "constraint": {},
-            "thumbnails": []
-          }
-        },
-        "qr_code": {
-          "type": "Image",
-          "config": {
-            "label": "QR Code",
-            "constraint": {},
-            "thumbnails": []
-          }
-        },
-        "iso_label": {
-          "type": "StructuredText",
-          "config": {
-            "label": "iso label",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
-        },
-        "iso_license": {
-          "type": "StructuredText",
-          "config": {
-            "label": "iso license",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
-        },
-        "tixas_image": {
-          "type": "Image",
-          "config": {
-            "label": "TIXAS image",
-            "constraint": {},
-            "thumbnails": []
           }
         }
       },
